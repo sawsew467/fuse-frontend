@@ -30,7 +30,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -43,22 +43,22 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     { haveOverlay, className, variant, size, asChild = false, ...props },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
-      <div className="relative group">
+      <div className="group relative flex">
         <Comp
           className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
           {...props}
         />
         {haveOverlay && (
-          <span className="absolute top-[2px] left-[2px] block w-full h-full bg-black rounded-md group-hover:top-1 group-hover:left-1 transition-all group-active:top-0 group-active:left-0 "></span>
+          <span className="absolute left-[2px] top-[2px] block h-full w-full rounded-md bg-black transition-all group-hover:left-1 group-hover:top-1 group-active:left-0 group-active:top-0"></span>
         )}
       </div>
     );
-  }
+  },
 );
 Button.displayName = "Button";
 
