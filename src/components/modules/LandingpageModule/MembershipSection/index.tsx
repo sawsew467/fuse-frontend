@@ -3,6 +3,7 @@ import Card from "./card";
 
 const data = [
   {
+    id: 1,
     title: "Miễn phí",
     description:
       "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
@@ -14,6 +15,7 @@ const data = [
     labelColor: "#fff7ad",
   },
   {
+    id: 2,
     title: "Nâng cao",
     description:
       "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
@@ -27,6 +29,7 @@ const data = [
     labelColor: "#ceceff",
   },
   {
+    id: 3,
     title: "Chuyên nghiệp",
     description:
       "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",

@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 
 interface CardProps {
@@ -10,12 +12,22 @@ interface CardProps {
     isBestSeller?: boolean;
     description: string;
     labelColor: string;
+    id: number;
   };
 }
 
 function Card({ data }: CardProps) {
   return (
-    <div className="shadow-3d hover:shadow-3d-hover relative min-h-32 flex-1 rounded-3xl border-2 border-black bg-white p-4 transition-all sm:p-6 md:p-8 lg:p-10">
+    <div
+      className={cn(
+        "relative min-h-32 flex-1 rounded-3xl border-2 border-black bg-white p-4 transition-all duration-500 sm:p-6 md:p-8 lg:p-10",
+        data?.id === 2 && "lg:hover:-translate-y-3 lg:hover:scale-[1.025]",
+        data?.id === 1 &&
+          "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+        data?.id === 3 && "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+        "shadow-3d hover:shadow-3d-hover",
+      )}
+    >
       {data?.isBestSeller && (
         <span className="absolute right-0 top-0 block w-fit rounded-bl-[20px] rounded-tr-[20px] border-2 border-black bg-black px-4 py-[6px] text-xs text-white md:text-sm lg:text-base">
           Thông dụng
