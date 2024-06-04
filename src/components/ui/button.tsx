@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs md:text-sm lg:text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all",
   {
     variants: {
       variant: {
@@ -30,7 +30,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -43,22 +43,21 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     { haveOverlay, className, variant, size, asChild = false, ...props },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
     return (
-      <div className="relative group">
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        />
-        {haveOverlay && (
-          <span className="absolute top-[2px] left-[2px] block w-full h-full bg-black rounded-md group-hover:top-1 group-hover:left-1 transition-all group-active:top-0 group-active:left-0 "></span>
+      <Comp
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          haveOverlay &&
+            "shadow-3d hover:shadow-3d-hover active:shadow-3d-active",
         )}
-      </div>
+        ref={ref}
+        {...props}
+      />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

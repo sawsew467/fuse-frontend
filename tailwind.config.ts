@@ -21,6 +21,11 @@ const config = {
       title: ["Calistoga", "serif"],
     },
     extend: {
+      boxShadow: {
+        "3d": "2px 2px 0px 0px #000",
+        "3d-hover": "4px 4px 0px 0px #000",
+        "3d-active": "0px 0px 0px 0px #000",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

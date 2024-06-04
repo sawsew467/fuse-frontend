@@ -6,7 +6,6 @@ function LandingpageModule() {
   return (
     <>
       <HeroSection />
-      <MembershipSection />
       <ProductSection />
       <MembershipSection />
     </>
