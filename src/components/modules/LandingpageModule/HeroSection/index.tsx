@@ -40,7 +40,7 @@ function HeroSection() {
           <span className="absolute bottom-0 hidden scale-50 transition-all duration-700 sm:-bottom-8 sm:-right-6 sm:block md:bottom-3 md:right-3 md:scale-75 lg:bottom-16 lg:right-14 lg:scale-100">
             <Scopy2 />
           </span>
-          <span className="absolute top-1/2 hidden -translate-y-full scale-50 transition-all duration-700 md:right-16 md:block md:scale-75 lg:right-32 lg:scale-100 xl:right-20">
+          <span className="absolute top-1/2 hidden -translate-y-full scale-50 transition-all duration-700 md:right-16 md:block md:scale-75 lg:right-28 lg:scale-100 xl:right-32">
             <Arrow_subcribe />
           </span>
           <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
