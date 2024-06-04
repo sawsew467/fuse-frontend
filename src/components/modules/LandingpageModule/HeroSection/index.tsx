@@ -46,7 +46,7 @@ function HeroSection() {
           <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
             <Mouse />
           </span>
-          <span className="absolute -top-14 left-20 scale-50 transition-all duration-700 sm:left-40 md:left-52 md:top-0 md:scale-75 lg:left-40 lg:scale-100 xl:left-80">
+          <span className="absolute -top-16 left-20 scale-50 transition-all duration-700 sm:-top-12 sm:left-40 md:left-52 md:-top-6 md:scale-75 lg:left-52 lg:top-2 lg:scale-100 xl:left-80 xl:top-5">
             <Fly />
           </span>
         </div>
