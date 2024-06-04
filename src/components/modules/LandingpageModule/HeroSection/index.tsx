@@ -37,13 +37,13 @@ function HeroSection() {
           <span className="absolute bottom-0 hidden scale-50 transition-all duration-700 sm:-bottom-8 sm:-left-3 sm:block md:bottom-3 md:left-5 md:scale-75 lg:bottom-16 lg:left-16 lg:scale-100">
             <Scopy1 className="aspect-auto h-full w-full" />
           </span>
-          <span className="absolute bottom-0 hidden scale-50 transition-all duration-700 sm:-bottom-8 sm:-right-6 sm:block md:bottom-3 md:right-3 md:scale-75 lg:bottom-16 lg:right-14 lg:scale-100">
+          <span className="absolute bottom-0 hidden scale-50 transition-all duration-700 sm:-right-5 sm:block md:right-0 md:scale-75 lg:bottom-14 lg:right-14 lg:w-56 xl:bottom-20 xl:right-20">
             <Scopy2 />
           </span>
           <span className="absolute top-1/2 hidden -translate-y-full scale-50 transition-all duration-700 md:right-16 md:block md:scale-75 lg:right-28 lg:scale-100 xl:right-32">
             <Arrow_subcribe />
           </span>
-          <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
+          <span className="absolute right-3.5 scale-50 transition-all duration-700 sm:right-40 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 xl:right-80 xl:top-24">
             <Mouse />
           </span>
           <span className="absolute -top-16 left-20 scale-50 transition-all duration-700 sm:-top-12 sm:left-40 md:left-52 md:-top-6 md:scale-75 lg:left-52 lg:top-2 lg:scale-100 xl:left-80 xl:top-5">
