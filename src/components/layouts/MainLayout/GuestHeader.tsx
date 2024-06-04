@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { AppProgressBar } from "next-nprogress-bar";
 
 import { headerItems } from "@/data/headerItems";
 import { cn } from "@/lib/utils";
@@ -18,6 +20,12 @@ function GuestHeader() {
   return (
     <>
       <header className="fixed left-0 top-0 z-50 w-full bg-background py-4">
+        <AppProgressBar
+          height="4px"
+          color="#FF9966"
+          options={{ showSpinner: false }}
+          shallowRouting
+        />
         <div className="container flex justify-between px-5 sm:px-8 md:px-10 lg:px-[60px]">
           <Logo />
           <ul className="hidden gap-8 md:flex lg:gap-12">
@@ -38,11 +46,15 @@ function GuestHeader() {
             ))}
           </ul>
           <div className="gap:3 hidden md:flex lg:gap-6">
-            <Button variant="link">Đăng nhập</Button>
-            <Button className="flex gap-1" haveOverlay>
-              <span>Đăng ký</span>
-              <ButtonArrow />
-            </Button>
+            <Link href="/sign-in">
+              <Button variant="link">Đăng nhập</Button>
+            </Link>
+            <Link href="/sign-up">
+              <Button className="flex gap-1" haveOverlay>
+                <span>Đăng ký</span>
+                <ButtonArrow />
+              </Button>
+            </Link>
           </div>
           <div className="flex md:hidden">
             <Button
