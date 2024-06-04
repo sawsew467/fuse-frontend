@@ -62,10 +62,6 @@ const config = {
         background: {
           DEFAULT: "#F5F3EA",
         },
-        footer: {
-          DEFAULT: "hsl(var(--footer))",
-          foreground: "hsl(var(--footer-foreground))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

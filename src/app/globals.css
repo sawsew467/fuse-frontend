@@ -18,9 +18,6 @@
     --primary: 20 100% 70%;
     --primary-foreground: 210 40% 98%;
 
-    --footer: 0 0% 78.82%;
-    --footer-foreground: 0 0% 78.82%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
@@ -75,7 +72,6 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
