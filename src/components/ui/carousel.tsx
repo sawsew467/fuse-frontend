@@ -12,6 +12,11 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
 
+type sliderButton = {
+  currenButtonIndex : number;
+  numberOfButton : number;
+}
+
 type CarouselProps = {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
@@ -62,8 +67,8 @@ const Carousel = React.forwardRef<
       },
       plugins,
     );
-    const [selectedIndex, setSelectedIndex] = React.useState(0);
-    const [slidesCount, setSlidesCount] = React.useState(0);
+    const [selectedIndex, setSelectedIndex] = React.useState<sliderButton["currenButtonIndex"]>(0);
+    const [slidesCount, setSlidesCount] = React.useState<sliderButton['numberOfButton']>(0);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -198,7 +203,7 @@ const CarouselDots = () => {
         <button
           key={index}
           className={cn(
-            "h-[15px] w-[15px] rounded-full bg-[#A3A3A3]",
+            "h-4 w-4 rounded-full bg-[#A3A3A3]",
             selectedIndex === index && "w-[100px]",
           )}
           onClick={() => scrollTo(index)}
