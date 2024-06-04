@@ -53,7 +53,7 @@ const benefits = [
 function BenefitSection() {
   return (
     <>
-      <div className="px-5 pt-10 pb-0 sm:px-8 sm:pt-12 sm:pb-0 md:px-10 md:pt-14 md:pb-0 lg:px-[60px] lg:pt-28 lg:pb-0">
+      <div className="container px-5 pt-10 pb-0 sm:px-8 sm:pt-12 sm:pb-0 md:px-10 md:pt-14 md:pb-0 lg:px-[60px] lg:pt-28 lg:pb-0">
           <ul className="flex flex-col lg:flex-row md:flex-row sm:flex-col justify-between gap-10 ">
             {benefits.map((benefit, index) => (
               <li key={index} className="flex flex-col justify-between items-center gap-2" >
