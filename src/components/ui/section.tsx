@@ -44,9 +44,10 @@ function Section({ children, title, subTitle, backgroundColor }: SectionProps) {
           </h3>
         )}
         {subTitle && (
-          <p className="mb-4 text-center text-base sm:mb-6 md:mb-8 lg:mb-10 lg:text-xl">
-            {subTitle}
-          </p>
+          <p
+            className="mb-4 text-center text-base font-normal sm:mb-6 md:mb-8 lg:mb-10 lg:text-xl"
+            dangerouslySetInnerHTML={{ __html: subTitle }}
+          />
         )}
         {children}
       </div>

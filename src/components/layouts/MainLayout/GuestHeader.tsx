@@ -25,7 +25,7 @@ function GuestHeader() {
               <li
                 onClick={() => setHeaderClicked(item.href)}
                 key={index}
-                className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-1"
+                className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-1 text-xs md:text-sm lg:text-base"
               >
                 <span>{item?.label}</span>
                 <div
@@ -69,7 +69,7 @@ function GuestHeader() {
           {headerItems?.map((item) => (
             <li
               key={item?.label}
-              className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 transition-all hover:bg-[#DCDAD3]"
+              className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 text-xs transition-all hover:bg-[#DCDAD3]"
               onClick={() => setIsHambugerClicked(false)}
             >
               <span>{item?.label}</span>
