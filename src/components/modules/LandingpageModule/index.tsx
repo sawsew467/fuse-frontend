@@ -1,3 +1,4 @@
+import CommunicationSection from "./CommunicationSection";
 import HeroSection from "./HeroSection";
 import MembershipSection from "./MembershipSection";
 import ProductSection from "./ProductSection";
@@ -8,6 +9,7 @@ function LandingpageModule() {
       <HeroSection />
       <ProductSection />
       <MembershipSection />
+      <CommunicationSection/>
     </>
   );
 }
