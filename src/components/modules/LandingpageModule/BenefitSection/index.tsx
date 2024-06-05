@@ -63,8 +63,8 @@ function BenefitSection() {
                   width={80}
                   height={80}
                 />
-                <h3 className="text-2xl lg:text-3xl md:text-3xl sm:text-3xl font-title text-center ">{benefit.title}</h3>
-                <p className="text-base text-center">{benefit.description}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-title text-center ">{benefit.title}</h3>
+                <p className="text-sm sm:text-base md:text-base lg:text-base text-center">{benefit.description}</p>
               </li>
             ))}
           </ul>

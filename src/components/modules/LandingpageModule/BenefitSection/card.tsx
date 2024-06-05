@@ -22,8 +22,8 @@ function Card({ data }: CardProps) {
                     />
                 </div>
                 <div className="flex flex-col lg:flex-col  md:flex-col  sm:flex-col gap-1 lg:gap-2  md:gap-2  sm:gap-2">
-                    <h3 className="text-base text-left lg:text-center md:text-center sm:text-center font-semibold group-hover:text-white">{data?.title}</h3>
-                    <p className="text-base text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.description}</p>
+                    <h3 className="text-sm md:text-sm lg:text-base font-semibold text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.title}</h3>
+                    <p className="text-xs md:text-sm lg:text-base text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.description}</p>
                 </div>
             </li>
         </ul>
