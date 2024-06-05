@@ -1,3 +1,4 @@
+import InforTeamSection from "./InforTeamSection";
 import CommunicationSection from "./CommunicationSection";
 import HeroSection from "./HeroSection";
 import MembershipSection from "./MembershipSection";
@@ -9,6 +10,7 @@ function LandingpageModule() {
       <HeroSection />
       <ProductSection />
       <MembershipSection />
+      <InforTeamSection/>
       <CommunicationSection/>
     </>
   );
