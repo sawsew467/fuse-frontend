@@ -72,7 +72,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-0">
             <div>
-              <h2 className="text-footer mb-5 text-lg font-bold lg:mb-4 lg:text-base">
+              <h2 className="mb-5 text-lg font-bold text-[#c9c9c9] lg:mb-4 lg:text-base">
                 Tổ chức
               </h2>
               <ul className="flex flex-col gap-2 text-base text-white lg:gap-4">
@@ -91,7 +91,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="text-footer mb-5 text-lg font-bold lg:mb-4 lg:text-base">
+              <h2 className="mb-5 text-lg font-bold text-[#c9c9c9] lg:mb-4 lg:text-base">
                 Fuse
               </h2>
               <ul className="flex flex-col gap-2 text-base text-white lg:gap-4">
