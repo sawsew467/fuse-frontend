@@ -8,7 +8,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {isAuth ? <UserHeader /> : <GuestHeader />}
-      <main className="min-h-screen mt-[72px]">{children}</main>
+      <main className="mt-[72px] min-h-screen">{children}</main>
       <Footer />
     </>
   );
