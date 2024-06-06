@@ -4,7 +4,9 @@ import Image from "next/image";
 
 interface CardProps {
     data: {
-        title: string;
+        avatar: string;
+        fullName: string;
+        userName: string;
         description: string;
     };
 }
@@ -12,18 +14,33 @@ interface CardProps {
 function Card({ data }: CardProps) {
     return (
         <ul className="">
-            <li className="group hover:shadow-3d-hover shadow-3d hover:bg-primary transition-all duration-500 ease-in-out p-4 lg:p-8 md:p-8 sm:p-4 flex flex-row lg:flex-col  md:flex-col  sm:flex-col  justify-between  items-center  gap-3 lg:gap-2  md:gap-2  sm:gap-2  bg-white  border-2  border-black rounded  ">
-                <div className="w-16 h-16 flex justify-center items-center">
+            <li className="w-full group hover:shadow-3d-hover shadow-3d  transition-all  p-5  sm:p-4 md:p-5 lg:p-5  flex flex-col lg:flex-col  md:flex-col  sm:flex-col  justify-between  items-center  gap-6  bg-white  border-2  border-black rounded-lg  ">
+                <div className="w-full flex flex-rown justify-between">
+                    <div className="flex flex-row gap-2 items-center">
+                        <Image
+                            src={data.avatar}
+                            alt="avatar"
+                            width={48}
+                            height={48}
+                        />
+                        <div className="flex flex-col overflow-hidden">
+                            <h5 className="font-semibold truncate leading-normal">{data.fullName}</h5>
+                            <span>{data.userName}</span>
+                        </div>
+                    </div>
                     <Image
-                    src="/folder_icon.svg"
-                    alt="folder_icon"
-                    width={36}
-                    height={28}
+                        src="/facebook.svg"
+                        alt="facebook icon"
+                        width={36}
+                        height={36}
                     />
                 </div>
-                <div className="flex flex-col lg:flex-col  md:flex-col  sm:flex-col gap-1 lg:gap-2  md:gap-2  sm:gap-2">
-                    <h3 className="text-sm md:text-sm lg:text-base font-semibold text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.title}</h3>
-                    <p className="text-xs md:text-sm lg:text-base text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.description}</p>
+                <div className="">
+                    <p className="text-sm md:text-sm lg:text-base flex flex-col gap-4">
+                        {data.description.split('\n').map((line, index) => (
+                            <span key={index} className="inline-block leading-5">{line}</span>
+                        ))}
+                    </p>
                 </div>
             </li>
         </ul>
