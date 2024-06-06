@@ -37,7 +37,7 @@ function ProductSection() {
         const nextIndex = (currentIndex + 1) % keys.length;
         return { key: keys[nextIndex].value };
       });
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
