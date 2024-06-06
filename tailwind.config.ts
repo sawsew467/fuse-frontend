@@ -23,6 +23,7 @@ const config = {
     extend: {
       boxShadow: {
         "3d": "2px 2px 0px 0px #000",
+        "3d-dark": "4px 4px 0px 0px #000",
         "3d-hover": "4px 4px 0px 0px #000",
         "3d-active": "0px 0px 0px 0px #000",
       },
@@ -84,7 +85,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animated')],
 } satisfies Config;
 
 export default config;
