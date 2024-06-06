@@ -152,17 +152,14 @@ function ExamReview() {
             {/* Text1 */}
             <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start animate-fade-left">
               <p className="max-w-[400px] text-end text-sm sm:text-base">
-                Hệ thống sẽ tự động thống kê các lựa chọn mà những người khác đã
-                chọn sau mỗi câu hỏi, giúp bạn so sánh và học hỏi từ kinh nghiệm
-                của cộng đồng.
+              Khu vực ôn thi hỗ trợ trò chuyện, giúp bạn trao đổi và tìm hiểu thông tin một cách dễ dàng và nhanh chóng.
               </p>
               <Image src={HandPointer} alt="icon" width={24} height={24} />
             </div>
             {/* Text2 */}
             <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start animate-fade-left">
               <p className="max-w-[400px] text-end text-sm sm:text-base">
-                Ghi lại lịch sử các phiên ôn thi, giúp bạn theo dõi tiến trình
-                học tập và ôn luyện của mình một cách dễ dàng.
+              Tổ chức phòng ôn thi theo từng bộ môn và bộ đề được cung cấp sẵn, giúp bạn tập trung học tập và ôn luyện một cách hiệu quả.
               </p>
               <Image src={HandPointer} alt="icon" width={24} height={24} />
             </div>
