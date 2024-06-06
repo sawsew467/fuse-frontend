@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -15,9 +16,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
-import React from "react";
 import { Textarea } from "@/components/ui/textarea";
+
+import scopyFeedback from "@public/scopyFeedback.svg";
 
 const formSchema = z.object({
   email: z
@@ -46,9 +47,9 @@ const Feedback = () => {
 
   return (
     <div className="flex w-full gap-20">
-      <span className="hidden w-56 lg:block">
+      <span className="hidden w-96 lg:block">
         <Image
-          src="/ScopyFeedback.svg"
+          src={scopyFeedback}
           alt="scopy"
           width={200}
           height={200}
@@ -64,7 +65,7 @@ const Feedback = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="max-w-80">
+              <FormItem className="">
                 <FormLabel className="text-sm font-bold md:text-base lg:text-lg">
                   Email
                 </FormLabel>
@@ -100,9 +101,9 @@ const Feedback = () => {
           />
           <Button
             type="submit"
-            className="border-2 border-black shadow-3d hover:shadow-3d-hover active:shadow-3d-active"
+            className="border-2 border-black text-base shadow-3d hover:shadow-3d-hover active:shadow-3d-active md:text-lg lg:text-xl"
           >
-            Gửi
+            Gửi đi
           </Button>
         </form>
       </Form>

@@ -26,7 +26,7 @@ const FeedbackSection = () => {
       </span>
       <div className="container px-5 py-10 sm:px-8 sm:py-12 md:px-10 md:py-14 lg:px-[60px] lg:py-20">
         <div className="flex justify-between">
-          <div className="relative flex w-full flex-col gap-20 rounded-2xl border-2 border-black bg-background lg:p-14 md:p-10 sm:p-8 p-6 shadow-3d">
+          <div className="relative flex w-full flex-col gap-8 rounded-2xl border-2 border-black bg-background p-6 shadow-3d sm:gap-10 sm:p-8 md:gap-12 md:p-10 lg:gap-16 lg:p-14">
             <PopularQuestion />
             <Feedback />
           </div>

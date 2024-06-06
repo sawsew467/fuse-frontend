@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import React from "react";
 import {
   Accordion,
@@ -5,7 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Image from "next/image";
+
+import scopyQuestion from "@public/scopyQuestion.svg";
 
 const faqData = [
   {
@@ -61,7 +64,7 @@ const PopularQuestion = () => {
       </Accordion>
       <span className="hidden w-56 lg:block">
         <Image
-          src="/ScopyQuestion.svg"
+          src={scopyQuestion}
           alt="scopy"
           width={200}
           height={200}
