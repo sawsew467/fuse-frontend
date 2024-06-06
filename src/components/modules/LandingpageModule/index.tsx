@@ -3,15 +3,17 @@ import BenefitSection from "./BenefitSection";
 import HeroSection from "./HeroSection";
 import MembershipSection from "./MembershipSection";
 import ProductSection from "./ProductSection";
+import FeedbackSection from "./FeedbackSection";
 
 function LandingpageModule() {
   return (
     <>
       <HeroSection />
       <ProductSection />
-      <BenefitSection/>
+      <BenefitSection />
       <MembershipSection />
-      <CommunicationSection/>
+      <CommunicationSection />
+      <FeedbackSection  />
     </>
   );
 }
