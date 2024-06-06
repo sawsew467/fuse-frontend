@@ -9,6 +9,7 @@ const Rooms: React.FC = () => {
     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {cardsData.map((card: CardType) => (
         <Card
+          key = {card.id}
           id={card.id}
           imgSrc={card.imgSrc}
           title={card.title}
