@@ -29,7 +29,7 @@ const Card: React.FC<CardType> = ({
       key={id}
       className="flex flex-col rounded-3xl border-2 border-black bg-white shadow-3d transition-all hover:shadow-3d-hover"
     >
-      <div className="h-52 w-full rounded-3xl overflow-hidden">
+      <div className="h-52 w-full overflow-hidden rounded-t-3xl border">
         <Image
           className="h-full w-full object-cover"
           width={400}
