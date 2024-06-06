@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+
 import PassionFruidOne from "@public/passionfruid/passionone.svg";
 import PassionFruidTwo from "@public/passionfruid/passiontwo.svg";
 import IdeaIcon from "@public/icons/idea.svg";
@@ -16,16 +17,16 @@ function Flashcard() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
         {/* Left */}
-        <div className="flex h-[fit] w-[100%] md:w-[50%] items-center justify-start">
-          <div className="flex flex-col gap-8">
-            <h1 className="animate-fade-up font-title text-3xl text-center md:text-start md:text-[52px]">
+        <div className="flex h-fit w-full md:w-[50%] items-center justify-center">
+          <div className="flex flex-col gap-6 md:gap-8">
+            <h1 className="animate-fade-up font-title text-3xl text-center md:text-start md:text-[52px] ">
               FlashCard
             </h1>
             <div className="flex animate-fade-right flex-row items-start gap-4">
               <Image src={IdeaIcon} alt="icon" />
-              <p className="font-title font-bold">
+              <p className="text-sm md:text-base font-title font-bold">
                 Giải pháp hữu dụng để bạn có thể lưu nhớ các kiến thức hiệu quả
                 và dễ dàng hơn
               </p>
@@ -37,7 +38,7 @@ function Flashcard() {
                   key={index}
                 >
                   <Image src={ArrowRightIcon} alt="icon" />
-                  <p className="">{item}</p>
+                  <p className="text-sm md:text-base ">{item}</p>
                 </div>
               );
             })}
