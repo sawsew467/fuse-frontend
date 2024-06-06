@@ -13,9 +13,9 @@ type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
 
 type sliderButton = {
-  currenButtonIndex : number;
-  numberOfButton : number;
-}
+  currenButtonIndex: number;
+  numberOfButton: number;
+};
 
 type CarouselProps = {
   opts?: CarouselOptions;
@@ -67,8 +67,10 @@ const Carousel = React.forwardRef<
       },
       plugins,
     );
-    const [selectedIndex, setSelectedIndex] = React.useState<sliderButton["currenButtonIndex"]>(0);
-    const [slidesCount, setSlidesCount] = React.useState<sliderButton['numberOfButton']>(0);
+    const [selectedIndex, setSelectedIndex] =
+      React.useState<sliderButton["currenButtonIndex"]>(0);
+    const [slidesCount, setSlidesCount] =
+      React.useState<sliderButton["numberOfButton"]>(0);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -198,7 +200,7 @@ const CarouselDots = () => {
   const { scrollTo, selectedIndex, slidesCount } = useCarousel();
 
   return (
-    <div className="absolute left-1/2 flex -translate-x-1/2 translate-y-3 transform space-x-2 md:translate-y-5 lg:translate-y-[34px]">
+    <div className="flex justify-center gap-2">
       {Array.from({ length: slidesCount }).map((_, index) => (
         <button
           key={index}
