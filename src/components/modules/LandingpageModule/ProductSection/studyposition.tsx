@@ -15,8 +15,8 @@ function StudyPosition() {
 
         <div className="h-fit w-full rounded-xl border-2 border-black bg-[#FFF380] pb-6 shadow-3d animate-fade">
           <div className="flex w-full flex-wrap justify-center gap-2 p-2 md:p-4 xl:8">
-            {Array.from({ length: 10 }).map(() => (
-              <div className="h-[30px] md:h-[40px] lg:h-[60px] w-[50px] md:w-[60px] xl:w-[80px] rounded-md border-2 border-black bg-primary shadow-3d animate-flip-up"></div>
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div key={index} className="h-[30px] md:h-[40px] lg:h-[60px] w-[50px] md:w-[60px] xl:w-[80px] rounded-md border-2 border-black bg-primary shadow-3d animate-flip-up"></div>
             ))}
           </div>
           <div className="flex flex-row items-center justify-center gap-2">
