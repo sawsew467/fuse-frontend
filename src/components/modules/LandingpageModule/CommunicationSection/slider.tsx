@@ -4,7 +4,7 @@ import {
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { dataCommunity } from "@/data/Community";
+import { dataCommunity } from "@/data/community";
 import Card from "./card";
 
 export function Slider() {
@@ -13,7 +13,7 @@ export function Slider() {
       opts={{
         align: "start",
       }}
-      className="w-full"
+      className="flex w-full flex-col gap-5 md:gap-8"
     >
       <CarouselContent>
         {dataCommunity.map((item, index) => (
