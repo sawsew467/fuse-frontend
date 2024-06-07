@@ -12,8 +12,8 @@ function LandingpageModule() {
       <ProductSection />
       <BenefitSection />
       <MembershipSection />
+      <FeedbackSection />
       <CommunicationSection />
-      <FeedbackSection  />
     </>
   );
 }
