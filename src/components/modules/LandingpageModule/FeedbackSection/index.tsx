@@ -2,10 +2,15 @@ import Image from "next/image";
 import React from "react";
 import PopularQuestion from "./PopularQuestion";
 import Feedback from "./Feedback";
+import Section from "@/components/ui/section";
 
 const FeedbackSection = () => {
   return (
-    <section className="relative w-full bg-primary">
+    <Section
+      backgroundColor="#FF9966"
+      title="Fuse và những thắc mắc"
+      subTitle="Những câu hỏi thường gặp ở Fuse và những câu hỏi bạn đặt cho Fuse"
+    >
       <span className="absolute -top-px left-0 z-10 h-2 w-full">
         <Image
           src="/wave.svg"
@@ -33,7 +38,7 @@ const FeedbackSection = () => {
         </div>
         <div></div>
       </div>
-    </section>
+    </Section>
   );
 };
 
