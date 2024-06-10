@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Section from "@/components/ui/section";
 import { cn } from "@/lib/utils";
@@ -27,8 +27,31 @@ type Turns = {
 
 function ProductSection() {
   const [turn, setTurn] = useState<Turns>({ key: keys[0].value });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
+    if (!isVisible) return;
+
     const interval = setInterval(() => {
       setTurn((prevTurn) => {
         const currentIndex = keys.findIndex(
@@ -37,9 +60,10 @@ function ProductSection() {
         const nextIndex = (currentIndex + 1) % keys.length;
         return { key: keys[nextIndex].value };
       });
-    }, 5000);
+    }, 6000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isVisible]);
 
   return (
     <Section
@@ -47,8 +71,9 @@ function ProductSection() {
       subTitle="Thoả sức học tập và kết nối"
       backgroundColor="#FF9966"
     >
-      <div className="flex w-full flex-col items-center justify-center gap-2 md:gap-6">
-        <div className="flex gap-2 md:gap-7">
+      <div 
+        className="flex w-full flex-col items-center justify-center gap-2 md:gap-6">
+        <div className="flex gap-2 md:gap-7"  ref={sectionRef}>
           {keys.map((item, index: number) => (
             <button
               key={index}
