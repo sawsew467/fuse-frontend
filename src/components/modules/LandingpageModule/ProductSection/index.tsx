@@ -60,7 +60,7 @@ function ProductSection() {
         const nextIndex = (currentIndex + 1) % keys.length;
         return { key: keys[nextIndex].value };
       });
-    }, 1000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [isVisible]);
