@@ -1,10 +1,9 @@
 import React from 'react'
+import HomeModule from '@/components/modules/MainAppModule/HomeModule'
 
 function Home() {
     return (
-        <div>
-            adadada
-        </div>
+        <HomeModule/>
     )
 }
 
