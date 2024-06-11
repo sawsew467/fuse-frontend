@@ -14,8 +14,8 @@ function LandingpageModule() {
       <BenefitSection />
       <MembershipSection />
       <InforTeamSection/>
-      <CommunicationSection />
       <FeedbackSection  />
+      <CommunicationSection />
     </>
   );
 }

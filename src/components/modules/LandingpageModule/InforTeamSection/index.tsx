@@ -2,6 +2,7 @@ import Card from "@/components/modules/LandingpageModule/InforTeamSection/card";
 import Logos from "@/components/modules/LandingpageModule/InforTeamSection/logos";
 import { Carousel, CarouselContent, CarouselDots, CarouselItem } from "@/components/ui/carousel";
 import Section from "@/components/ui/section";
+import Image from "next/image";
 
 const data = [
   {
@@ -38,35 +39,45 @@ const data = [
 
 function InforTeamSection() {
   return (
-    <Section
-      title="Đội ngũ phát triển"
-      subTitle={`Những lập trình viên tài năng đã cùng tạo nên <span class="bg-primary px-1 rounded-md">“fuse”</span>`}
-    >
-      <div className="lg:grid hidden lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-rows-2  gap-10">
-        {data.map((item, index) => (
-          <Card key={index} data={item} />
-        ))}
-      </div>
-
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="lg:hidden block w-full"
+    <>
+      <Section
+        title="Đội ngũ phát triển"
+        subTitle={`Những lập trình viên tài năng đã cùng tạo nên <span class="bg-primary px-1 rounded-md">“fuse”</span>`}
       >
-        <CarouselContent>
+        <div className="lg:grid hidden lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-rows-2  gap-10">
           {data.map((item, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card key={index} data={item} />
-              </div>
-            </CarouselItem>
+            <Card key={index} data={item} />
           ))}
-        </CarouselContent>
-        <CarouselDots />
-      </Carousel>
-      <Logos />
-    </Section>
+            <Image
+              src="/infor_image.svg"
+              alt="Image"
+              width={400}
+              height={321}
+              className="h-full w-full"
+            />
+        </div>
+
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="lg:hidden block w-full"
+        >
+          <CarouselContent>
+            {data.map((item, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card key={index} data={item} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselDots />
+        </Carousel>
+
+        <Logos />
+      </Section>
+    </>
   );
 }
 
