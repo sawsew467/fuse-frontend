@@ -200,12 +200,12 @@ const CarouselDots = () => {
   const { scrollTo, selectedIndex, slidesCount } = useCarousel();
 
   return (
-    <div className="absolute left-1/2 flex -translate-x-1/2 translate-y-3 transform space-x-2 md:translate-y-5 lg:translate-y-[34px]">
+    <div className="flex justify-center gap-2">
       {Array.from({ length: slidesCount }).map((_, index) => (
         <button
           key={index}
           className={cn(
-            "h-4 w-4 rounded-full bg-[#A3A3A3] transition-all duration-500",
+            "h-4 w-4 rounded-full bg-[#A3A3A3]",
             selectedIndex === index && "w-[100px]",
           )}
           onClick={() => scrollTo(index)}

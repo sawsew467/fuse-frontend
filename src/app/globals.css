@@ -76,7 +76,18 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .paper {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  .paper:hover {
+    transform: rotateY(180deg) translateX(100%);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
 }
+
 
 @layer utilities {
   .animation-pause {

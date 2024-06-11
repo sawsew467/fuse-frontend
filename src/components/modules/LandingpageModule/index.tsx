@@ -16,6 +16,7 @@ function LandingpageModule() {
       <InforTeamSection/>
       <FeedbackSection  />
       <CommunicationSection />
+      <FeedbackSection  />
     </>
   );
 }

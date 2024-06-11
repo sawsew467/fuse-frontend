@@ -13,7 +13,7 @@ export function Slider() {
       opts={{
         align: "start",
       }}
-      className="w-full"
+      className="flex w-full flex-col gap-5 md:gap-8"
     >
       <CarouselContent>
         {dataCommunity.map((item, index) => (

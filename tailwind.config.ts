@@ -22,6 +22,10 @@ const config = {
       title: ["Calistoga", "serif"],
     },
     extend: {
+      transitionDuration: {
+        "2000": "2000ms",
+        "3000": "3000ms",
+      },
       boxShadow: {
         "3d": "2px 2px 0px 0px #000",
         "3d-light": "1px 1px 0px 0px #000",
