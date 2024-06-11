@@ -69,6 +69,10 @@ const config = {
         background: {
           DEFAULT: "#F5F3EA",
         },
+        status : {
+          offline : "#DCDAD3",
+          online : "#65CCA0"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
