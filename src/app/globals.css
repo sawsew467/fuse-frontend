@@ -76,4 +76,30 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .paper {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  .paper:hover {
+    transform: rotateY(180deg) translateX(100%);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+}
+
+
+@layer utilities {
+  .animation-pause {
+    animation-play-state: paused;
+  }
+
+  .custom-hover-effect {
+    @apply hover:scale-150 hover:-translate-y-5;
+  }
+
+  .box:hover + .box,
+    .box:has(+ .box:hover) {
+        @apply scale-110 -translate-y-6;
+    }
 }
