@@ -2,7 +2,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselDots,
-  CarouselItem,
+  CarouselItem
 } from "@/components/ui/carousel";
 import { dataCommunity } from "@/data/Community";
 import Card from "./card";
