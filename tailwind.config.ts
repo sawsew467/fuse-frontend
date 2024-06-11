@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -83,11 +84,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "infinite-scroll": {
+          form: {transform: "translateX(0)"},
+          to: {transform: "translateX(-50%)"},
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "infinite-scroll" : "infinite-scroll 20s linear infinite",
       },
+      
     },
   },
   plugins: [require('tailwindcss-animated')],
