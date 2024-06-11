@@ -7,28 +7,28 @@ import Section from "@/components/ui/section";
 
 const data = [
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Quản lý nhóm dễ dàng",
+    description: "Sắp xếp và quản lý các nhóm, dự án, và thư mục một cách trực quan và hiệu quả.",
   },
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Tích hợp công cụ mạnh mẽ",
+    description: "Kết nối và sử dụng các công cụ mạnh mẽ giúp bạn nâng cao hiệu suất làm việc.",
   },
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Tương tác thời gian thực",
+    description: "Cộng tác và chia sẻ ý tưởng với đồng đội trong thời gian thực mà không gặp trở ngại.",
   },
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Bảo mật hàng đầu",
+    description: "Đảm bảo an toàn dữ liệu với các tiêu chuẩn bảo mật hàng đầu thế giới.",
   },
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Hỗ trợ đa nền tảng",
+    description: "Truy cập và làm việc trên mọi thiết bị, từ máy tính để bàn đến điện thoại di động.",
   },
   {
-    title: "Teams, Projects & Folders",
-    description: "Create teams and organize your 3d designs in folders and projects.",
+    title: "Tùy chỉnh linh hoạt",
+    description: "Tùy chỉnh giao diện và tính năng theo nhu cầu riêng của bạn để tối ưu hóa trải nghiệm.",
   },
 ]
 
@@ -54,20 +54,22 @@ function BenefitSection() {
   return (
     <>
       <div className="container px-5 pt-10 pb-0 sm:px-8 sm:pt-12 sm:pb-0 md:px-10 md:pt-14 md:pb-0 lg:px-[60px] lg:pt-28 lg:pb-0">
-          <ul className="flex flex-col lg:flex-row md:flex-row sm:flex-col justify-between gap-10 ">
-            {benefits.map((benefit, index) => (
-              <li key={index} className="flex flex-col justify-between items-center gap-2" >
-                <Image
-                  src={benefit.image}
-                  alt={benefit.title}
-                  width={80}
-                  height={80}
-                />
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-title text-center ">{benefit.title}</h3>
-                <p className="text-sm sm:text-base md:text-base lg:text-base text-center">{benefit.description}</p>
-              </li>
-            ))}
-          </ul>
+        <ul className="flex flex-col lg:flex-row md:flex-row sm:flex-col justify-between gap-10 ">
+          {benefits.map((benefit, index) => (
+            <li key={index} className="flex flex-row lg:flex-col md:flex-col justify-between items-center gap-2 transform transition-transform duration-500" >
+              <Image
+                src={benefit.image}
+                alt={benefit.title}
+                width={80}
+                height={80}
+              />
+              <div className="flex flex-col gap-0 lg:gap-2 md:gap-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-title text-left lg:text-center md:text-center ">{benefit.title}</h3>
+                <p className="text-sm sm:text-base md:text-base lg:text-base text-left lg:text-center md:text-center">{benefit.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
       <Section
         title="Và còn nhiều hơn thế nữa"
