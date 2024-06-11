@@ -60,3 +60,26 @@ export const cardsData = [
     tag: "Chill",
   },
 ];
+
+export const subjects = [
+  { subject: "Kinh tế lượng" },
+  { subject: "Kinh tế vi mô" },
+  { subject: "Thương mại quốc tế" },
+  { subject: "Tài chính doanh nghiệp" },
+  { subject: "Marketing" },
+  { subject: "Quản trị nhân sự" },
+  { subject: "Phân tích kinh doanh" },
+  { subject: "Kế toán" },
+  { subject: "Kinh tế lượng" },
+  { subject: "Ngôn ngữ Anh" },
+  { subject: "Ngôn ngữ Pháp" },
+  { subject: "Ngôn ngữ Tây Ban Nha" },
+  { subject: "Ngôn ngữ Trung Quốc" },
+  { subject: "Ngôn ngữ Nhật Bản" },
+  { subject: "Khoa học máy tính" },
+  { subject: "Kỹ thuật phần mềm" },
+  { subject: "Khoa học dữ liệu" },
+  { subject: "Trí tuệ nhân tạo" },
+  { subject: "Bảo mật mạng" },
+  { subject: "Hệ thống thông tin" },
+];
