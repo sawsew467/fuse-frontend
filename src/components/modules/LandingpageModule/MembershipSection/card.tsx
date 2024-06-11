@@ -33,7 +33,7 @@ function Card({ data, ref, hidden }: CardProps) {
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.55 : 0.4, 1],
+    [0, hidden ? 0.55 : 0.42, 1],
     [0, 0, 2000],
   );
 

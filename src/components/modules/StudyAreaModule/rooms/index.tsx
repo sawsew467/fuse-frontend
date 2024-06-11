@@ -7,7 +7,7 @@ import Toolbar from "./toolbar";
 
 const Rooms: React.FC = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="w-full flex flex-col gap-10">
       <Toolbar />
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {cardsData.map((card: CardType) => (

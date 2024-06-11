@@ -33,7 +33,7 @@ const child: any = {
 function Section({ children, title, subTitle, backgroundColor }: SectionProps) {
   return (
     <section
-      className="relative bg-background w-full"
+      className="relative w-full bg-background"
       style={{
         backgroundColor,
       }}
@@ -46,16 +46,16 @@ function Section({ children, title, subTitle, backgroundColor }: SectionProps) {
               alt=""
               width={1440}
               height={8}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </span>
-          <span className="w-full rotate-180 absolute -bottom-px left-0 z-10 h-2">
+          <span className="absolute -bottom-px left-0 z-10 h-2 w-full rotate-180">
             <Image
               src="/wave.svg"
               alt=""
               width={1440}
               height={8}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </span>
         </>
