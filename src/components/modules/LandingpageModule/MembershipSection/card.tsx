@@ -28,22 +28,18 @@ interface CardProps {
 function Card({ data, ref, hidden }: CardProps) {
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end end"],
+    offset: ["start start", "end end"],
   });
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.7 : 0.55, 1],
+    [0, hidden ? 0.55 : 0.4, 1],
     [0, 0, 2000],
   );
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.75, 0.8, 1],
-    [1, 1, 0, 0],
-  );
+
   return (
     <motion.div
-      style={{ translateY, opacity }}
+      style={{ translateY }}
       initial={data.animate}
       whileInView={{
         x: 0,
