@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll, motion, useTransform, MotionValue } from "framer-motion";
 
 import { keys } from ".";
 import Flashcard from "./flashcard";
@@ -74,32 +74,37 @@ const fade = {
 };
 
 function ProductCard({ turn, ref }: TProps) {
-  const [hidden, setHidden] = useState(innerWidth < 1024);
-
+  const [hidden, setHidden] = useState(true);
+  useEffect(() => {
+    setHidden(innerWidth < 1024);
+  }, []);
+  const handleResize = ({ target }: UIEvent) => {
+    setHidden((target as Window)?.innerWidth < 1024);
+  };
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
+
   const rotateX = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.5, 1],
-    [180, 0, 0, 180],
+    [0, 0.13, 0.5, 1],
+    [90, 0, 0, 90],
   );
-  const handleResize = ({ target }: UIEvent) => {
-    setHidden((target as Window)?.innerWidth < 1024);
-  };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [hidden]);
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.7, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 1], [1, 1, 0]);
+  const scale: any = useTransform(scrollYProgress, [0, 0.15, 1], [1, 1, 0]);
   return (
     <motion.div
       style={{
         rotateX: hidden ? 0 : rotateX,
         opacity: hidden ? 1 : opacity,
-        scale: hidden ? 0 : scale,
+        scale: hidden ? 1 : scale,
+        originX: "bottom",
       }}
       ref={ref}
       className="inline h-[fit] w-full transform-none items-start rounded-2xl border-2 border-black bg-[#f5f3ea] p-6 shadow-3d-dark sm:h-[fit] md:flex md:h-[670px] md:items-center md:p-16 lg:h-[600px]"

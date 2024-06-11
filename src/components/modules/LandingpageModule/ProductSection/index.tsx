@@ -45,7 +45,7 @@ function ProductSection() {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [view]);
+  }, [view, turn]);
 
   return (
     <Section
@@ -56,18 +56,19 @@ function ProductSection() {
       <div
         ref={ref}
         style={{ perspective: 800 }}
-        className="flex-inline flex w-full flex-col items-center justify-center gap-2 overflow-hidden md:gap-6"
+        className="flex-inline flex w-full flex-col items-center justify-center gap-2 p-2 md:gap-6 lg:overflow-hidden"
       >
         <div className="flex gap-2 md:gap-7">
           {keys.map((item, index: number) => (
             <button
-              key={index}
+              key={item.value}
               className={cn(
                 "rounded-md border-2 border-black px-4 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white md:px-7",
-                turn.key === item.value
-                  ? "bg-secondary-foreground text-white"
-                  : "bg-[#f5f3ea] text-black",
               )}
+              style={{
+                backgroundColor: turn.key === item.value ? "#000" : "#f5f3ea",
+                color: turn.key === item.value ? "#fff" : "#000",
+              }}
               onClick={() => {
                 setTurn({ key: item.value });
               }}

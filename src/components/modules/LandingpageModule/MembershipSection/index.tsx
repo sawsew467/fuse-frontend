@@ -1,5 +1,8 @@
+"use client";
 import Section from "@/components/ui/section";
 import Card from "./card";
+import { animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const data = [
   {
@@ -13,6 +16,11 @@ const data = [
       "Up to 50 active contacts per month",
     ],
     labelColor: "#fff7ad",
+    animate: {
+      x: -20,
+      y: 0,
+      opacity: 0,
+    },
   },
   {
     id: 2,
@@ -27,6 +35,11 @@ const data = [
     ],
     isBestSeller: true,
     labelColor: "#ceceff",
+    animate: {
+      x: 0,
+      y: 20,
+      opacity: 0,
+    },
   },
   {
     id: 3,
@@ -39,18 +52,38 @@ const data = [
       "Up to 50 active contacts per month",
     ],
     labelColor: "#ffecee",
+    animate: {
+      x: 20,
+      y: 0,
+      opacity: 0,
+    },
   },
 ];
 
 function MembershipSection() {
+  const ref = useRef(null);
+  const [hidden, setHidden] = useState(true);
+  const handleResize = ({ target }: UIEvent) => {
+    setHidden((target as Window)?.innerWidth < 1024);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [hidden]);
+  useEffect(() => {
+    setHidden(innerWidth < 1024);
+  }, []);
   return (
     <Section
       title="Các gói tài khoản"
       subTitle="Bắt đầu với việc học hoàn toàn miễn phí. <br/> Nâng cấp tài khoản để trải nghiệm nhiều tính năng tuyệt vời hơn!"
     >
-      <div className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-center">
+      <div
+        ref={ref}
+        className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-center"
+      >
         {data.map((item, index) => (
-          <Card key={index} data={item} />
+          <Card key={index} data={item} ref={ref} hidden={hidden} />
         ))}
       </div>
     </Section>

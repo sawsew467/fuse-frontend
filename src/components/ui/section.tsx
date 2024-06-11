@@ -33,31 +33,31 @@ const child: any = {
 function Section({ children, title, subTitle, backgroundColor }: SectionProps) {
   return (
     <section
-      className="relative w-full"
+      className="relative bg-background w-full"
       style={{
         backgroundColor,
       }}
     >
       {backgroundColor && (
         <>
-          <div className="absolute left-0 right-0 top-0">
+          <span className="absolute -top-px left-0 z-10 h-2 w-full">
             <Image
               src="/wave.svg"
               alt=""
               width={1440}
-              height={6}
-              className="w-full object-cover"
+              height={8}
+              className="w-full h-full object-cover"
             />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 rotate-180">
+          </span>
+          <span className="w-full rotate-180 absolute -bottom-px left-0 z-10 h-2">
             <Image
               src="/wave.svg"
               alt=""
               width={1440}
-              height={6}
-              className="w-full object-cover"
+              height={8}
+              className="w-full h-full object-cover"
             />
-          </div>
+          </span>
         </>
       )}
       <div className="container flex flex-col items-center px-5 py-10 sm:px-8 sm:py-12 md:px-10 md:py-14 lg:px-[60px] lg:py-28">

@@ -70,7 +70,7 @@ function HeroSection() {
                 opacity: 1,
                 transition: {
                   delay: 0,
-                  duration: 0.2,
+                  duration: 0.5,
                 },
               }}
               style={{ translateY, opacity }}
@@ -89,7 +89,7 @@ function HeroSection() {
 
                 transition: {
                   delay: 0,
-                  duration: 0.2,
+                  duration: 0.5,
                 },
               }}
               style={{ translateY, opacity }}
