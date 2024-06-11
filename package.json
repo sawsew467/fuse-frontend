@@ -25,6 +25,7 @@
     "framer-motion-3d": "^11.2.10",
     "gsap": "^3.12.5",
     "embla-carousel-react": "^8.1.3",
+    "framer-motion": "^11.2.10",
     "intersection-observer": "^0.12.2",
     "lucide-react": "^0.383.0",
     "next": "14.2.3",
