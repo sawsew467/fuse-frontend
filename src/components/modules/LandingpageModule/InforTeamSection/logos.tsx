@@ -53,11 +53,7 @@ const logos = [
 function Logos() {
     return (
         <div
-            className="group overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)]"
-            style={{
-                marginTop: "70px",
-                paddingTop: "50px",
-            }}
+            className="group overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] pt-10 lg:pt-28 md:pt-14 sm:pt-12"
         >
             <div className="flex justify-center items-center whitespace-nowrap animate-infinite-scroll group-hover:animation-pause w-max">
                 {logos.concat(logos).map((item, index) => (
@@ -65,9 +61,9 @@ function Logos() {
                         <Image
                             src={item.logo}
                             alt={`Logo ${index + 1}`}
-                            width={85}
-                            height={87}
-                            className="bg-white rounded-2xl"
+                            width={64} 
+                            height={64}
+                            className="lg:w-20 lg:h-20 bg-white rounded-2xl"
                         />
                     </button>
                 ))}

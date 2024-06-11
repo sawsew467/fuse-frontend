@@ -61,7 +61,7 @@ function InforTeamSection() {
           opts={{
             align: "start",
           }}
-          className="lg:hidden block w-full"
+          className="w-full lg:hidden flex flex-col gap-5 md:gap-8 "
         >
           <CarouselContent>
             {data.map((item, index) => (
