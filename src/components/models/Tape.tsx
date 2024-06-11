@@ -2,8 +2,8 @@ import { useGLTF } from "@react-three/drei";
 import { GroupProps } from "@react-three/fiber";
 import { Color, MeshStandardMaterial } from "three";
 
-function Tape(props: GroupProps) {
-  const { nodes }: any = useGLTF("/models/tools.glb");
+function TapeModel(props: GroupProps) {
+  const { nodes, materials }: any = useGLTF("/models/tools.glb");
   return (
     <group {...props}>
       <mesh
@@ -34,4 +34,4 @@ function Tape(props: GroupProps) {
   );
 }
 
-export default Tape;
+export default TapeModel;

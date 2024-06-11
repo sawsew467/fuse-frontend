@@ -1,10 +1,11 @@
-import { OrthographicCamera, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
+import { GroupProps } from "@react-three/fiber";
 import { Color, MeshStandardMaterial } from "three";
 
-function StickyNote() {
+function StickyNote(props: GroupProps) {
   const { nodes, materials }: any = useGLTF("/models/tools.glb");
   return (
-    <group position={[0, 0, 0]} rotation={[0, 0, 0]} scale={0.02}>
+    <group {...props}>
       <mesh
         castShadow
         receiveShadow

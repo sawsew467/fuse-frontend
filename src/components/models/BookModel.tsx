@@ -1,11 +1,12 @@
 import { OrthographicCamera, useGLTF } from "@react-three/drei";
+import { GroupProps } from "@react-three/fiber";
 import { Color, MeshStandardMaterial } from "three";
 
-function BookModel() {
+function BookModel(props: GroupProps) {
   const { nodes, materials }: any = useGLTF("/models/tools.glb");
   return (
-    <group scale={0.005} rotation={[0, 0, 0]} position={[0, 0, 0]}>
-      <group position={[-16.127, 53.831, -94.55]} scale={[1.847, 3.361, 3.073]}>
+    <group {...props}>
+      <group position={[0, 0, 0]} scale={[1.847, 3.361, 3.073]}>
         <mesh
           castShadow
           receiveShadow

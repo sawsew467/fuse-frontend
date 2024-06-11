@@ -1,10 +1,11 @@
 import { useGLTF } from "@react-three/drei";
+import { GroupProps } from "@react-three/fiber";
 import { Color, MeshStandardMaterial } from "three";
 
-function Pencil1() {
+function Pencil1(props: GroupProps) {
   const { nodes }: any = useGLTF("/models/tools.glb");
   return (
-    <group position={[0, 0, 0]} rotation={[0, 0, 0]} scale={0.01}>
+    <group {...props}>
       <mesh
         castShadow
         receiveShadow
@@ -12,6 +13,7 @@ function Pencil1() {
         material={
           new MeshStandardMaterial({
             color: new Color(0xc6c6c6),
+            lightMapIntensity: 60,
           })
         }
         position={[-118.459, 8.356, -6.09]}

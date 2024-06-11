@@ -10,6 +10,7 @@ import RuleModel from "@/components/models/Rule";
 import CoffeeModel from "@/components/models/Coffee";
 import DodecahedronModel from "@/components/models/Dodecahedron";
 import TapeModel from "@/components/models/Tape";
+import Triangle from "@/components/models/Triangle";
 
 export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
   return (
