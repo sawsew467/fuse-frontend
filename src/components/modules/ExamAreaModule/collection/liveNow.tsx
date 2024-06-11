@@ -12,7 +12,7 @@ import Section from "../section";
 
 import { liveRoom } from "@/data/exam-area";
 
-import Fire from "@public/image/svg/Fire.svg";
+import Fire from "@public/image/svg/fire.svg";
 
 function LiveNow() {
   return (
