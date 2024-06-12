@@ -54,6 +54,7 @@ function Card({ data, ref, hidden }: CardProps) {
           type: "spring",
           duration: 1,
           delay: 0.75,
+          bounce: 0,
         },
       }}
       viewport={{ once: true }}
@@ -87,7 +88,7 @@ function Card({ data, ref, hidden }: CardProps) {
         </p>
         <div className="mb-2 sm:mb-4 md:mb-6 md:text-sm lg:mb-8">
           <span className="text-xl font-semibold md:text-2xl lg:text-4xl">
-            {data?.price?.toLocaleString('vi')} VNĐ
+            {data?.price?.toLocaleString("vi")} VNĐ
           </span>
           <span className="text-xs md:text-sm lg:text-base">/Tháng</span>
         </div>
