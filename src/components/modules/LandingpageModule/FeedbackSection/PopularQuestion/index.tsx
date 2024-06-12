@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import React from "react";
 import {
@@ -43,26 +45,67 @@ const faqData = [
   },
 ];
 
+const parent = {
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+      type: "spring",
+      bounce: 0.8,
+      duration: 0.01,
+      deplay: 0.5,
+    },
+  },
+};
+
+const child: any = {
+  show: {
+    y: [20, 0],
+    opacity: [0, 1],
+    transition: {
+      type: "spring",
+    },
+  },
+};
+
 const PopularQuestion = () => {
   return (
-    <div className="flex w-full gap-20">
+    <motion.div
+      className="flex w-full gap-20"
+      variants={parent}
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <Accordion type="single" collapsible className="flex-1">
         {faqData.map((item) => (
-          <AccordionItem
-            key={item.id}
-            value={item.id}
-            className="border-b-2 border-black/25"
-          >
-            <AccordionTrigger className="text-xs font-medium md:text-sm lg:text-base">
-              {item.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-xs font-normal md:text-sm lg:text-base">
-              {item.answer}
-            </AccordionContent>
-          </AccordionItem>
+          <motion.div key={item.id} variants={child}>
+            <AccordionItem
+              key={item.id}
+              value={item.id}
+              className="border-b-2 border-black/25"
+            >
+              <AccordionTrigger className="text-left text-xs font-medium md:text-sm lg:text-base">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-left text-xs font-normal md:text-sm lg:text-base">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          </motion.div>
         ))}
       </Accordion>
-      <span className="hidden w-56 lg:block">
+      <motion.div
+        whileInView={{
+          x: [100, 0],
+          opacity: [0, 1],
+          transition: {
+            type: "spring",
+            duration: 0.75,
+            deplay: 0.5,
+          },
+        }}
+        viewport={{ once: true }}
+        className="hidden w-56 lg:block"
+      >
         <Image
           src={scopyQuestion}
           alt="scopy"
@@ -70,8 +113,8 @@ const PopularQuestion = () => {
           height={200}
           className="w-full"
         ></Image>
-      </span>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
