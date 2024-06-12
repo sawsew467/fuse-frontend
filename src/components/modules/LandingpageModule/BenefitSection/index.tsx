@@ -1,34 +1,43 @@
+"use client"
 import Image from "next/image";
 
 import Card from "./card";
 
 import Section from "@/components/ui/section";
+import { GlobeLock, LaptopMinimal, LaptopMinimalIcon, Lightbulb, MonitorSmartphone, Users, Wrench } from "lucide-react";
 
 
 const data = [
   {
     title: "Quản lý nhóm dễ dàng",
     description: "Sắp xếp và quản lý các nhóm, dự án, và thư mục một cách trực quan và hiệu quả.",
+    icon: () => <Users className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
   },
   {
     title: "Tích hợp công cụ mạnh mẽ",
     description: "Kết nối và sử dụng các công cụ mạnh mẽ giúp bạn nâng cao hiệu suất làm việc.",
+    icon: () => <LaptopMinimal className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
+
   },
   {
     title: "Tương tác thời gian thực",
     description: "Cộng tác và chia sẻ ý tưởng với đồng đội trong thời gian thực mà không gặp trở ngại.",
+    icon: () => <Lightbulb className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
   },
   {
     title: "Bảo mật hàng đầu",
     description: "Đảm bảo an toàn dữ liệu với các tiêu chuẩn bảo mật hàng đầu thế giới.",
+    icon: () => <GlobeLock className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
   },
   {
     title: "Hỗ trợ đa nền tảng",
     description: "Truy cập và làm việc trên mọi thiết bị, từ máy tính để bàn đến điện thoại di động.",
+    icon: () => <MonitorSmartphone className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
   },
   {
     title: "Tùy chỉnh linh hoạt",
     description: "Tùy chỉnh giao diện và tính năng theo nhu cầu riêng của bạn để tối ưu hóa trải nghiệm.",
+    icon: () => <Wrench className="lg:w-11 md:w-11 sm:w-7 lg:h-9 md:h-9 sm:h-7 group-hover:invert" />
   },
 ]
 
