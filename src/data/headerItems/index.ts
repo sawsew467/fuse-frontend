@@ -13,6 +13,21 @@ export const headerItems = [
   },
 ];
 
+export const headerUser = [
+  {
+    href: "/",
+    label: "Trang chủ",
+  },
+  {
+    href: "/membership",
+    label: "Khu học tập",
+  },
+  {
+    href: "/developers",
+    label: "Khu ôn thi",
+  },
+];
+
 export const dataCommunity = [
   {
     user: {
@@ -60,4 +75,3 @@ export const dataCommunity = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros urna, malesuada quis facilisis in, porttitor ut elit. Etiam vitae scelerisque nulla. Nunc a gravida justo, in feugiat dolor. Vestibulum mauris neque  porttitor ut elit. Etiam vitae scelerisque nulla. Nunc a gravida justo, in feugiat dolor. Vestibulum mauris neque  porttitor ut elit. Etiam vitae scelerisque nulla. Nunc a gravida justo, in feugiat dolor. Vestibulum mauris neque",
   },
 ];
-

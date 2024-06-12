@@ -4,9 +4,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Dispatch, SetStateAction } from "react";
+import { signInWithPopup } from "firebase/auth";
+import { useRouter } from "next-nprogress-bar";
 
 import { LoginSchema } from "@/zod/schemas/LoginSchema";
 import { cn } from "@/lib/utils";
+import { auth, provider } from "@/services/firebase/config";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
+import { actionLogin } from "@/store/slices/auth";
 
 import {
   Form,
@@ -18,7 +23,6 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 
 import Logo from "@public/svgr/Logo";
@@ -33,6 +37,10 @@ export function SignInCard({
   mode: string;
   setMode: Dispatch<SetStateAction<"SIGNIN" | "SIGNUP">>;
 }) {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const { access_token, userInfo } = useAppSelector((state) => state.auth);
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -42,15 +50,31 @@ export function SignInCard({
     },
   });
 
-  function onSubmit(data: z.infer<typeof LoginSchema>) {
-    console.log(data);
+  async function onSubmit(data: z.infer<typeof LoginSchema>) {
+    try {
+    } catch (error) {}
 
-    toast({
-      title: "Đăng nhập thất bại",
-      description: "Sai thông tin đăng nhập",
-      variant: "destructive",
-    });
+    // toast({
+    //   title: "Đăng nhập thất bại",
+    //   description: "Sai thông tin đăng nhập",
+    //   variant: "destructive",
+    // });
   }
+
+  const handleGoogleLogin = async () => {
+    try {
+      const resFirebase: any = await signInWithPopup(
+        auth,
+        provider.providerGoogle,
+      );
+      console.log(resFirebase);
+      dispatch(actionLogin(resFirebase?.user));
+      router.push("/");
+      router.refresh();
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
 
   return (
     <div
@@ -141,6 +165,7 @@ export function SignInCard({
               haveOverlay
               className="h-auto py-4"
               type="button"
+              onClick={handleGoogleLogin}
             >
               <Google />
             </Button>
