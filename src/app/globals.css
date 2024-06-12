@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -89,18 +88,17 @@
   }
 }
 
-
 @layer utilities {
   .animation-pause {
     animation-play-state: paused;
   }
 
   .custom-hover-effect {
-    @apply hover:scale-150 hover:-translate-y-5;
+    @apply hover:-translate-y-5 hover:scale-150;
   }
 
   .box:hover + .box,
-    .box:has(+ .box:hover) {
-        @apply scale-110 -translate-y-6;
-    }
+  .box:has(+ .box:hover) {
+    @apply -translate-y-6 scale-110;
+  }
 }
