@@ -77,7 +77,7 @@ function InforTeamSection() {
         </Carousel>
 
         <Logos />
-        <Demo/>
+        {/* <Demo/> */}
       </Section>
     </>
   );

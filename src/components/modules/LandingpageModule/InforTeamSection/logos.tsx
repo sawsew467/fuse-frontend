@@ -55,7 +55,7 @@ function Logos() {
 
     return (
         <div
-            className="group overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] pt-10 lg:pt-28 md:pt-14 sm:pt-12"
+            className="group overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] pt-10 lg:pt-28 md:pt-14 sm:pt-12 w-full"
         >
             <div
                 className="flex justify-center items-center whitespace-nowrap animate-infinite-scroll w-max hover:animation-pause"
