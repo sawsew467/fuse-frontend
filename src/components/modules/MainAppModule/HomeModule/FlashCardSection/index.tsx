@@ -6,6 +6,7 @@ import {
   CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { flashcardDatas, recentData } from "@/data/flash-card-views";
 
 function FlashCardSection() {
   return (
@@ -16,8 +17,8 @@ function FlashCardSection() {
       <div className="flex flex-col gap-5">
         <h4 className="font-bold">Đã xem gần đây</h4>
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row justify-between">
-          {Array.from({ length: 3 }).map((_,index) => {
-            return <TitleCard key={index}/>;
+          {recentData.map((item,index) => {
+            return <TitleCard flashCardData={item} key={index}/>;
           })}
         </div>
       </div>
@@ -30,13 +31,13 @@ function FlashCardSection() {
           className="flex w-full flex-col gap-5 md:gap-[10px] select-none"
         >
           <CarouselContent className="h-fit">
-            {Array.from({ length: 6 }).map((item, index) => (
+            {flashcardDatas.map((item, index) => (
               <CarouselItem
                 key={index}
                 className='md:basis-1/2 lg:basis-[33.7%]'
               >
                 <div className="p-1">
-                  <TitleCard key={index}/>
+                  <TitleCard flashCardData={item} key={index}/>
                 </div>
               </CarouselItem>
             ))}
