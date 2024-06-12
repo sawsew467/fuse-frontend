@@ -11,7 +11,7 @@ function HighlightRooms() {
       <div className="font-title text-3xl">
         <h3 className="font-bold">Phòng học nổi bật</h3>
       </div>
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 xl:gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {cardsData.map((card: CardType) => (
           <Card
             key={card.id}
