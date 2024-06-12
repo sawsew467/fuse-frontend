@@ -21,8 +21,8 @@ type TProps = {
 
 function TitleCard({flashCardData}: TProps) {
   return (
-    <div className="h-fit w-full xl:w-[400px] rounded-[20px] border-2 shadow-3d-light hover:shadow-3d-hover transition border-black bg-white">
-      <div className="p-4 flex flex-col gap-2">
+    <div className="h-full rounded-[20px] border-2 shadow-3d-light hover:shadow-3d-hover transition border-black bg-white">
+      <div className="h-full p-4 flex flex-col gap-2 justify-between">
         <h3 className="text-[20px] font-bold">{flashCardData.title}</h3>
         <p className="font-medium">{flashCardData.subTitle}</p>
         <div className="h-fit w-fit rounded-lg border-2 border-black px-2 bg-white">
