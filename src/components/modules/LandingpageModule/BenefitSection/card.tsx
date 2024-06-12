@@ -1,13 +1,13 @@
 "use client";
 
 import { useScroll, useTransform, motion } from "framer-motion";
-import Image from "next/image";
 import { MutableRefObject, useEffect, useState } from "react";
 
 interface CardProps {
   data: {
     title: string;
     description: string;
+    icon: any;
     animate: {
       translateX: Array<number>;
       translateY: Array<number>;
@@ -50,18 +50,12 @@ function Card({ data, ref }: CardProps) {
         style={{
           translateX: hidden ? 0 : translateX,
           translateY: hidden ? 0 : translateY,
-          opacity : hidden ? 1 : opacity,
+          opacity: hidden ? 1 : opacity,
         }}
         className="group z-0 flex flex-row items-center gap-1 rounded-3xl border-2 border-black bg-white p-4 shadow-3d transition-all duration-500 ease-in-out hover:bg-primary hover:shadow-3d-hover sm:flex-col sm:gap-0 sm:p-4 md:flex-col md:gap-2 md:p-8 lg:flex-col lg:gap-2 lg:p-8"
       >
         <div className="flex h-16 w-16 items-center justify-center">
-          <Image
-            src="/folder_icon.svg"
-            alt="folder_icon"
-            width={28}
-            height={20}
-            className="group-hover:invert md:h-7 md:w-9 lg:h-7 lg:w-9"
-          />
+          <data.icon />
         </div>
         <div className="flex flex-col gap-1 sm:flex-col sm:gap-2 md:flex-col md:gap-2 lg:flex-col lg:gap-2">
           <h3 className="text-left text-sm font-semibold group-hover:text-white sm:text-center md:text-center md:text-sm lg:text-center lg:text-base">
@@ -75,5 +69,4 @@ function Card({ data, ref }: CardProps) {
     </>
   );
 }
-
 export default Card;

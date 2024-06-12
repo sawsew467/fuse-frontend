@@ -6,6 +6,15 @@ import Card from "./card";
 import Section from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import {
+  GlobeLock,
+  LaptopMinimal,
+  LaptopMinimalIcon,
+  Lightbulb,
+  MonitorSmartphone,
+  Users,
+  Wrench,
+} from "lucide-react";
 
 const data = [
   {
@@ -16,6 +25,9 @@ const data = [
       translateX: [-200, 0, 0],
       translateY: [-200, 0, 0],
     },
+    icon: () => (
+      <Users className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
   {
     title: "Tích hợp công cụ mạnh mẽ",
@@ -25,6 +37,9 @@ const data = [
       translateX: [0, 0, 0],
       translateY: [-200, 0, 0],
     },
+    icon: () => (
+      <LaptopMinimal className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
   {
     title: "Tương tác thời gian thực",
@@ -34,6 +49,9 @@ const data = [
       translateX: [200, 0, 0],
       translateY: [-200, 0, 0],
     },
+    icon: () => (
+      <Lightbulb className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
   {
     title: "Bảo mật hàng đầu",
@@ -43,6 +61,9 @@ const data = [
       translateX: [-200, 0, 0],
       translateY: [200, 0, 0],
     },
+    icon: () => (
+      <GlobeLock className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
   {
     title: "Hỗ trợ đa nền tảng",
@@ -52,6 +73,9 @@ const data = [
       translateX: [0, 0, 0],
       translateY: [200, 0, 0],
     },
+    icon: () => (
+      <MonitorSmartphone className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
   {
     title: "Tùy chỉnh linh hoạt",
@@ -61,6 +85,9 @@ const data = [
       translateX: [200, 0, 0],
       translateY: [200, 0, 0],
     },
+    icon: () => (
+      <Wrench className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+    ),
   },
 ];
 

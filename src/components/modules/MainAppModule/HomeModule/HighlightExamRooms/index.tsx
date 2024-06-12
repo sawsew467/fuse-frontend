@@ -17,13 +17,16 @@ function HighlightExamRooms() {
         className="flex w-full flex-col gap-5 md:gap-3"
       >
         <CarouselContent>
-          {examAreaData.map((item, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card card={item}></Card>
-              </div>
-            </CarouselItem>
-          ))}
+        {[...examAreaData]
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 6)
+            .map((item, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card card={item}></Card>
+                </div>
+              </CarouselItem>
+            ))}
         </CarouselContent>
         <CarouselDots />
       </Carousel>
