@@ -21,6 +21,7 @@ export const keys = [
     lable: "Khu học tập",
   },
 ];
+
 type Turns = {
   key: string;
 };
@@ -74,15 +75,16 @@ function ProductSection() {
       <div 
         className="flex w-full flex-col items-center justify-center gap-2 md:gap-6">
         <div className="flex gap-2 md:gap-7"  ref={sectionRef}>
-          {keys.map((item, index: number) => (
+          {keys.map((item) => (
             <button
-              key={index}
+              key={item.value}
               className={cn(
                 "rounded-md border-2 border-black px-4 md:px-7 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white",
-                turn.key === item.value
-                  ? "bg-secondary-foreground text-white"
-                  : "bg-[#f5f3ea] text-black",
               )}
+              style={{
+                background: turn.key === item.value ? "#000" : "#f5f3ea",
+                color: turn.key === item.value ? "#fff" : "#000"
+              }}
               onClick={() => {
                 setTurn({ key: item.value });
               }}
