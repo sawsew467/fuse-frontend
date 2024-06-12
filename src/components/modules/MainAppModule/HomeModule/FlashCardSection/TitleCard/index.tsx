@@ -24,7 +24,7 @@ function TitleCard({flashCardData}: TProps) {
     <div className="h-fit w-full sm:w-[400px] rounded-[20px] border-2 shadow-3d-light hover:shadow-3d-hover transition border-black bg-white">
       <div className="p-4 flex flex-col gap-2">
         <h3 className="text-[20px] font-bold">{flashCardData.title}</h3>
-        <p className="font-bold">{flashCardData.subTitle}</p>
+        <p className="font-medium">{flashCardData.subTitle}</p>
         <div className="h-fit w-fit rounded-lg border-2 border-black px-2 bg-white">
           <p>{flashCardData.turns} lượt học</p>
         </div>
