@@ -87,3 +87,18 @@
     transition: transform 1s;
   }
 }
+
+@layer utilities {
+  .animation-pause {
+    animation-play-state: paused;
+  }
+
+  .custom-hover-effect {
+    @apply hover:-translate-y-5 hover:scale-150;
+  }
+
+  .box:hover + .box,
+  .box:has(+ .box:hover) {
+    @apply -translate-y-6 scale-110;
+  }
+}
