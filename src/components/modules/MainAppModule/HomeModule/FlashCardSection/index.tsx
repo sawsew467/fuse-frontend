@@ -9,13 +9,13 @@ import {
 
 function FlashCardSection() {
   return (
-    <div className="flex h-fit w-full flex-col gap-5 py-[60px]">
+    <div className="flex h-fit w-full flex-col gap-5">
       <div className="font-title text-3xl">
-        <h3>FlashCards</h3>
+        <h3 className="font-bold">FlashCards</h3>
       </div>
       <div className="flex flex-col gap-5">
         <h4 className="font-bold">Đã xem gần đây</h4>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row justify-between">
           {Array.from({ length: 3 }).map(() => {
             return <TitleCard />;
           })}
@@ -23,13 +23,6 @@ function FlashCardSection() {
       </div>
       <div className="flex flex-col gap-5">
         <h4 className="font-bold">Phổ biến</h4>
-        {/* <div className='flex flex-row justify-between'>
-                    {
-                        Array.from({length: 3}).map(() => {
-                            return (<TitleCard/>)
-                        })
-                    }
-                </div> */}
         <Carousel
           opts={{
             align: "start",
@@ -40,9 +33,9 @@ function FlashCardSection() {
             {Array.from({ length: 6 }).map((item, index) => (
               <CarouselItem
                 key={index}
-                className='md:basis-1/2 h-[200px] lg:basis-[33.9%]'
+                className='md:basis-1/2 lg:basis-[33.7%]'
               >
-                <div>
+                <div className="p-1">
                   <TitleCard />
                 </div>
               </CarouselItem>

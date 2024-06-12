@@ -3,7 +3,7 @@ import React from "react";
 
 function TitleCard() {
   return (
-    <div className="h-fit w-[400px] rounded-[20px] border-2 shadow-3d-light hover:shadow-3d-hover transition border-black bg-white">
+    <div className="h-fit w-full sm:w-[400px] rounded-[20px] border-2 shadow-3d-light hover:shadow-3d-hover transition border-black bg-white">
       <div className="p-4 flex flex-col gap-2">
         <h3 className="text-[20px] font-bold">JPD123</h3>
         <p className="font-bold">Dekiru1＿Kanji 4+5_Những từ cơ bản</p>
