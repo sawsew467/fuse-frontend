@@ -234,7 +234,7 @@ const CarouselDots = () => {
         <button
           key={index}
           className={cn(
-            "h-4 w-4 rounded-full bg-[#A3A3A3]",
+            "h-4 w-4 rounded-full bg-[#A3A3A3] transition-all duration-500",
             selectedIndex === index && "w-[100px]",
           )}
           onClick={() => scrollTo(index)}

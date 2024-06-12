@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import SignUpModule from "@/components/modules/SignUpModule";
+import SignInModule from "@/components/modules/SignInModule";
 
 export const metadata: Metadata = {
   title: "fuse - Đăng ký",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function SignUpPage() {
-  return <SignUpModule />;
+  return <SignInModule pageMode={"SIGNUP"} />;
 }

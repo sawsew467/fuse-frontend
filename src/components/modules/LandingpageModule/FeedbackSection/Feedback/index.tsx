@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -47,7 +48,19 @@ const Feedback = () => {
 
   return (
     <div className="flex w-full gap-20">
-      <span className="hidden w-96 lg:block">
+      <motion.span
+        whileInView={{
+          x: [-100, 0],
+          opacity: [0, 1],
+          transition: {
+            type: "spring",
+            duration: 0.75,
+            deplay: 0.5,
+          },
+        }}
+        viewport={{ once: true }}
+        className="hidden w-96 lg:block"
+      >
         <Image
           src={scopyFeedback}
           alt="scopy"
@@ -55,7 +68,7 @@ const Feedback = () => {
           height={200}
           className="w-full"
         ></Image>
-      </span>
+      </motion.span>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

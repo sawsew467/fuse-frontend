@@ -2,21 +2,18 @@ import {
   Carousel,
   CarouselContent,
   CarouselDots,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "@/components/ui/carousel";
 import { Search } from "@/components/ui/search";
 import Card from "../card";
 import Section from "../section";
 
-import { examAreaData, liveRoom } from "@/data/exam-area";
+import { examAreaData } from "@/data/exam-area";
 
-import Fire from "@public/image/svg/fire.svg";
 import {
-  isCurrentDayWithinSlot,
-  isCurrentTimeWithinSlot,
+  isCurrentTimeWithinSlot
 } from "@/utils/checkingTime";
+import Fire from "@public/image/svg/fire.svg";
 
 function LiveNow() {
   return (
