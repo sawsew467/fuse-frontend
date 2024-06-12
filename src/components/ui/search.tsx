@@ -18,7 +18,7 @@ const Search = React.forwardRef<HTMLInputElement, SearchProps>(
         <Input
           type="search"
           placeholder={placeholder}
-          className="h-fit w-full border-0 bg-white text-base py-0 px-0"
+          className="h-fit w-full border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-white text-base py-0 px-0"
         />
       </div>
     );

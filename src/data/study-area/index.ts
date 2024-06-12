@@ -62,6 +62,7 @@ export const cardsData = [
 ];
 
 export const subjects = [
+  { subject: "Tất cả" },
   { subject: "Kinh tế lượng" },
   { subject: "Kinh tế vi mô" },
   { subject: "Thương mại quốc tế" },

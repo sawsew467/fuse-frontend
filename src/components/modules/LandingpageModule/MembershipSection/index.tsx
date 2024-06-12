@@ -19,7 +19,7 @@ const data = [
     title: "Nâng cao",
     description:
       "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
-    price: 100000,
+    price: 100.000,
     features: [
       "Up to 50 active contacts per month",
       "Up to 50 active contacts per month",
