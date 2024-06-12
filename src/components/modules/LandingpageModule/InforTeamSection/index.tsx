@@ -1,4 +1,5 @@
 import Card from "@/components/modules/LandingpageModule/InforTeamSection/card";
+import Demo from "@/components/modules/LandingpageModule/InforTeamSection/demo";
 import Logos from "@/components/modules/LandingpageModule/InforTeamSection/logos";
 import { Carousel, CarouselContent, CarouselDots, CarouselItem } from "@/components/ui/carousel";
 import Section from "@/components/ui/section";
@@ -76,6 +77,7 @@ function InforTeamSection() {
         </Carousel>
 
         <Logos />
+        <Demo/>
       </Section>
     </>
   );
