@@ -22,6 +22,7 @@ export const keys = [
     lable: "Khu học tập",
   },
 ];
+
 type Turns = {
   key: string;
 };
