@@ -16,8 +16,8 @@ function FlashCardSection() {
       <div className="flex flex-col gap-5">
         <h4 className="font-bold">Đã xem gần đây</h4>
         <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row justify-between">
-          {Array.from({ length: 3 }).map(() => {
-            return <TitleCard />;
+          {Array.from({ length: 3 }).map((_,index) => {
+            return <TitleCard key={index}/>;
           })}
         </div>
       </div>
@@ -36,7 +36,7 @@ function FlashCardSection() {
                 className='md:basis-1/2 lg:basis-[33.7%]'
               >
                 <div className="p-1">
-                  <TitleCard />
+                  <TitleCard key={index}/>
                 </div>
               </CarouselItem>
             ))}
