@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 
+
 const logos = [
   {
     logo: "./stack_logos/html_icon.svg",
@@ -51,26 +52,28 @@ const logos = [
 ];
 
 function Logos() {
-  return (
-    <div className="group w-full overflow-hidden whitespace-nowrap pt-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] sm:pt-12 md:pt-14 lg:pt-28">
-      <div className="hover:animation-pause flex w-max animate-infinite-scroll items-center justify-center whitespace-nowrap">
-        {logos.concat(logos).map((item, index) => (
-          <button
-            key={index}
-            className="custom-hover-effect m-4 inline flex-shrink-0 duration-200"
-          >
-            <Image
-              src={item.logo}
-              alt={`Logo ${index + 1}`}
-              width={64}
-              height={64}
-              className="rounded-2xl bg-white lg:h-20 lg:w-20"
-            />
-          </button>
-        ))}
-      </div>
-    </div>
-  );
+
+    return (
+        <div
+            className="group overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] pt-10 lg:pt-28 md:pt-14 sm:pt-12 w-full"
+        >
+            <div
+                className="flex justify-center items-center whitespace-nowrap animate-infinite-scroll w-max hover:animation-pause"
+            >
+                {logos.concat(logos).map((item, index) => (
+                    <button key={index} className="box flex-shrink-0 mx-4 inline duration-200 ">
+                        <Image
+                            src={item.logo}
+                            alt={`Logo ${index + 1}`}
+                            width={64}
+                            height={64}
+                            className="lg:w-20 lg:h-20 bg-white rounded-2xl"
+                        />
+                    </button>
+                ))}
+            </div>
+        </div>
+    )
 }
 
 export default Logos;

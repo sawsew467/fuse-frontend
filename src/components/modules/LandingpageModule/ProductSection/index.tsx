@@ -22,13 +22,13 @@ export const keys = [
     lable: "Khu học tập",
   },
 ];
+
 type Turns = {
   key: string;
 };
 
 function ProductSection() {
   const [turn, setTurn] = useState<Turns>({ key: keys[0].value });
-
   const ref = useRef(null);
   const view = useInView(ref);
 

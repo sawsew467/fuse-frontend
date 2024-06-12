@@ -18,7 +18,10 @@ function Section({
 }: SectionProps) {
   return (
     <section
-      className={cn("relative top-10 w-full pt-10", className)}
+      className={cn(
+        "relative top-10 flex w-full flex-col gap-2 pb-10 sm:pb-12 md:pb-14 lg:gap-4 lg:pb-20",
+        className,
+      )}
       style={{
         backgroundColor,
       }}

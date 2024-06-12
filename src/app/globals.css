@@ -87,6 +87,14 @@
     transform-style: preserve-3d;
     transition: transform 1s;
   }
+  .box:hover {
+    transform: scale(1.4) translateY(-15px);
+  }
+  
+  .box:has(+ .box:hover),
+  .box:hover + .box {
+    transform: scale(1.1) translateY(-8px);
+  }
 }
 
 
@@ -94,13 +102,4 @@
   .animation-pause {
     animation-play-state: paused;
   }
-
-  .custom-hover-effect {
-    @apply hover:scale-150 hover:-translate-y-5;
-  }
-
-  .box:hover + .box,
-    .box:has(+ .box:hover) {
-        @apply scale-110 -translate-y-6;
-    }
 }

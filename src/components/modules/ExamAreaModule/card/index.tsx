@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { cn } from "@/lib/utils";
@@ -7,15 +9,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Calendar from "./calendar";
 
+import { timeOptions } from "@/data/constants";
 import Bell from "@public/svgr/Bell";
-import Pin from "@public/svgr/Pin";
 import BlackUser from "@public/svgr/BlackUser";
 import JoinRoom from "@public/svgr/JoinRoom";
-import ThreeDot from "@public/svgr/ThreeDot";
+import { MoreOptions } from "./moreOptions";
 
 type CardType = {
   users: User[];
-  pinAt: Date;
+  pinAt?: Date | null;
   subject: string;
   title: string;
   schedule: string[]; //["1","3","4"] max have 3 value
@@ -34,6 +36,13 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ card }) => {
+  const [isReceiveNotification, setIsNotification] = React.useState(
+    card.isWantReceiveNotification,
+  );
+
+  const handleClickNotificationBtn = (state: boolean) => {
+    setIsNotification(!state);
+  };
   return (
     <div
       className={cn(
@@ -43,7 +52,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
           : "bg-gradient-to-b from-status-offline to-white",
       )}
     >
-      <div className="flex justify-between">
+      <div className="flex content-center justify-between">
         <div className="relative">
           <div className="relative">
             {card.users.slice(0, 4).map((user: User, index: number) => (
@@ -74,9 +83,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
             )}
           </div>
         </div>
-        <button>
-          <ThreeDot className="h-6 w-6" />
-        </button>
+        <MoreOptions pinedState={card?.pinAt != null} />
       </div>
       <div>
         <h1 className="text-2xl font-bold"> {card?.subject}</h1>
@@ -91,9 +98,15 @@ const Card: React.FC<CardProps> = ({ card }) => {
           </div>
           <div className={cn("h-fit w-fit rounded-sm py-1 text-xs font-bold")}>
             <p>
-              {" "}
-              {card.timeSlotStart?.toLocaleTimeString()} -{" "}
-              {card.timeSlotEnd?.toLocaleTimeString()}
+              {card.timeSlotStart?.toLocaleTimeString("en-US", {
+                ...timeOptions,
+                timeZone: "UTC",
+              })}
+              {"-"}
+              {card.timeSlotEnd?.toLocaleTimeString("en-US", {
+                ...timeOptions,
+                timeZone: "UTC",
+              })}
             </p>
           </div>
         </div>
@@ -105,9 +118,12 @@ const Card: React.FC<CardProps> = ({ card }) => {
           <Button
             className={cn(
               "bg-white p-3",
-              card?.isWantReceiveNotification && "bg-status-online",
+              isReceiveNotification && "bg-status-online",
             )}
             haveOverlay
+            onClick={() => {
+              handleClickNotificationBtn(isReceiveNotification);
+            }}
           >
             <Bell className="h-5 w-4" variant="light" />
           </Button>

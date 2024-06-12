@@ -20,7 +20,7 @@ const calendar = ({ day }: CalendarProps) => {
       ></div>
       <div className="h-4 w-5 rounded-b-sm border-2 border-black bg-white">
         <h1 className="text-center text-[8px] font-bold">
-          {day == 6 ? "CN" : day + 1}
+          {day == 7 ? "CN" : day + 1}
         </h1>
       </div>
     </div>
