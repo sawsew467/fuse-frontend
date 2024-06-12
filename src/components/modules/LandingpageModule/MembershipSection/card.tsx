@@ -33,13 +33,18 @@ function Card({ data, ref, hidden }: CardProps) {
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.55 : 0.42, 1],
+    [0, hidden ? 0.6 : 0.44, 1],
     [0, 0, 2000],
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, hidden ? 0.6 : 0.44, hidden ? 1 : 0.5],
+    [1, 1, 0],
   );
 
   return (
     <motion.div
-      style={{ translateY }}
+      style={{ translateY, opacity }}
       initial={data.animate}
       whileInView={{
         x: 0,

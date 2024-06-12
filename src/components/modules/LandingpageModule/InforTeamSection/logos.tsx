@@ -53,7 +53,7 @@ const logos = [
 function Logos() {
   return (
     <div className="group w-full overflow-hidden whitespace-nowrap pt-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_20px,white_calc(100%-20px),_transparent_100%)] sm:pt-12 md:pt-14 lg:pt-28">
-      <div className="group-hover:animation-pause flex w-max animate-infinite-scroll items-center justify-center whitespace-nowrap">
+      <div className="hover:animation-pause flex w-max animate-infinite-scroll items-center justify-center whitespace-nowrap">
         {logos.concat(logos).map((item, index) => (
           <button
             key={index}

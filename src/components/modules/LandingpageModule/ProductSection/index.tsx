@@ -28,8 +28,6 @@ type Turns = {
 
 function ProductSection() {
   const [turn, setTurn] = useState<Turns>({ key: keys[0].value });
-  const sectionRef = useRef<HTMLDivElement>(null);
-
 
   const ref = useRef(null);
   const view = useInView(ref);
@@ -50,38 +48,40 @@ function ProductSection() {
   }, [view, turn]);
 
   return (
-    <Section
-      title="Cung cấp những công cụ hỗ trợ"
-      subTitle="Thoả sức học tập và kết nối"
-      backgroundColor="#FF9966"
-    >
-      <div
-        ref={ref}
-        style={{ perspective: 800 }}
-        className="flex-inline flex w-full flex-col items-center justify-center gap-2 p-2 md:gap-6 lg:overflow-hidden"
+    <div className="lg:overflow-hidden">
+      <Section
+        title="Cung cấp những công cụ hỗ trợ"
+        subTitle="Thoả sức học tập và kết nối"
+        backgroundColor="#FF9966"
       >
-        <div className="flex gap-2 md:gap-7">
-          {keys.map((item, index: number) => (
-            <button
-              key={item.value}
-              className={cn(
-                "rounded-md border-2 border-black px-4 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white md:px-7",
-              )}
-              style={{
-                backgroundColor: turn.key === item.value ? "#000" : "#f5f3ea",
-                color: turn.key === item.value ? "#fff" : "#000",
-              }}
-              onClick={() => {
-                setTurn({ key: item.value });
-              }}
-            >
-              {item.lable}
-            </button>
-          ))}
+        <div
+          ref={ref}
+          style={{ perspective: 800 }}
+          className="flex-inline flex w-full flex-col items-center justify-center gap-2 p-2 md:gap-6"
+        >
+          <div className="flex gap-2 md:gap-7">
+            {keys.map((item, index: number) => (
+              <button
+                key={item.value}
+                className={cn(
+                  "rounded-md border-2 border-black px-4 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white md:px-7",
+                )}
+                style={{
+                  backgroundColor: turn.key === item.value ? "#000" : "#f5f3ea",
+                  color: turn.key === item.value ? "#fff" : "#000",
+                }}
+                onClick={() => {
+                  setTurn({ key: item.value });
+                }}
+              >
+                {item.lable}
+              </button>
+            ))}
+          </div>
+          <ProductCard turn={turn} ref={ref} />
         </div>
-        <ProductCard turn={turn} ref={ref} />
-      </div>
-    </Section>
+      </Section>
+    </div>
   );
 }
 

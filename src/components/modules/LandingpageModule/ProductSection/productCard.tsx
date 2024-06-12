@@ -88,7 +88,7 @@ function ProductCard({ turn, ref }: TProps) {
 
   const rotateX = useTransform(
     scrollYProgress,
-    [0, 0.13, 0.5, 1],
+    [0, 0.1, 0.5, 1],
     [90, 0, 0, 90],
   );
 
