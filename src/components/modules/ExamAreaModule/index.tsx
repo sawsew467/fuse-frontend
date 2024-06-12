@@ -6,15 +6,16 @@ import LiveNow from "./collection/liveNow";
 import Compass from "@public/svgr/Compass";
 import PinColor from "@public/svgr/PinColor";
 import ForYou from "./collection/forYou";
+import MyCollect from "./collection/myCollect";
 
 function CommunicationSection() {
   return (
     <>
       <Section
-        title="Mọi người suy nghĩ gì về Fuse?"
-        subTitle="Dưới đây là những phát biểu của những người đã tham gia sử dụng Fuse"
+        title="Khu vực ôn thi"
+        subTitle="Nơi bạn có thể ôn tập kiến thức theo từng chương học hàng tuần, <br/> ôn tập cùng mọi người, và xem lại các câu hỏi, <br/> tất cả đều dành cho bạn."
       >
-        <Tabs defaultValue="discover" className="w-full">
+        <Tabs defaultValue="discover" className="w-full pb-10">
           <TabsList>
             <TabsTrigger value="discover" className="flex gap-2">
               <span>Khám phá</span>
@@ -30,7 +31,9 @@ function CommunicationSection() {
             <ForYou></ForYou>
             <HaveAnyThing></HaveAnyThing>
           </TabsContent>
-          <TabsContent value="gim"> </TabsContent>
+          <TabsContent value="gim"> 
+            <MyCollect/>
+          </TabsContent>
         </Tabs>
       </Section>
     </>
