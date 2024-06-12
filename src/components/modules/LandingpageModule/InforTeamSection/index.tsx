@@ -45,7 +45,7 @@ function InforTeamSection() {
         title="Đội ngũ phát triển"
         subTitle={`Những lập trình viên tài năng đã cùng tạo nên <span class="bg-primary px-1 rounded-md">“fuse”</span>`}
       >
-        <div className="lg:grid hidden lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-rows-2  gap-10">
+        <div className="lg:grid hidden lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-rows-2 gap-10">
           {data.map((item, index) => (
             <Card key={index} data={item} />
           ))}
