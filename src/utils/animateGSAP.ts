@@ -5,7 +5,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const animateWithGsapTimeline = (rotationRef: any) => {
   const timeline = gsap.timeline();
-  console.log(rotationRef?.current);
 
   timeline.to(rotationRef?.current, {
     autoRotateSpeed: 100,

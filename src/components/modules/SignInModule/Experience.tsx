@@ -10,44 +10,65 @@ import RuleModel from "@/components/models/Rule";
 import CoffeeModel from "@/components/models/Coffee";
 import DodecahedronModel from "@/components/models/Dodecahedron";
 import TapeModel from "@/components/models/Tape";
+import { motion } from "framer-motion";
 
 export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
   return (
     <div className="relative z-40">
-      <div
+      <motion.div
+        initial={{ opacity: 0, translateX: -400, translateY: -400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.3,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[5%] top-[5%]" : "left-[60%] top-[40%]",
+          mode === "SIGNUP" ? "left-[5%] top-[5%]" : "left-[60%] top-[40%]",
         )}
       >
         <ToolViewer mode={mode} width={320} height={300}>
           <BookModel rotation={[0, 1.2, -1.2]} scale={0.01} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 400, translateY: 600 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.2,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[55%] top-[50%]" : "left-[0%] top-[60%]",
+          mode === "SIGNUP" ? "left-[55%] top-[50%]" : "left-[0%] top-[60%]",
         )}
       >
         <ToolViewer mode={mode} width={320} height={300}>
           <DodecahedronModel rotation={[0.4, -0.5, 0]} scale={0.03} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: -400, translateY: 600 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.3,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-20 top-[70%]" : "left-[75%] top-[65%]",
+          mode === "SIGNUP" ? "left-20 top-[70%]" : "left-[75%] top-[65%]",
         )}
       >
         <ToolViewer mode={mode} width={400} height={300}>
           <Pencil1 rotation={[-0.3, 0, -0.5]} scale={0.015} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.5,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[80%] top-[65%]" : "left-[20%] top-[30%]",
+          mode === "SIGNUP" ? "left-[80%] top-[65%]" : "left-[20%] top-[30%]",
         )}
       >
         <ToolViewer
@@ -58,11 +79,16 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <RuleModel rotation={[0.5, 0, 0]} scale={0.01} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.3,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[80%] top-[5%]" : "left-[30%] top-[75%]",
+          mode === "SIGNUP" ? "left-[80%] top-[5%]" : "left-[30%] top-[75%]",
         )}
       >
         <ToolViewer
@@ -73,11 +99,16 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <StickyNote rotation={[0.24, 0.8, 0]} scale={0.05} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.2,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[30%] top-[80%]" : "left-[5%] top-[5%]",
+          mode === "SIGNUP" ? "left-[30%] top-[80%]" : "left-[5%] top-[5%]",
         )}
       >
         <ToolViewer
@@ -88,11 +119,16 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <CoffeeModel rotation={[0.8, 0, 0]} scale={0.02} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 400, translateY: -400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.1,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[30%] top-[-80px]" : "left-[80%] top-[5%]",
+          mode === "SIGNUP" ? "left-[30%] top-[-80px]" : "left-[80%] top-[5%]",
         )}
       >
         <ToolViewer
@@ -103,31 +139,46 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <TapeModel rotation={[0.4, -0.5, -0.3]} scale={0.03} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: -800, translateY: 0 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.4,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[20%] top-[40%]" : "left-[90%] top-[35%]",
+          mode === "SIGNUP" ? "left-[20%] top-[40%]" : "left-[90%] top-[35%]",
         )}
       >
         <ToolViewer mode={mode} width={320} height={300}>
           <DodecahedronModel rotation={[0.4, -0.5, -0.3]} scale={0.02} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 800, translateY: 400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.3,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[60%] top-[-15%]" : "left-[65%] top-[75%]",
+          mode === "SIGNUP" ? "left-[60%] top-[-15%]" : "left-[65%] top-[75%]",
         )}
       >
         <ToolViewer mode={mode} width={320} height={300}>
           <CoffeeModel rotation={[0.8, 1, 0]} scale={0.01} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: 800, translateY: 400 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.1,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[85%] top-[35%]" : "left-[25%] top-[-10%]",
+          mode === "SIGNUP" ? "left-[85%] top-[35%]" : "left-[25%] top-[-10%]",
         )}
       >
         <ToolViewer
@@ -138,11 +189,16 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <BookModel rotation={[0, 0.3, -1.2]} scale={0.007} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: -800, translateY: -600 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.5,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[47%] top-[17%]" : "left-[-10%] top-[25%]",
+          mode === "SIGNUP" ? "left-[47%] top-[17%]" : "left-[-10%] top-[25%]",
         )}
       >
         <ToolViewer
@@ -153,17 +209,22 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         >
           <Pencil1 rotation={[-0.3, 1, -0.5]} scale={0.01} />
         </ToolViewer>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, translateX: -600, translateY: -800 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{
+          duration: 0.3,
+        }}
         className={cn(
           "fixed transition-all delay-1000 duration-2000 ease-out",
-          mode === "SIGNIN" ? "left-[-5%] top-[35%]" : "left-[50%] top-[10%]",
+          mode === "SIGNUP" ? "left-[-5%] top-[35%]" : "left-[50%] top-[10%]",
         )}
       >
         <ToolViewer mode={mode} width={320} height={300}>
           <RuleModel rotation={[0.5, 1, 0.3]} scale={0.008} />
         </ToolViewer>
-      </div>
+      </motion.div>
     </div>
   );
 }
