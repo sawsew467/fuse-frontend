@@ -7,8 +7,8 @@ import SignInCard from "./SignInCard";
 import { Experience } from "./Experience";
 import Ribbon from "./Ribbon";
 
-function SignInModule() {
-  const [mode, setMode] = useState<"SIGNIN" | "SIGNUP">("SIGNIN");
+function SignInModule({ pageMode }: { pageMode: "SIGNIN" | "SIGNUP" }) {
+  const [mode, setMode] = useState<"SIGNIN" | "SIGNUP">(pageMode);
 
   return (
     <>
