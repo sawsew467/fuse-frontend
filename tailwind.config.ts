@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -21,6 +22,10 @@ const config = {
       title: ["Calistoga", "serif"],
     },
     extend: {
+      transitionDuration: {
+        "2000": "2000ms",
+        "3000": "3000ms",
+      },
       boxShadow: {
         "3d": "2px 2px 0px 0px #000",
         "3d-light": "1px 1px 0px 0px #000",
@@ -64,6 +69,10 @@ const config = {
         background: {
           DEFAULT: "#F5F3EA",
         },
+        status : {
+          offline : "#DCDAD3",
+          online : "#65CCA0"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,11 +88,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "infinite-scroll": {
+          form: {transform: "translateX(0)"},
+          to: {transform: "translateX(-50%)"},
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "infinite-scroll" : "infinite-scroll 20s linear infinite",
       },
+      
     },
   },
   plugins: [require('tailwindcss-animated')],
