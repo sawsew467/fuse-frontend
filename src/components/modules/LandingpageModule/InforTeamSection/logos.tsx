@@ -4,52 +4,52 @@ import Image from "next/image";
 
 
 const logos = [
-    {
-        logo: "./stack_logos/html_icon.svg",
-    },
-    {
-        logo: "./stack_logos/css_icon.svg",
-    },
-    {
-        logo: "./stack_logos/figma_icon.svg",
-    },
-    {
-        logo: "./stack_logos/github_icon.svg",
-    },
-    {
-        logo: "./stack_logos/nextjs_icon.svg",
-    },
-    {
-        logo: "./stack_logos/npm_icon.svg",
-    },
-    {
-        logo: "./stack_logos/postgresql_icon.svg",
-    },
-    {
-        logo: "./stack_logos/prettier_icon.svg",
-    },
-    {
-        logo: "./stack_logos/redux-toolkit_icon.svg",
-    },
-    {
-        logo: "./stack_logos/typescript_icon.svg",
-    },
-    {
-        logo: "./stack_logos/vscode_icon.svg",
-    },
-    {
-        logo: "./stack_logos/nextjs_icon.svg",
-    },
-    {
-        logo: "./stack_logos/github_icon.svg",
-    },
-    {
-        logo: "./stack_logos/postman_icon.svg",
-    },
-    {
-        logo: "./stack_logos/prettier_icon.svg",
-    },
-]
+  {
+    logo: "./stack_logos/html_icon.svg",
+  },
+  {
+    logo: "./stack_logos/css_icon.svg",
+  },
+  {
+    logo: "./stack_logos/figma_icon.svg",
+  },
+  {
+    logo: "./stack_logos/github_icon.svg",
+  },
+  {
+    logo: "./stack_logos/nextjs_icon.svg",
+  },
+  {
+    logo: "./stack_logos/npm_icon.svg",
+  },
+  {
+    logo: "./stack_logos/postgresql_icon.svg",
+  },
+  {
+    logo: "./stack_logos/prettier_icon.svg",
+  },
+  {
+    logo: "./stack_logos/redux-toolkit_icon.svg",
+  },
+  {
+    logo: "./stack_logos/typescript_icon.svg",
+  },
+  {
+    logo: "./stack_logos/vscode_icon.svg",
+  },
+  {
+    logo: "./stack_logos/nextjs_icon.svg",
+  },
+  {
+    logo: "./stack_logos/github_icon.svg",
+  },
+  {
+    logo: "./stack_logos/postman_icon.svg",
+  },
+  {
+    logo: "./stack_logos/prettier_icon.svg",
+  },
+];
 
 function Logos() {
 

@@ -1,9 +1,16 @@
+"use client";
 import Card from "@/components/modules/LandingpageModule/InforTeamSection/card";
 import Demo from "@/components/modules/LandingpageModule/InforTeamSection/demo";
 import Logos from "@/components/modules/LandingpageModule/InforTeamSection/logos";
-import { Carousel, CarouselContent, CarouselDots, CarouselItem } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import Section from "@/components/ui/section";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -36,7 +43,30 @@ const data = [
     userName: "@khangnguyen",
     description: "Nguyễn Văn Duy Khang luôn nỗ lực để cải thiện Fuse từ góc độ hiệu năng đến bảo mật. \n Với kiến thức vững chắc về bảo mật, anh đã triển khai nhiều biện pháp bảo vệ dữ liệu quan trọng. \n Sự tận tâm và chuyên nghiệp của anh đã giúp Fuse trở thành một nền tảng đáng tin cậy cho hàng triệu người dùng.",
   },
-]
+];
+const parent = {
+  show: {
+    transition: {
+      staggerChildren: 0.3,
+      type: "spring",
+      bounce: 0.8,
+      duration: 0.05,
+      deplay: 0.5,
+    },
+  },
+};
+
+const child: any = {
+  show: {
+    y: [20, 0],
+    x: [20, 0],
+    opacity: [0, 1],
+    scale: [0.75, 1],
+    transition: {
+      type: "spring",
+    },
+  },
+};
 
 function InforTeamSection() {
   return (
@@ -45,10 +75,28 @@ function InforTeamSection() {
         title="Đội ngũ phát triển"
         subTitle={`Những lập trình viên tài năng đã cùng tạo nên <span class="bg-primary px-1 rounded-md">“fuse”</span>`}
       >
-        <div className="lg:grid hidden lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-rows-2 gap-10">
+        <motion.ul
+          variants={parent}
+          whileInView="show"
+          className="hidden h-fit grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid lg:grid-cols-3"
+        >
           {data.map((item, index) => (
-            <Card key={index} data={item} />
+            <Card key={index} data={item} childAnimate={child} />
           ))}
+          <motion.span
+            whileInView={{
+              scale: [0.75, 1],
+              x: [20, 0],
+              y: [20, 0],
+              opacity: [0, 1],
+              transition: {
+                type: "spring",
+                bounce: 0.8,
+                delay: 0.5,
+                duration: 0.5,
+              },
+            }}
+          >
             <Image
               src="/infor_image.svg"
               alt="Image"
@@ -56,18 +104,19 @@ function InforTeamSection() {
               height={321}
               className="h-full w-full"
             />
-        </div>
+          </motion.span>
+        </motion.ul>
 
         <Carousel
           opts={{
             align: "start",
           }}
-          className="w-full lg:hidden flex flex-col gap-5 md:gap-8 "
+          className="flex w-full flex-col gap-5 md:gap-8 lg:hidden"
         >
           <CarouselContent>
             {data.map((item, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+              <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 flex h-full">
                   <Card key={index} data={item} />
                 </div>
               </CarouselItem>
