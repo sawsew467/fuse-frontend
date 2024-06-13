@@ -10,9 +10,9 @@ import { flashcardDatas, recentData } from "@/data/flash-card-views";
 
 function FlashCardSection() {
   return (
-    <div className="flex h-fit w-full flex-col gap-5">
+    <div className="flex h-fit w-full flex-col gap-5 md:gap-5">
       <div className="font-title text-3xl">
-        <h3 className="font-bold">FlashCards </h3>
+        <h3 className=" text-2xl  md:text-3xl font-bold">FlashCards </h3>
       </div>
       <div className="flex flex-col gap-5">
         <h4 className="font-bold">Đã xem gần đây</h4>
@@ -22,7 +22,7 @@ function FlashCardSection() {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="h-fit flex flex-col gap-5">
         <h4 className="font-bold">Phổ biến</h4>
         <div>
           <Carousel
@@ -37,7 +37,7 @@ function FlashCardSection() {
                   key={index}
                   className="lg:basis-[49.7%] xl:basis-[33.3%] 2xl:basis-[33.3%]"
                 >
-                  <div className="px-1 pb-1">
+                  <div className="p-1 md:px-1 pb-1">
                     <TitleCard flashCardData={item} key={index} />
                   </div>
                 </CarouselItem>

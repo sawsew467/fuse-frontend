@@ -9,7 +9,7 @@ function HighlightRooms() {
   return (
     <div className="flex h-fit w-full flex-col gap-5">
       <div className="font-title text-3xl">
-        <h3 className="font-bold">Phòng học nổi bật</h3>
+        <h3 className="font-bold  text-2xl md:text-3xl">Phòng học nổi bật</h3>
       </div>
       <div className="grid gap-6 xl:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {cardsData.map((card: CardType) => (

@@ -31,7 +31,6 @@ function ProductSection() {
   const [turn, setTurn] = useState<Turns>({ key: keys[0].value });
   const sectionRef = useRef<HTMLDivElement>(null);
 
-
   const ref = useRef(null);
   const view = useInView(ref);
 
@@ -66,7 +65,7 @@ function ProductSection() {
             <button
               key={item.value}
               className={cn(
-                "rounded-md border-2 border-black px-4 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white md:px-7",
+                "rounded-md border-2 border-black px-2 py-1 transition duration-300 hover:bg-secondary-foreground hover:text-white md:px-7 text-sm md:text-lg",
               )}
               style={{
                 backgroundColor: turn.key === item.value ? "#000" : "#f5f3ea",
