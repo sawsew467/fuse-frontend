@@ -29,11 +29,6 @@ type Turns = {
 
 function ProductSection() {
   const [turn, setTurn] = useState<Turns>({ key: keys[0].value });
-<<<<<<< HEAD
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-=======
->>>>>>> bed31cc10b3ca786f4ef88826aeb0bdd4d1ef36c
   const ref = useRef(null);
   const view = useInView(ref);
 
