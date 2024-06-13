@@ -8,7 +8,7 @@ import HighlightExamRooms from "./HighlightExamRooms";
 function HomeModule() {
   return (
     <Section title="Trang chủ" subTitle="Thỏa sức học tập, thỏa sức khám phá">
-      <div className="w-full h-fit flex flex-col gap-[60px]">
+      <div className="flex h-fit w-full flex-col gap-[60px]">
         <FlashCardSection />
         <HighlightExamRooms />
         <HighlightRooms />
