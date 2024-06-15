@@ -103,3 +103,17 @@
     animation-play-state: paused;
   }
 }
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+ 
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
+}
+

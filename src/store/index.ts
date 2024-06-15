@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import auth from "./slices/auth";
-import studyRoom from './slices/studyroom'
 
 export const store = configureStore({
-  reducer: { auth: auth, studyRoom: studyRoom},
+  reducer: { auth: auth},
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 

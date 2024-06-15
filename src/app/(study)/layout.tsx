@@ -1,7 +1,6 @@
-import StudyRoomLayout from "@/components/layouts/StudyRoomLayout";
+import StudyRoomMainLayout from "@/components/layouts/StudyRoomLayout";
 
-async function StudyLayout({ children }: { children: React.ReactNode }) {
-  return <StudyRoomLayout> {children}</StudyRoomLayout>;
+async function StudyRoomLayout({ children }: { children: React.ReactNode }) {
+  return <StudyRoomMainLayout>{children}</StudyRoomMainLayout>;
 }
-
-export default StudyLayout
+export default StudyRoomLayout;

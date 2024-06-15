@@ -69,10 +69,10 @@ const config = {
         background: {
           DEFAULT: "#F5F3EA",
         },
-        status : {
-          offline : "#DCDAD3",
-          online : "#65CCA0"
-        }
+        status: {
+          offline: "#DCDAD3",
+          online: "#65CCA0",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -89,19 +89,21 @@ const config = {
           to: { height: "0" },
         },
         "infinite-scroll": {
-          form: {transform: "translateX(0)"},
-          to: {transform: "translateX(-50%)"},
-        }
+          form: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "infinite-scroll" : "infinite-scroll 20s linear infinite",
+        "infinite-scroll": "infinite-scroll 20s linear infinite",
       },
-      
     },
   },
-  plugins: [require('tailwindcss-animated')],
+  plugins: [
+    require("tailwindcss-animated"),
+    require("tailwind-scrollbar-hide"),
+  ],
 } satisfies Config;
 
 export default config;
