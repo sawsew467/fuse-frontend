@@ -69,6 +69,34 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  padding-inline: 4px;
+  background: rgba(0, 0, 0, 0);
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000000;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF9966;
+  border-radius: 100vw;
+  border: 3px solid hsl(0, 0%, 100%)
+}
+
+/* Handle on hover */
+
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -82,17 +110,19 @@
     transform-style: preserve-3d;
     transition: transform 1s;
   }
+
   .paper:hover {
     transform: rotateY(180deg) translateX(100%);
     transform-style: preserve-3d;
     transition: transform 1s;
   }
+
   .box:hover {
     transform: scale(1.4) translateY(-15px);
   }
-  
+
   .box:has(+ .box:hover),
-  .box:hover + .box {
+  .box:hover+.box {
     transform: scale(1.1) translateY(-8px);
   }
 }

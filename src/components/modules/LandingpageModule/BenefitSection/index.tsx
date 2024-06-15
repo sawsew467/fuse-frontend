@@ -212,6 +212,7 @@ function BenefitSection() {
             <Card key={index} data={item} ref={ref} />
           ))}
         </div>
+        <div id="membership"></div>
       </Section>
     </div>
   );

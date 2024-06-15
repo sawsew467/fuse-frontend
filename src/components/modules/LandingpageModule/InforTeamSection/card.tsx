@@ -13,7 +13,7 @@ interface CardProps {
 
 function Card({ data, childAnimate }: CardProps) {
   return (
-    <motion.div className="" variants={childAnimate} viewport={{ once: true }}>
+    <motion.div className="" variants={childAnimate} >
       <span className="group flex w-full h-full flex-col gap-6 rounded-lg border-2 border-black bg-white p-5 shadow-3d transition-all hover:shadow-3d-hover sm:flex-col sm:p-4 md:flex-col md:p-5 lg:flex-col lg:p-5">
         <div className="flex-rown flex w-full justify-between">
           <div className="flex flex-row items-center gap-2">
