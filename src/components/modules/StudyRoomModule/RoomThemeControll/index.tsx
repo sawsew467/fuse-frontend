@@ -124,7 +124,7 @@ function RoomThemeControll() {
                     ref={scrollContainerRef}
                   >
                     {Array.from({ length: 30 }).map((item, index: number) => (
-                      <div>
+                      <div key={index}>
                         <ThemeItem />
                       </div>
                     ))}
@@ -167,6 +167,25 @@ function RoomThemeControll() {
               <div className="flex flex-col items-start gap-4 bg-white/50 p-2 rounded-lg">
                 <div>
                   <p className="text-[12px]">Audio Output</p>
+                </div>
+                <div className="flex w-full flex-row items-center gap-2">
+                  <select
+                    value={audioOutput}
+                    onChange={handleAudioOutputChange}
+                    className="appearance-none w-full p-2 outline-none rounded-lg"
+                  >
+                    <option value="default">Default</option>
+                    {audioDevices.map(device => (
+                      <option key={device.deviceId} value={device.deviceId}>
+                        {device.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className="flex flex-col items-start gap-4 bg-white/50 p-2 rounded-lg">
+                <div>
+                  <p className="text-[12px]">Video Input</p>
                 </div>
                 <div className="flex w-full flex-row items-center gap-2">
                   <select

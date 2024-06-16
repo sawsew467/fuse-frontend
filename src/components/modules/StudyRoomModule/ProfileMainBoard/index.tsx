@@ -21,9 +21,6 @@ type TProps = {
 function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
   const path = usePathname();
   const [appUrl, setAppUrl] = useState<string>("");
-
-  console.log(appUrl);
-
   useEffect(() => {
     const fetchAppUrl = () => {
       const url = window.location.origin;
@@ -31,7 +28,7 @@ function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
     };
 
     fetchAppUrl();
-  }, []);
+  }, [path]);
 
   const toggleFullscreen = () => {
     if (screenfull.isEnabled) {
@@ -70,7 +67,7 @@ function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
                 <DropdownMenu.Group className="flex max-h-[600px] w-fit max-w-[400px] flex-col gap-0 overflow-auto">
                   <DropdownMenu.Item className="flex flex-col gap-3 rounded-md p-2 transition focus-visible:outline-none">
                     {Array.from({ length: 10 }).map((_, index) => (
-                      <div className="flex flex-row gap-2">
+                      <div className="flex flex-row gap-2" key={index}>
                         <Image
                           src={AvatarImage}
                           alt="avatar"
@@ -160,7 +157,7 @@ function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
                       <div className="flex flex-row items-center gap-2 border-b-2 pb-2">
                         <span>🔔</span>
                         <p className="text-start text-sm">
-                          Người dùng "Lê Đức Anh Phương" đã tham gia phòng học
+                          Người dùng `&quot;`Lê Đức Anh Phương`&quot;` đã tham gia phòng học
                         </p>
                       </div>
                       <div className="flex flex-row items-center gap-2 border-b-2 pb-2">
