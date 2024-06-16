@@ -107,7 +107,7 @@ function RoomThemeControll() {
     setAudioOutput(event.target.value);
   };
   return (
-    <div className="absolute z-10 left-4 top-[80px] h-[calc(100%-95px)] w-[440px]">
+    <div className="absolute left-4 top-[80px] z-10 h-[calc(100%-95px)] w-[440px]">
       <div
         className={cn(
           "absolute bottom-0 right-[0px] flex h-full w-full flex-row items-end gap-4 transition duration-500",
@@ -142,16 +142,14 @@ function RoomThemeControll() {
                     ref={scrollContainerRef}
                   >
                     {themes.map((item, index) => (
-                      <>
-                        <div key={index}>
-                          <ThemeItem
-                            key={index}
-                            themeName={item.name}
-                            imageSrc={item.imageBackground}
-                            dataSource={item}
-                          />
-                        </div>
-                      </>
+                      <div key={index}>
+                        <ThemeItem
+                          key={item.id}
+                          themeName={item.name}
+                          imageSrc={item.imageBackground}
+                          dataSource={item}
+                        />
+                      </div>
                     ))}
                     {Array.from({ length: 10 }).map((item, index: number) => (
                       <div key={index}>

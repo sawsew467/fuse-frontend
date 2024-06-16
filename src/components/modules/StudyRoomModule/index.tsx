@@ -26,7 +26,7 @@ function StudyRoomModule() {
       audioRef.current.muted = audio.muted;
       audioRef.current.volume = audio.volume / 100;
       if (audio.muted == true) {
-        audioRef.current.pause();
+        audioRef.current.pause(); 
       } else {
         audioRef.current
           .play()
