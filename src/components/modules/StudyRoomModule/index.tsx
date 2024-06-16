@@ -2,93 +2,145 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import ChatIcon from "@public/icons/studyroom/chat.svg";
-
 import { cn } from "@/lib/utils";
 import ProfileMainBoard from "./ProfileMainBoard";
 import RoomThemeControll from "./RoomThemeControll";
-
-
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
+import ChatOutSide from "./ChatOutSide";
+import { actionSetCurrentMedia } from "@/store/slices/studyRoomController";
+import { themes } from "@/data/stuty-room-themes";
 
 function StudyRoomModule() {
-  const [isOpenChat, setIsOpenChat] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const { audio, currentMedia } = useAppSelector(
+    (state) => state.studyRoomController,
+  );
 
   const [audioPlayed, setAudioPlayed] = useState<boolean>(false);
-  const [isMuted, setIsMuted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.muted = isMuted;
-      audioRef.current.volume = 1;
-      
+      audioRef.current.muted = audio.muted;
+      audioRef.current.volume = audio.volume / 100;
+      if (audio.muted == true) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current
+          .play()
+          .catch((err) => console.error("Failed to play audio:", err));
+      }
     }
-  }, [isMuted]);
+  }, [audio]);
+
+  useEffect(() => {
+    dispatch(
+      actionSetCurrentMedia({
+        id: themes[0]?.id,
+        name: themes[0]?.name,
+        video: themes[0]?.videoBackground,
+        audio: themes[0]?.audio,
+      }),
+    );
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.load(); // Reload the audio element to update the source
+      audioRef.current
+        .play()
+        .catch((err) => console.error("Failed to play audio:", err));
+    }
+  }, [currentMedia.audio]);
 
   useEffect(() => {
     const handleUserInteraction = async () => {
       if (audioRef.current && !audioPlayed) {
         try {
           await audioRef.current.play();
-          setAudioPlayed(true); // Set the state to true after audio has played successfully
-          document.removeEventListener('click', handleUserInteraction); // Remove event listener once audio plays
-          document.removeEventListener('keydown', handleUserInteraction); // Remove event listener once audio plays
+          setAudioPlayed(true);
+          document.removeEventListener("click", handleUserInteraction); // Remove event listener once audio plays
+          document.removeEventListener("keydown", handleUserInteraction); // Remove event listener once audio plays
         } catch (err) {
           console.error("Failed to play audio:", err);
         }
       }
     };
 
-    document.addEventListener('click', handleUserInteraction);
-    document.addEventListener('keydown', handleUserInteraction);
+    document.addEventListener("click", handleUserInteraction);
+    document.addEventListener("keydown", handleUserInteraction);
 
     return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("keydown", handleUserInteraction);
     };
   }, [audioPlayed]);
 
+  useEffect(() => {
+    setIsLoading(true);
+    const handleLoadedData = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000); // 1 second delay
+    };
+
+    const videoElement = videoRef.current;
+    const audioElement = audioRef.current;
+
+    if (videoElement) {
+      videoElement.addEventListener("loadeddata", handleLoadedData);
+    }
+
+    if (audioElement) {
+      audioElement.addEventListener("loadeddata", handleLoadedData);
+    }
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener("loadeddata", handleLoadedData);
+      }
+      if (audioElement) {
+        audioElement.removeEventListener("loadeddata", handleLoadedData);
+      }
+    };
+  }, [currentMedia.video, currentMedia.audio]);
+
   return (
     <div className="h-full w-full select-none">
+      {isLoading && (
+        <div className="absolute inset-0 z-[-1] flex items-center justify-center bg-black bg-opacity-40">
+          <div className="loader animate-pulse text-2xl font-bold text-white">
+            Loading...
+          </div>
+        </div>
+      )}
+
+      {!audioPlayed && (
+        <div className="absolute inset-0 z-[1] flex items-center justify-center bg-black bg-opacity-40">
+          <div className="loader animate-pulse text-2xl font-bold text-white">
+            Click chuột hoặc bấm phím bất kỳ để nhạc được bật
+          </div>
+        </div>
+      )}
       <video
+        ref={videoRef}
         autoPlay
         muted
-        src="https://res.cloudinary.com/dy1uuo6ql/video/upload/v1718294544/apgtpr7fneeoropq2glp.mp4"
-        className="h-full w-full object-cover"
+        src={currentMedia?.video}
+        className={`h-full w-full animate-fade object-cover ${isLoading ? "hidden" : "block"}`}
         loop
       />
       <audio ref={audioRef} autoPlay hidden loop>
-        <source src="https://res.cloudinary.com/dy1uuo6ql/video/upload/v1718367383/Music/eaeyu7p5vjgdh58uzupv.mp4"></source>
+        <source src={currentMedia?.audio} />
       </audio>
 
       <div className="absolute left-0 right-0 top-0 h-full w-full overflow-hidden p-8">
-        <ProfileMainBoard isMuted={isMuted} setIsMuted={setIsMuted}/>
-        
-
-        {/* <div className="absolute bottom-4 right-4 h-[calc(100%-96px)] w-[420px] z-[1]">
-          <div
-            className={cn(
-              "absolute bottom-0 right-[0px] flex h-full w-full flex-row items-end gap-4 transition duration-500",
-              `${isOpenChat ? "translate-x-0" : "translate-x-[372px]"}`,
-            )}
-          >
-            <div
-              className="h-fit w-fit cursor-pointer rounded-lg backdrop-blur-sm bg-white/80 p-2"
-              onClick={() => setIsOpenChat(!isOpenChat)}
-            >
-              <Image
-                src={ChatIcon}
-                alt="icons"
-                height={40}
-                width={40}
-                className="h-[40px] w-[40px]"
-              />
-            </div>
-            <div className="h-full w-full rounded-lg backdrop-blur-sm bg-white/80 p-2"></div>
-          </div>
-        </div> */}
-
-        <RoomThemeControll/>
+        <ProfileMainBoard />
+        <ChatOutSide />
+        <RoomThemeControll />
 
         {/* <div className="absolute bottom-[-10px] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white">
           <div className="flex flex-row items-center gap-4 p-2">

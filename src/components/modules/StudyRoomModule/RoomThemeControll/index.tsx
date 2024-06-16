@@ -9,6 +9,13 @@ import CaretDown from "@public/icons/studyroom/caret-down";
 import VolumnMute from "@public/icons/studyroom/volumn-mute.svg";
 import Volumn from "@public/icons/studyroom/volumn-up.svg";
 import ThemeItem from "./themeItem";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
+import {
+  actionSetCurrentMedia,
+  actionSetMute,
+  actionSetVolume,
+} from "@/store/slices/studyRoomController";
+import { themes } from "@/data/stuty-room-themes";
 
 function RoomThemeControll() {
   const [isOpenMusicTheme, setIsOpenMusicTheme] = useState<boolean>(true);
@@ -20,6 +27,12 @@ function RoomThemeControll() {
 
   const [audioOutput, setAudioOutput] = useState<string>("default");
   const [audioDevices, setAudioDevices] = useState<MediaDeviceInfo[]>([]);
+
+  const { audio, currentMedia } = useAppSelector(
+    (state) => state.studyRoomController,
+  );
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const updateTime = () => {
@@ -69,13 +82,16 @@ function RoomThemeControll() {
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVolume(Number(event.target.value));
+    dispatch(actionSetVolume(Number(event.target.value)));
   };
 
   useEffect(() => {
     const fetchAudioDevices = async () => {
       try {
         const devices = await navigator.mediaDevices.enumerateDevices();
-        const audioDevices = devices.filter(device => device.kind === "audiooutput");
+        const audioDevices = devices.filter(
+          (device) => device.kind === "audiooutput",
+        );
         setAudioDevices(audioDevices);
       } catch (error) {
         console.error("Error fetching audio devices:", error);
@@ -85,18 +101,20 @@ function RoomThemeControll() {
     fetchAudioDevices();
   }, []);
 
-  const handleAudioOutputChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleAudioOutputChange = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
     setAudioOutput(event.target.value);
   };
   return (
-    <div className="absolute left-4 top-[80px] h-[calc(100%-95px)] w-[440px]">
+    <div className="absolute z-10 left-4 top-[80px] h-[calc(100%-95px)] w-[440px]">
       <div
         className={cn(
           "absolute bottom-0 right-[0px] flex h-full w-full flex-row items-end gap-4 transition duration-500",
           `${isOpenMusicTheme ? "translate-x-0" : "translate-x-[-394px]"}`,
         )}
       >
-        <div className="h-full w-full rounded-lg bg-white/80 p-4 backdrop-blur-sm">
+        <div className="h-full w-full overflow-auto rounded-lg bg-white/80 p-4 backdrop-blur-sm scrollbar-hide">
           <div className="flex flex-col gap-4">
             <div className="flex flex-row items-center justify-between">
               <h3 className="text-start font-title text-2xl font-bold">
@@ -123,7 +141,19 @@ function RoomThemeControll() {
                     className="flex max-h-[200px] flex-wrap justify-center gap-5 overflow-auto p-1 scrollbar-hide"
                     ref={scrollContainerRef}
                   >
-                    {Array.from({ length: 30 }).map((item, index: number) => (
+                    {themes.map((item, index) => (
+                      <>
+                        <div key={index}>
+                          <ThemeItem
+                            key={index}
+                            themeName={item.name}
+                            imageSrc={item.imageBackground}
+                            dataSource={item}
+                          />
+                        </div>
+                      </>
+                    ))}
+                    {Array.from({ length: 10 }).map((item, index: number) => (
                       <div key={index}>
                         <ThemeItem />
                       </div>
@@ -146,9 +176,17 @@ function RoomThemeControll() {
                 <h3>Media controll</h3>
               </div>
 
-              <div className="flex flex-row items-center gap-4 bg-white/50 p-2 rounded-lg">
-                <div>
-                  <Image src={Volumn} alt="icon" height={30} width={30} />
+              <div className="flex flex-row items-center gap-4 rounded-lg bg-white/50 p-2">
+                <div
+                  onClick={() => dispatch(actionSetMute(!audio.muted))}
+                  className="cursor-pointer"
+                >
+                  <Image
+                    src={audio.muted ? VolumnMute : Volumn}
+                    alt="icon"
+                    height={30}
+                    width={30}
+                  />
                 </div>
                 <div className="flex w-full flex-row items-center gap-2">
                   <input
@@ -163,8 +201,7 @@ function RoomThemeControll() {
                 </div>
               </div>
 
-                  {/* Thêm chức năng chọn audio output device */}
-              <div className="flex flex-col items-start gap-4 bg-white/50 p-2 rounded-lg">
+              <div className="flex flex-col items-start gap-2 rounded-lg bg-white/50 p-2">
                 <div>
                   <p className="text-[12px]">Audio Output</p>
                 </div>
@@ -172,10 +209,10 @@ function RoomThemeControll() {
                   <select
                     value={audioOutput}
                     onChange={handleAudioOutputChange}
-                    className="appearance-none w-full p-2 outline-none rounded-lg"
+                    className="w-full appearance-none rounded-lg p-2 outline-none"
                   >
                     <option value="default">Default</option>
-                    {audioDevices.map(device => (
+                    {audioDevices.map((device) => (
                       <option key={device.deviceId} value={device.deviceId}>
                         {device.label}
                       </option>
@@ -183,7 +220,7 @@ function RoomThemeControll() {
                   </select>
                 </div>
               </div>
-              <div className="flex flex-col items-start gap-4 bg-white/50 p-2 rounded-lg">
+              <div className="flex flex-col items-start gap-2 rounded-lg bg-white/50 p-2">
                 <div>
                   <p className="text-[12px]">Video Input</p>
                 </div>
@@ -191,10 +228,10 @@ function RoomThemeControll() {
                   <select
                     value={audioOutput}
                     onChange={handleAudioOutputChange}
-                    className="appearance-none w-full p-2 outline-none rounded-lg"
+                    className="w-full appearance-none rounded-lg p-2 outline-none"
                   >
                     <option value="default">Default</option>
-                    {audioDevices.map(device => (
+                    {audioDevices.map((device) => (
                       <option key={device.deviceId} value={device.deviceId}>
                         {device.label}
                       </option>

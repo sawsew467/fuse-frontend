@@ -12,14 +12,18 @@ import VideoCallIcon from "@public/icons/studyroom/video.svg";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
+import { actionSetMute } from "@/store/slices/studyRoomController";
 
 type TProps = {
-  isMuted?: boolean;
-  setIsMuted: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
+function ProfileMainBoard({}: TProps) {
   const path = usePathname();
+  const dispatch = useAppDispatch();
+
+  const {audio} = useAppSelector((state) => state.studyRoomController);
+
   const [appUrl, setAppUrl] = useState<string>("");
   useEffect(() => {
     const fetchAppUrl = () => {
@@ -173,10 +177,10 @@ function ProfileMainBoard({ isMuted, setIsMuted }: TProps) {
             </button>
             <button
               className="flex h-[30px] w-[30px] items-center justify-center rounded-md outline-none transition hover:bg-secondary"
-              onClick={() => setIsMuted(!isMuted)}
+              onClick={() => dispatch(actionSetMute(!audio.muted))}
             >
               <Image
-                src={isMuted ? VolumnMuteIcon : VolumnUpIcon}
+                src={audio.muted ? VolumnMuteIcon : VolumnUpIcon}
                 alt="icon"
                 height={200}
                 width={200}

@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import auth from "./slices/auth";
+import studyRoomController from "./slices/studyRoomController";
 
 export const store = configureStore({
-  reducer: { auth: auth},
+  reducer: { auth: auth, studyRoomController: studyRoomController},
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
