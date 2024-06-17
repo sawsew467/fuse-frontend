@@ -2,9 +2,6 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AppProgressBar, useRouter } from "next-nprogress-bar";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 import { headerItems } from "@/data/headerItems";
 import { cn } from "@/lib/utils";
@@ -14,26 +11,22 @@ import { Button } from "@/components/ui/button";
 import ButtonArrow from "@public/svgr/ButtonArrow";
 import Logo from "@public/svgr/Logo";
 import ChevRight from "@public/svgr/ChevRight";
-import { isNumber } from "lodash";
 import Nav from "@/components/modules/Header/Nav";
 import Image from "next/image";
 import Header from "@/components/modules/Header";
 
 function GuestHeader() {
-  const [headerClicked, setHeaderClicked] = useState("/");
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
 
-  const router = useRouter();
 
   const handleResize = useCallback(() => {
     setIsHambugerClicked(false);
   }, []);
 
   useEffect(() => {
-    router.push(headerClicked);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [headerClicked, router, handleResize]);
+  }, [handleResize]);
 
   const handleHiddenHeader = () => {
     setIsHambugerClicked(false);
@@ -100,11 +93,12 @@ function GuestHeader() {
               className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 text-xs transition-all hover:bg-[#DCDAD3]"
               onClick={() => {
                 setIsHambugerClicked(false);
-                setHeaderClicked(item.href);
               }}
             >
-              <span>{item?.label}</span>
-              <ChevRight />
+              <Link href={item.href}>
+                <span>{item?.label}</span>
+                <ChevRight />
+              </Link>
             </li>
           ))}
           <div className="mt-4 space-y-4">
