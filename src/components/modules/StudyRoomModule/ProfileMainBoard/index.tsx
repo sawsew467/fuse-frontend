@@ -42,7 +42,7 @@ function ProfileMainBoard({}: TProps) {
   return (
     <div className="absolute right-4 top-4">
       <div className="flex flex-row gap-6">
-        <div className="relative z-10 flex flex-row items-center rounded-lg backdrop-blur-sm bg-white/80 p-2">
+        <div className=" border-2 border-black transition hover:shadow-3d-hover relative z-10 flex flex-row items-center rounded-lg backdrop-blur-sm bg-white/80 p-2">
           <div className="px-2">
             <button className="flex flex-row-reverse items-center gap-2 rounded-md px-2 py-1 text-sm outline-none transition hover:bg-secondary">
               <p>Video call</p>

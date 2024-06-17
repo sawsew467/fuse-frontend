@@ -28,7 +28,7 @@ function ChatOutSide() {
                 className="h-[40px] w-[40px]"
               />
             </div>
-            <div className="h-full w-full rounded-lg backdrop-blur-sm bg-white/80 p-2"></div>
+            <div className="border-2 border-black hover:shadow-3d-hover h-full w-full rounded-lg backdrop-blur-sm transition bg-white/80 p-2"></div>
           </div>
         </div>
     )

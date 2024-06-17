@@ -114,7 +114,7 @@ function RoomThemeControll() {
           `${isOpenMusicTheme ? "translate-x-0" : "translate-x-[-394px]"}`,
         )}
       >
-        <div className="h-full w-full overflow-auto rounded-lg bg-white/80 p-4 backdrop-blur-sm scrollbar-hide">
+        <div className="border-2 border-black hover:shadow-3d-dark transition h-full w-full overflow-auto rounded-lg bg-white/80 p-4 backdrop-blur-sm scrollbar-hide">
           <div className="flex flex-col gap-4">
             <div className="flex flex-row items-center justify-between">
               <h3 className="text-start font-title text-2xl font-bold">
@@ -241,7 +241,7 @@ function RoomThemeControll() {
           </div>
         </div>
         <div
-          className="h-fit w-fit cursor-pointer rounded-lg bg-white/80 p-2 backdrop-blur-sm"
+          className="border-2 border-black hover:shadow-3d-hover transition h-fit w-fit cursor-pointer rounded-lg bg-white/80 p-2 backdrop-blur-sm"
           onClick={() => setIsOpenMusicTheme(!isOpenMusicTheme)}
         >
           <Image

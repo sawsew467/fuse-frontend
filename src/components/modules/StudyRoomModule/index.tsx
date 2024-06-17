@@ -141,16 +141,6 @@ function StudyRoomModule() {
         <ProfileMainBoard />
         <ChatOutSide />
         <RoomThemeControll />
-
-        {/* <div className="absolute bottom-[-10px] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white">
-          <div className="flex flex-row items-center gap-4 p-2">
-            <div className="border-r pl-2 pr-6">Đồng hồ</div>
-            <div className="flex flex-row gap-4 p-2">
-              <div>Tool1</div>
-              <div>Tool2</div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
