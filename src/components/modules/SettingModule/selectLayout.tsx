@@ -41,7 +41,7 @@ export default function SelectLayout({
             {
                 placeholder && options && (
                     <Select>
-                        <SelectTrigger className="bg-transparent">
+                        <SelectTrigger className="bg-transparent ">
                             <SelectValue placeholder={placeholder} />
                         </SelectTrigger>
                         <SelectContent>

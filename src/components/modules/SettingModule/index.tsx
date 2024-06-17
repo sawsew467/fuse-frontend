@@ -1,8 +1,8 @@
 'use client'
 
+import DashBoard from '@/components/modules/SettingModule/DashBoard';
 import EditProfile from '@/components/modules/SettingModule/EditProfile';
 import SettingAcount from '@/components/modules/SettingModule/SettingAcount';
-import DashBoard from '@/components/modules/SettingModule/DashBoard';
 
 function EditModule() {
 

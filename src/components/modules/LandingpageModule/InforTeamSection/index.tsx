@@ -14,34 +14,39 @@ import { motion } from "framer-motion";
 
 const data = [
   {
-    avatar: "./avatar.svg", 
+    avatar: "/avatar_image/Thắng_avatar.svg", 
     fullName: "Trần Văn Bảo Thắng",
-    userName: "@thangtvb",
+    userName: "@SawSew467",
     description: "Trần Văn Bảo Thắng đã đóng góp vào sự phát triển của dự án Fuse từ những ngày đầu tiên. \n Với sự sáng tạo và quyết đoán, anh đã giúp trang web phát triển với nhiều tính năng mới mẻ. \n Anh không chỉ là một lập trình viên tài năng mà còn là một người dẫn dắt đội ngũ đầy cảm hứng.",
+    facebookLink: "https://www.facebook.com/SawSew467"
   },
   {
-    avatar: "./avatar.svg",
+    avatar: "/avatar_image/Hoàng_avatar.svg",
     fullName: "Võ Huy Hoàng",
     userName: "@hoangvo",
     description: "Võ Huy Hoàng đã giúp nâng cao hiệu suất và tính năng của Fuse. \n Với sự chăm chỉ và nỗ lực không ngừng, anh đã cải thiện đáng kể tốc độ tải trang và độ ổn định của hệ thống. \n Những đóng góp của anh đã mang lại sự hài lòng tuyệt đối cho người dùng Fuse.",
+    facebookLink: "https://www.facebook.com/profile.php?id=100015248288646"
   },
   {
-    avatar: "./avatar.svg",
+    avatar: "/avatar_image/Vũ_avatar.svg",
     fullName: "Võ Văn Vũ",
-    userName: "@vovanvu",
+    userName: "@VanVu.070403",
     description: "Võ Văn Vũ là người đứng sau nhiều cải tiến kỹ thuật của Fuse. \n Anh đã phát triển các tính năng quan trọng giúp trang web hoạt động ổn định và đáng tin cậy. \n Những nỗ lực của anh đã giúp Fuse trở thành một nền tảng mạnh mẽ và hiệu quả.",
+    facebookLink: "https://www.facebook.com/VanVu.070403"
   },
   {
-    avatar: "./avatar.svg",
+    avatar: "/avatar_image/Phương_avatar.svg",
     fullName: "Lê Đức Anh Phương",
     userName: "@phuongle",
     description: "Lê Đức Anh Phương đã góp phần không nhỏ vào việc phát triển giao diện và trải nghiệm người dùng của Fuse. \n Với tài năng thiết kế và tư duy sáng tạo, anh đã tạo nên những trải nghiệm trực quan và hấp dẫn cho người dùng. \n Những đóng góp của anh đã giúp Fuse ghi điểm trong mắt người dùng từ cái nhìn đầu tiên.",
+    facebookLink: "https://www.facebook.com/KICHm1"
   },
   {
-    avatar: "./avatar.svg",
+    avatar: "/avatar_image/Khang_avatar.svg",
     fullName: "Nguyễn Văn Duy Khang",
-    userName: "@khangnguyen",
+    userName: "@nguyenkhang.030204",
     description: "Nguyễn Văn Duy Khang luôn nỗ lực để cải thiện Fuse từ góc độ hiệu năng đến bảo mật. \n Với kiến thức vững chắc về bảo mật, anh đã triển khai nhiều biện pháp bảo vệ dữ liệu quan trọng. \n Sự tận tâm và chuyên nghiệp của anh đã giúp Fuse trở thành một nền tảng đáng tin cậy cho hàng triệu người dùng.",
+    facebookLink: "https://www.facebook.com/nguyenkhang.030204"
   },
 ];
 const parent = {

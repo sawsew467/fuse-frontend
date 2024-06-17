@@ -8,14 +8,15 @@ function DashBoard() {
         <div className='flex flex-col '>
             <div className='flex flex-row gap-2 pb-5'>
                 <Image
-                    src="/avatar.svg"
+                    src="/avatar_image/Thắng_avatar.svg"
                     alt='avatar'
-                    width={64}
+                    width={80}
                     height={64}
+                    className='aspect-square object-cover rounded-full'
                 />
                 <div className='flex flex-col justify-center '>
-                    <h5>Nguyễn Văn Duy Khang</h5>
-                    <span>@khangnguyen</span>
+                    <h5 className=''>Trần Văn Bảo Thắng</h5>
+                    <span>@SawSew467</span>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
