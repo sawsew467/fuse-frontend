@@ -2,16 +2,18 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 interface InputLayoutProps {
+    className?: string;
     label?: string;
     placeholder?:string;
+    type?:string;
     backgroundColor?: string;
-    className?: string;
 }
 
 function InputLayout({
     className,
     label,
     placeholder,
+    type,
     backgroundColor,
 }: InputLayoutProps) {
     return (
@@ -26,12 +28,10 @@ function InputLayout({
         >
             <div className="flex flex-col gap-2">
                 {label && (
-                    <h3 className="text-sm font-semibold">
-                        {label}
-                    </h3>
+                    <h3 className="text-sm font-semibold" dangerouslySetInnerHTML={{ __html: label }}/>
                 )}
-                {placeholder && (
-                    <Input type="text" placeholder={placeholder} className="bg-transparent" />
+                {placeholder && type && (
+                    <Input type={type} placeholder={placeholder} className="bg-transparent" />
                 )}
             </div>
         </section>

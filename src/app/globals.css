@@ -102,4 +102,10 @@
   .animation-pause {
     animation-play-state: paused;
   }
+  .tag {
+    @apply bg-[#65CCA0] px-1 rounded-md border-[1px]  border-black select-none w-fit ;
+    box-shadow: -2px 2px 0px 0px #000;
+  }
 }
+
+/* *{border: 1px solid black;} */
