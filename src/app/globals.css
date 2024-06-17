@@ -78,7 +78,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #00000000;
+  background: #F5F3EA;
 }
 
 
@@ -86,7 +86,7 @@
 ::-webkit-scrollbar-thumb {
   background: #FF9966;
   border-radius: 100vw;
-  border: 3px solid hsl(0, 0%, 100%)
+  border: 3px solid #F5F3EA;
 }
 
 /* Handle on hover */
