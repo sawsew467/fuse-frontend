@@ -19,7 +19,7 @@ const Header = ({
     clearTimeout(time);
     time = setTimeout(() => {
       setHidden(false);
-    }, 1000);
+    },500);
     setHidden(true);
   };
 
@@ -46,13 +46,11 @@ const Header = ({
       <motion.div
         initial={{
           rotateX: -90,
-          opacity: 0,
         }}
         animate={{
           rotateX: isHidden ? -90 : 0,
-          opacity: isHidden ? 0 : 1,
           transition: {
-            duration: isHidden ? 1 : 2.5,
+            duration: isHidden ? 0.5 : 1.5,
             type: "spring",
             bounce: isHidden ? 0 : 0.8,
           },
