@@ -1,34 +1,72 @@
 "use client";
 
-import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
+import { MutableRefObject, useEffect, useState } from "react";
 
 interface CardProps {
-    data: {
-        title: string;
-        description: string;
+  data: {
+    title: string;
+    description: string;
+    icon: any;
+    animate: {
+      translateX: Array<number>;
+      translateY: Array<number>;
     };
+  };
+  ref: MutableRefObject<null>;
 }
 
-function Card({ data }: CardProps) {
-    return (
-        <>
-            <button className="group hover:shadow-3d-hover  shadow-3d hover:bg-primary  transition-all  duration-500  ease-in-out  p-4 lg:p-8 md:p-8  sm:p-4 flex  flex-row lg:flex-col  md:flex-col  sm:flex-col    items-center  gap-1 lg:gap-2  md:gap-2  sm:gap-0  bg-white  border-2  border-black rounded-3xl  ">
-                <div className="w-16 h-16 flex justify-center items-center">
-                    <Image
-                    src="/folder_icon.svg"
-                    alt="folder_icon"
-                    width={28}
-                    height={20}
-                    className="lg:w-9 md:w-9 lg:h-7 md:h-7 group-hover:invert"
-                    />
-                </div>
-                <div className="flex flex-col lg:flex-col  md:flex-col  sm:flex-col gap-1 lg:gap-2  md:gap-2  sm:gap-2">
-                    <h3 className="text-sm md:text-sm lg:text-base font-semibold text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.title}</h3>
-                    <p className="text-xs md:text-sm lg:text-base text-left lg:text-center md:text-center sm:text-center group-hover:text-white">{data?.description}</p>
-                </div>
-            </button>
-        </>
-    )
+function Card({ data, ref }: CardProps) {
+  const [hidden, setHidden] = useState(true);
+  const handleResize = ({ target }: UIEvent) => {
+    setHidden((target as Window)?.innerWidth < 1024);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [hidden]);
+  useEffect(() => {
+    setHidden(innerWidth < 1024);
+  }, []);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const translateX = useTransform(
+    scrollYProgress,
+    [0, 0.3, 1],
+    data.animate.translateX,
+  );
+  const translateY = useTransform(
+    scrollYProgress,
+    [0, 0.3, 1],
+    data.animate.translateY,
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.251, 1],
+    [0, 0, 1, 1],
+  );
+  return (
+    <>
+      <motion.button
+        style={{
+          translateX: hidden ? 0 : translateX,
+          translateY: hidden ? 0 : translateY,
+          opacity: hidden ? 1 : opacity,
+        }}
+        className="group z-0 flex flex-row items-center gap-1 rounded-3xl border-2 border-black bg-white p-4 shadow-3d transition-all duration-500 ease-in-out hover:bg-primary hover:shadow-3d-hover sm:flex-col sm:gap-0 sm:p-4 md:flex-col md:gap-2 md:p-8 lg:flex-col lg:gap-2 lg:p-8"
+      >
+        <div className="flex h-16 w-16 items-center justify-center">
+          <data.icon />
+        </div>
+        <div className="flex flex-col gap-1 sm:flex-col sm:gap-2 md:flex-col md:gap-2 lg:flex-col lg:gap-2">
+          <h3 className="text-left text-sm font-semibold group-hover:text-white sm:text-center md:text-center md:text-sm lg:text-center lg:text-base">
+            {data?.title}
+          </h3>
+          <p className="text-left text-xs group-hover:text-white sm:text-center md:text-center md:text-sm lg:text-center lg:text-base">
+            {data?.description}
+          </p>
+        </div>
+      </motion.button>
+    </>
+  );
 }
-
 export default Card;

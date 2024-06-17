@@ -33,13 +33,18 @@ function Card({ data, ref, hidden }: CardProps) {
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.55 : 0.42, 1],
+    [0, hidden ? 0.6 : 0.44, 1],
     [0, 0, 2000],
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, hidden ? 0.6 : 0.44, hidden ? 1 : 0.5],
+    [1, 1, 0],
   );
 
   return (
     <motion.div
-      style={{ translateY }}
+      style={{ translateY, opacity }}
       initial={data.animate}
       whileInView={{
         x: 0,
@@ -49,6 +54,7 @@ function Card({ data, ref, hidden }: CardProps) {
           type: "spring",
           duration: 1,
           delay: 0.75,
+          bounce: 0,
         },
       }}
       viewport={{ once: true }}
@@ -82,7 +88,7 @@ function Card({ data, ref, hidden }: CardProps) {
         </p>
         <div className="mb-2 sm:mb-4 md:mb-6 md:text-sm lg:mb-8">
           <span className="text-xl font-semibold md:text-2xl lg:text-4xl">
-            {data?.price?.toLocaleString('vi')} VNĐ
+            {data?.price?.toLocaleString("vi")} VNĐ
           </span>
           <span className="text-xs md:text-sm lg:text-base">/Tháng</span>
         </div>
