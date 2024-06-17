@@ -4,6 +4,7 @@ import InputLayout from '@/components/modules/SettingModule/inputLayout';
 import TextAreaLayout from "@/components/modules/SettingModule/textAreaLayout";
 import SelectLayout from '@/components/modules/SettingModule/selectLayout';
 import { CalendarForm } from '@/components/modules/SettingModule/EditProfile/calendar';
+import { Button } from '@/components/ui/button';
 
 // interface EditProfileProps {
 //     majors: {
@@ -89,7 +90,7 @@ function EditProfile() {
                 {/* <InputLayout className='col-span-1' type='text' label='Tên' placeholder='Nhập tên của bạn' /> */}
                 <SelectLayout className='col-span-1' label='Giới tính' placeholder='Chọn giới tính' options={genders} />
                 {/* <div className=''> */}
-                    <CalendarForm/>
+                <CalendarForm />
                 {/* </div> */}
             </div>
             <div className='grid grid-cols-2 gap-4 mb-4'>
@@ -102,6 +103,11 @@ function EditProfile() {
                 <SelectLayout className='col-span-2' label='Học kỳ' placeholder='Chọn học kỳ' options={semesters} />
             </div>
             <TextAreaLayout label="Mô tả bản thân" className="pt-4" />
+            <div className='grid justify-items-end mt-4'>
+                <Button haveOverlay>
+                    <span>Cập nhật</span>
+                </Button>
+            </div>
         </div>
     )
 }

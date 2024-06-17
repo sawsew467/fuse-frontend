@@ -1,4 +1,5 @@
 import InputLayout from '@/components/modules/SettingModule/inputLayout'
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 function SettingAcount() {
@@ -20,6 +21,11 @@ function SettingAcount() {
           type='password'
           label={`<span class="text-red-500">*</span> Xác nhận mật khẩu mới`}
           placeholder='Nhập xác nhận mật khẩu mới' />
+        <div className='grid justify-items-end mt-4'>
+          <Button haveOverlay>
+            <span>Cập nhật</span>
+          </Button>
+        </div>
       </div>
     </>
   )
