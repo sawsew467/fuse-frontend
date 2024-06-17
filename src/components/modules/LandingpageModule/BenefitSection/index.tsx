@@ -16,6 +16,13 @@ import {
   Wrench,
 } from "lucide-react";
 
+import management from "@public/images/management.png";
+import security from "@public/images/security.png";
+import setting from "@public/images/setting.png";
+import support from "@public/images/support.png";
+import technology from "@public/images/technology.png";
+import touch_real_time from "@public/images/touch_real_time.png";
+
 const data = [
   {
     title: "Quản lý nhóm dễ dàng",
@@ -26,7 +33,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <Users className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={management}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7  md:w-11  lg:w-11"
+      />
     ),
   },
   {
@@ -38,7 +51,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <LaptopMinimal className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={technology}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7  md:w-11  lg:w-11"
+      />
     ),
   },
   {
@@ -50,7 +69,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <Lightbulb className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={touch_real_time}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-5  md:w-6  lg:w-7"
+      />
     ),
   },
   {
@@ -62,7 +87,13 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <GlobeLock className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={security}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7  md:w-11  lg:w-11"
+      />
     ),
   },
   {
@@ -74,7 +105,13 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <MonitorSmartphone className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={support}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7  md:w-11  lg:w-11"
+      />
     ),
   },
   {
@@ -86,7 +123,13 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <Wrench className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={setting}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7  md:w-11  lg:w-11"
+      />
     ),
   },
 ];

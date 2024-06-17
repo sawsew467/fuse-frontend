@@ -124,7 +124,7 @@ function UserHeader() {
                   className="rounded-full border-2 border-black"
                 />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="-translate-x-5 lg:-translate-x-1/4">
+              <DropdownMenuContent className="-translate-x-5 lg:-translate-x-1/4 shadow-3d ">
                 <DropdownMenuLabel>
                   <div className="flex items-center gap-2">
                     <Image
