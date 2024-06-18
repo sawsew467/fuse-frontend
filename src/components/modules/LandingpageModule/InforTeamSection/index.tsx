@@ -84,7 +84,7 @@ function InforTeamSection() {
         <motion.ul
           variants={parent}
           whileInView="show"
-          className="hidden grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid lg:grid-cols-3"
+          className="hidden h-fit grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid lg:grid-cols-3"
         >
           {data.map((item, index) => (
             <Card key={index} data={item} childAnimate={child} />
@@ -122,8 +122,8 @@ function InforTeamSection() {
         >
           <CarouselContent>
             {data.map((item, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+              <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 flex h-full">
                   <Card key={index} data={item} />
                 </div>
               </CarouselItem>
