@@ -2,8 +2,6 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AppProgressBar, useRouter } from "next-nprogress-bar";
-import { motion } from "framer-motion";
 
 import { headerUser } from "@/data/headerItems";
 import { cn } from "@/lib/utils";
@@ -30,22 +28,18 @@ import Nav from "@/components/modules/Header/Nav";
 import Header from "@/components/modules/Header";
 
 function UserHeader() {
-  const [headerClicked, setHeaderClicked] = useState("/");
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
 
   const { userInfo } = useAppSelector((state) => state.auth);
-  const [translateHeader, setTranslateHeader] = useState(37.5);
-  const router = useRouter();
 
   const handleResize = useCallback(() => {
     setIsHambugerClicked(false);
   }, []);
 
   useEffect(() => {
-    router.push(headerClicked);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [headerClicked, router, handleResize]);
+  }, [handleResize]);
   const logout = () => {
     webStorageClient.removeAll();
     window.location.reload();
@@ -124,7 +118,7 @@ function UserHeader() {
                   className="rounded-full border-2 border-black"
                 />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="-translate-x-5 lg:-translate-x-1/4 shadow-3d ">
+              <DropdownMenuContent className="-translate-x-5 shadow-3d lg:-translate-x-1/4">
                 <DropdownMenuLabel>
                   <div className="flex items-center gap-2">
                     <Image
@@ -186,17 +180,17 @@ function UserHeader() {
         </span>
         <ul className="container px-5 pt-24 sm:px-8 md:px-10 lg:px-[60px]">
           {headerUser?.map((item) => (
-            <li
+            <Link
+              href={item.href}
               key={item?.label}
               className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 text-xs transition-all hover:bg-[#DCDAD3]"
               onClick={() => {
                 setIsHambugerClicked(false);
-                setHeaderClicked(item.href);
               }}
             >
               <span>{item?.label}</span>
               <ChevRight />
-            </li>
+            </Link>
           ))}
         </ul>
         <div className="mt-2 flex-1 px-10">

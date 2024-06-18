@@ -1,9 +1,9 @@
 "use client";
-import { useRouter } from "next-nprogress-bar";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { isNumber } from "lodash";
+import Link from "next/link";
 
 type HeaderType = {
   href: string;
@@ -12,10 +12,8 @@ type HeaderType = {
 };
 
 const Nav = ({ headerItems }: { headerItems: Array<HeaderType> }) => {
-  const [headerClicked, setHeaderClicked] = useState("/");
   const [translateHeader, setTranslateHeader] = useState(37);
   const [url, setUrl] = useState("home");
-  const router = useRouter();
 
   const pathname = usePathname();
 
@@ -35,10 +33,6 @@ const Nav = ({ headerItems }: { headerItems: Array<HeaderType> }) => {
     }, 1);
   };
 
-  useEffect(() => {
-    router.push(headerClicked);
-  }, [headerClicked, router]);
-
   const hash = useMemo(
     () => window.location.hash.substring(1) || "home",
     [window.location.hash],
@@ -57,8 +51,8 @@ const Nav = ({ headerItems }: { headerItems: Array<HeaderType> }) => {
   return (
     <ul className="relative hidden gap-7 md:flex lg:gap-12">
       {headerItems?.map((item: HeaderType, index: number) => (
-        <li
-          onClick={() => setHeaderClicked(item.href)}
+        <Link
+          href={item.href}
           onMouseEnter={() => handleHover(item.id)}
           onMouseLeave={() => handleHover(url)}
           id={"header-" + item.id}
@@ -66,7 +60,7 @@ const Nav = ({ headerItems }: { headerItems: Array<HeaderType> }) => {
           className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-1 text-xs md:text-sm lg:text-base"
         >
           <span className="">{item?.label}</span>
-        </li>
+        </Link>
       ))}
       <div className="absolute bottom-0 left-0 h-[2px] w-full transition-all">
         <motion.span

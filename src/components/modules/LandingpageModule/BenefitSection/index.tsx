@@ -6,15 +6,6 @@ import Card from "./card";
 import Section from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import {
-  GlobeLock,
-  LaptopMinimal,
-  LaptopMinimalIcon,
-  Lightbulb,
-  MonitorSmartphone,
-  Users,
-  Wrench,
-} from "lucide-react";
 
 import management from "@public/images/management.png";
 import security from "@public/images/security.png";
@@ -38,7 +29,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-7  md:w-11  lg:w-11"
+        className="w-7 md:w-11 lg:w-11"
       />
     ),
   },
@@ -56,7 +47,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-7  md:w-11  lg:w-11"
+        className="w-9 md:w-12 lg:w-14"
       />
     ),
   },
@@ -74,7 +65,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-5  md:w-6  lg:w-7"
+        className="w-5 md:w-6 lg:w-7"
       />
     ),
   },
@@ -92,7 +83,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-7  md:w-11  lg:w-11"
+        className="w-7 md:w-11 lg:w-11"
       />
     ),
   },
@@ -110,7 +101,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-7  md:w-11  lg:w-11"
+        className="w-7 md:w-11 lg:w-11"
       />
     ),
   },
@@ -128,7 +119,7 @@ const data = [
         alt="quản lí"
         width={100}
         height={100}
-        className="w-7  md:w-11  lg:w-11"
+        className="w-7 md:w-11 lg:w-11"
       />
     ),
   },
