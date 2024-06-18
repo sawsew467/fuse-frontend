@@ -28,17 +28,17 @@ interface CardProps {
 function Card({ data, ref, hidden }: CardProps) {
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["center center", "end end"],
   });
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.6 : 0.44, 1],
+    [0, hidden ? 0.6 : 0.04, 1],
     [0, 0, 2000],
   );
   const opacity = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.6 : 0.44, hidden ? 1 : 0.5],
+    [0, hidden ? 0.6 : 0.04, hidden ? 1 : 0.1],
     [1, 1, 0],
   );
 

@@ -7,7 +7,7 @@ function HighlightExamRooms() {
   return (
     <div className="flex h-fit w-full flex-col gap-5 select-none">
       <div className="font-title text-3xl">
-        <h3 className="font-bold">Phòng ôn thi dành cho bạn</h3>
+        <h3 className="font-bold text-2xl md:text-3xl">Phòng ôn thi dành cho bạn</h3>
       </div>
       <div>
       <Carousel

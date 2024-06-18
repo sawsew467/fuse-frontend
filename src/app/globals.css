@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -72,6 +71,7 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   body {
@@ -90,13 +90,12 @@
   .box:hover {
     transform: scale(1.4) translateY(-15px);
   }
-  
+
   .box:has(+ .box:hover),
   .box:hover + .box {
     transform: scale(1.1) translateY(-8px);
   }
 }
-
 
 @layer utilities {
   .animation-pause {

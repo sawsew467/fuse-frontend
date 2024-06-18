@@ -16,7 +16,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
   return (
     <div className="relative z-40">
       <motion.div
-        initial={{ opacity: 0, translateX: -400, translateY: -400 }}
+        initial={{ opacity: 0, translateX: -1000, translateY: -1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.3,
@@ -31,7 +31,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 400, translateY: 600 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.2,
@@ -46,7 +46,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: -400, translateY: 600 }}
+        initial={{ opacity: 0, translateX: -1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.3,
@@ -61,7 +61,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.5,
@@ -81,7 +81,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.3,
@@ -101,7 +101,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 400, translateY: 400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.2,
@@ -121,7 +121,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 400, translateY: -400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: -1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.1,
@@ -141,7 +141,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: -800, translateY: 0 }}
+        initial={{ opacity: 0, translateX: -1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.4,
@@ -156,7 +156,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 800, translateY: 400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.3,
@@ -171,7 +171,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: 800, translateY: 400 }}
+        initial={{ opacity: 0, translateX: 1000, translateY: 1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.1,
@@ -191,7 +191,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: -800, translateY: -600 }}
+        initial={{ opacity: 0, translateX: -1000, translateY: -1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.5,
@@ -211,7 +211,7 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
         </ToolViewer>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, translateX: -600, translateY: -800 }}
+        initial={{ opacity: 0, translateX: -1000, translateY: -1000 }}
         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
         transition={{
           duration: 0.3,

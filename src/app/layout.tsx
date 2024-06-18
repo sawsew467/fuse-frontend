@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import Providers from "./providers";
+import Cursor from "@/components/ui/cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body className={cn(inter.className)} suppressHydrationWarning={true}>
         <Providers>
           {children}
+          <Cursor />
+
           <Toaster />
         </Providers>
       </body>
