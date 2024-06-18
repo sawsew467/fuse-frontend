@@ -20,6 +20,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 import scopyFeedback from "@public/scopyFeedback.svg";
+import Hourse5 from "../../HeroSection/Hourse5";
+import Hourse from "./Hourse";
 
 const formSchema = z.object({
   email: z
@@ -68,6 +70,7 @@ const Feedback = () => {
           height={200}
           className="w-full"
         ></Image>
+        {/* <Hourse /> */}
       </motion.span>
       <Form {...form}>
         <form

@@ -11,37 +11,43 @@ import {
 import Section from "@/components/ui/section";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Hourse4 from "../HeroSection/Hourse4";
 
 const data = [
   {
-    avatar: "./avatar.svg", 
+    avatar: "./avatar.svg",
     fullName: "Trần Văn Bảo Thắng",
     userName: "@thangtvb",
-    description: "Trần Văn Bảo Thắng đã đóng góp vào sự phát triển của dự án Fuse từ những ngày đầu tiên. \n Với sự sáng tạo và quyết đoán, anh đã giúp trang web phát triển với nhiều tính năng mới mẻ. \n Anh không chỉ là một lập trình viên tài năng mà còn là một người dẫn dắt đội ngũ đầy cảm hứng.",
+    description:
+      "Trần Văn Bảo Thắng đã đóng góp vào sự phát triển của dự án Fuse từ những ngày đầu tiên. \n Với sự sáng tạo và quyết đoán, anh đã giúp trang web phát triển với nhiều tính năng mới mẻ. \n Anh không chỉ là một lập trình viên tài năng mà còn là một người dẫn dắt đội ngũ đầy cảm hứng.",
   },
   {
     avatar: "./avatar.svg",
     fullName: "Võ Huy Hoàng",
     userName: "@hoangvo",
-    description: "Võ Huy Hoàng đã giúp nâng cao hiệu suất và tính năng của Fuse. \n Với sự chăm chỉ và nỗ lực không ngừng, anh đã cải thiện đáng kể tốc độ tải trang và độ ổn định của hệ thống. \n Những đóng góp của anh đã mang lại sự hài lòng tuyệt đối cho người dùng Fuse.",
+    description:
+      "Võ Huy Hoàng đã giúp nâng cao hiệu suất và tính năng của Fuse. \n Với sự chăm chỉ và nỗ lực không ngừng, anh đã cải thiện đáng kể tốc độ tải trang và độ ổn định của hệ thống. \n Những đóng góp của anh đã mang lại sự hài lòng tuyệt đối cho người dùng Fuse.",
   },
   {
     avatar: "./avatar.svg",
     fullName: "Võ Văn Vũ",
     userName: "@vovanvu",
-    description: "Võ Văn Vũ là người đứng sau nhiều cải tiến kỹ thuật của Fuse. \n Anh đã phát triển các tính năng quan trọng giúp trang web hoạt động ổn định và đáng tin cậy. \n Những nỗ lực của anh đã giúp Fuse trở thành một nền tảng mạnh mẽ và hiệu quả.",
+    description:
+      "Võ Văn Vũ là người đứng sau nhiều cải tiến kỹ thuật của Fuse. \n Anh đã phát triển các tính năng quan trọng giúp trang web hoạt động ổn định và đáng tin cậy. \n Những nỗ lực của anh đã giúp Fuse trở thành một nền tảng mạnh mẽ và hiệu quả.",
   },
   {
     avatar: "./avatar.svg",
     fullName: "Lê Đức Anh Phương",
     userName: "@phuongle",
-    description: "Lê Đức Anh Phương đã góp phần không nhỏ vào việc phát triển giao diện và trải nghiệm người dùng của Fuse. \n Với tài năng thiết kế và tư duy sáng tạo, anh đã tạo nên những trải nghiệm trực quan và hấp dẫn cho người dùng. \n Những đóng góp của anh đã giúp Fuse ghi điểm trong mắt người dùng từ cái nhìn đầu tiên.",
+    description:
+      "Lê Đức Anh Phương đã góp phần không nhỏ vào việc phát triển giao diện và trải nghiệm người dùng của Fuse. \n Với tài năng thiết kế và tư duy sáng tạo, anh đã tạo nên những trải nghiệm trực quan và hấp dẫn cho người dùng. \n Những đóng góp của anh đã giúp Fuse ghi điểm trong mắt người dùng từ cái nhìn đầu tiên.",
   },
   {
     avatar: "./avatar.svg",
     fullName: "Nguyễn Văn Duy Khang",
     userName: "@khangnguyen",
-    description: "Nguyễn Văn Duy Khang luôn nỗ lực để cải thiện Fuse từ góc độ hiệu năng đến bảo mật. \n Với kiến thức vững chắc về bảo mật, anh đã triển khai nhiều biện pháp bảo vệ dữ liệu quan trọng. \n Sự tận tâm và chuyên nghiệp của anh đã giúp Fuse trở thành một nền tảng đáng tin cậy cho hàng triệu người dùng.",
+    description:
+      "Nguyễn Văn Duy Khang luôn nỗ lực để cải thiện Fuse từ góc độ hiệu năng đến bảo mật. \n Với kiến thức vững chắc về bảo mật, anh đã triển khai nhiều biện pháp bảo vệ dữ liệu quan trọng. \n Sự tận tâm và chuyên nghiệp của anh đã giúp Fuse trở thành một nền tảng đáng tin cậy cho hàng triệu người dùng.",
   },
 ];
 const parent = {
@@ -104,6 +110,7 @@ function InforTeamSection() {
               height={321}
               className="h-full w-full"
             />
+            {/* <Hourse4 /> */}
           </motion.span>
         </motion.ul>
 

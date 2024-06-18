@@ -11,7 +11,7 @@ import { LoginSchema } from "@/zod/schemas/LoginSchema";
 import { cn } from "@/lib/utils";
 import { auth, provider } from "@/services/firebase/config";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
-import { actionLogin } from "@/store/slices/auth";
+import { actionLogin, actionSetIsAuth } from "@/store/slices/auth";
 
 import {
   Form,
@@ -67,10 +67,12 @@ export function SignInCard({
         auth,
         provider.providerGoogle,
       );
-      console.log(resFirebase);
       dispatch(actionLogin(resFirebase?.user));
-      router.push("/");
-      router.refresh();
+      dispatch(actionSetIsAuth(true));
+      setTimeout(() => {
+        router.push("/");
+        router.refresh();
+      }, 1000);
     } catch (error: any) {
       console.log(error);
     }
