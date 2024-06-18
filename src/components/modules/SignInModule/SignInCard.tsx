@@ -12,7 +12,7 @@ import { LoginSchema } from "@/zod/schemas/LoginSchema";
 import { cn } from "@/lib/utils";
 import { auth, provider } from "@/services/firebase/config";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
-import { actionLogin } from "@/store/slices/auth";
+import { actionLogin, actionSetIsAuth } from "@/store/slices/auth";
 
 import {
   Form,
@@ -68,10 +68,12 @@ export function SignInCard({
         auth,
         provider.providerGoogle,
       );
-      console.log(resFirebase);
       dispatch(actionLogin(resFirebase?.user));
-      router.push("/");
-      router.refresh();
+      dispatch(actionSetIsAuth(true));
+      setTimeout(() => {
+        router.push("/");
+        router.refresh();
+      }, 1000);
     } catch (error: any) {
       console.log(error);
     }
@@ -83,7 +85,8 @@ export function SignInCard({
         rotateY: mode === "SIGNIN" ? 0 : 180,
         translateZ: mode === "SIGNIN" ? 0 : -100,
         zIndex: mode === "SIGNIN" ? 50 : 40,
-        scale: mode === "SIGNIN" ? 1 : 0.75,
+        scale: mode === "SIGNIN" ?[0.75, 1] : [1, 0.75],
+
         transition: {
           duration: 1,
           bounce: 0,
@@ -97,7 +100,7 @@ export function SignInCard({
           "backdrop-blur-sm",
           "z-10",
           // mode === "SIGNIN" ? "z-50" : "z-40",
-          mode === "SIGNIN" ? "opacity-100" : "opacity-0 duration-100",
+          mode === "SIGNIN" ? "opacity-100" : "opacity-0 duration-200",
         )}
       >
         <Logo />

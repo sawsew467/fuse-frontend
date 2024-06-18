@@ -11,6 +11,7 @@ import {
 import Section from "@/components/ui/section";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Hourse4 from "../HeroSection/Hourse4";
 
 const data = [
   {
@@ -111,6 +112,7 @@ function InforTeamSection() {
               height={321}
               className="h-full w-full"
             />
+            {/* <Hourse4 /> */}
           </motion.span>
         </motion.ul>
 

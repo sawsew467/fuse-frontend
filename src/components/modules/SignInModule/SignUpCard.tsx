@@ -43,8 +43,6 @@ export function SignUpCard({
   });
 
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
-    console.log(data);
-
     toast({
       title: "Đăng nhập thất bại",
       description: "Sai thông tin đăng nhập",
@@ -58,7 +56,7 @@ export function SignUpCard({
         rotateY: mode === "SIGNUP" ? 0 : -180,
         translateZ: mode === "SIGNUP" ? 0 : -100,
         zIndex: mode === "SIGNUP" ? 50 : 40,
-        scale: mode === "SIGNUP" ? 1 : 0.75,
+        scale: mode === "SIGNUP" ?[0.75, 1] : [1, 0.75],
 
         transition: {
           duration: 1,
@@ -72,7 +70,7 @@ export function SignUpCard({
           "h-full w-full flex-1 rounded-3xl border-2 border-black bg-white/70 px-4 py-8 shadow-3d transition-all duration-200 hover:shadow-3d-hover sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-10 lg:py-12",
           "z-50 backdrop-blur-sm",
           // mode === "SIGNUP" ? "z-50" : "z-40",
-          mode === "SIGNUP" ? "opacity-100" : "opacity-0 duration-100",
+          mode === "SIGNUP" ? "opacity-100" : "opacity-0 duration-200",
         )}
       >
         <Logo />

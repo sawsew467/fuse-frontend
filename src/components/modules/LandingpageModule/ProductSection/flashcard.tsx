@@ -9,6 +9,9 @@ import IdeaIcon from "@public/icons/idea.svg";
 import ArrowRightIcon from "@public/icons/arrowRight.svg";
 import CancleIcon from "@public/icons/cancle.png";
 import CheckIcon from "@public/icons/check.png";
+import Hourse1 from "../HeroSection/Hourse1";
+import Hourse31 from "../HeroSection/Hourse31";
+import Hourse32 from "../HeroSection/Hourse32";
 
 function Flashcard({ fade }: { fade: Variants }) {
   const data = [
@@ -72,6 +75,7 @@ function Flashcard({ fade }: { fade: Variants }) {
               variants={fade}
             >
               <Image src={PassionFruidOne} alt="image" />
+              {/* <Hourse31 /> */}
             </motion.div>
             <motion.div
               initial="hidden-flip-down"
@@ -142,6 +146,7 @@ function Flashcard({ fade }: { fade: Variants }) {
               variants={fade}
             >
               <Image src={PassionFruidTwo} alt="image" />
+              {/* <Hourse32 /> */}
             </motion.div>
           </div>
         </div>

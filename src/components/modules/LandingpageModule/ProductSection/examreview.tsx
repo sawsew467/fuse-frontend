@@ -4,6 +4,7 @@ import React from "react";
 import PassionFour from "@public/passionfruid/passionfour.svg";
 import PassionFive from "@public/passionfruid/passionfive.svg";
 import HandPointer from "@public/passionfruid/handpointer.svg";
+import Hourse3 from "../HeroSection/Hourse31";
 
 function ExamReview() {
   return (
@@ -25,6 +26,7 @@ function ExamReview() {
                 width={200}
                 className="h-[100px] w-[100px]"
               />
+              {/* <Hourse3 /> */}
             </div>
             {/* board */}
             <div className="h-[150px] w-[80%] animate-flip-up rounded-[20px] border-2 border-black bg-[#65CCA0] p-3 shadow-3d sm:h-[160px] sm:w-[400px] sm:p-4 lg:h-[200px] lg:p-6">
@@ -54,7 +56,7 @@ function ExamReview() {
           </div>
           <div className="flex w-full flex-col gap-6">
             {/* Text1 */}
-            <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-end animate-fade-right">
+            <div className="flex animate-fade-right flex-row items-start justify-center gap-2 sm:gap-8 md:justify-end">
               <Image
                 src={HandPointer}
                 alt="icon"
@@ -69,7 +71,7 @@ function ExamReview() {
               </p>
             </div>
             {/* Text2 */}
-            <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-end animate-fade-right">
+            <div className="flex animate-fade-right flex-row items-start justify-center gap-2 sm:gap-8 md:justify-end">
               <Image
                 src={HandPointer}
                 alt="icon"
@@ -85,7 +87,7 @@ function ExamReview() {
           </div>
         </div>
 
-        <div className="flex h-fit w-full flex-col gap-4  md:w-[50%]">
+        <div className="flex h-fit w-full flex-col gap-4 md:w-[50%]">
           <div className="flex w-full items-end justify-center gap-2 sm:gap-8 md:justify-start">
             {/* board */}
             <div className="h-[150px] w-[80%] animate-flip-down rounded-[20px] border-2 border-black bg-[#65CCA0] p-3 shadow-3d sm:h-[160px] sm:w-[400px] sm:p-4 lg:h-[200px] lg:p-6">
@@ -104,18 +106,23 @@ function ExamReview() {
                   </div>
                   <div className="flex h-[50%] w-full flex-col gap-1">
                     <div className="flex w-full items-center gap-2">
-                        <div className="text-center rounded-xl border-2 flex items-center justify-center border-black w-4 h-4 bg-white text-[10px] animate-fade-right ">A</div>
-                        <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
+                      <div className="flex h-4 w-4 animate-fade-right items-center justify-center rounded-xl border-2 border-black bg-white text-center text-[10px]">
+                        A
+                      </div>
+                      <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
                     </div>
                     <div className="flex w-full items-center gap-2">
-                        <div className="text-center rounded-xl border-2 flex items-center justify-center border-black w-4 h-4 bg-white text-[10px] animate-fade-right">B</div>
-                        <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
+                      <div className="flex h-4 w-4 animate-fade-right items-center justify-center rounded-xl border-2 border-black bg-white text-center text-[10px]">
+                        B
+                      </div>
+                      <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
                     </div>
                     <div className="flex w-full items-center gap-2">
-                        <div className="text-center rounded-xl border-2 flex items-center justify-center border-black w-4 h-4 bg-white text-[10px] animate-fade-right">C</div>
-                        <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
+                      <div className="flex h-4 w-4 animate-fade-right items-center justify-center rounded-xl border-2 border-black bg-white text-center text-[10px]">
+                        C
+                      </div>
+                      <div className="h-3 w-[60%] animate-fade-right rounded-lg bg-gray-600"></div>
                     </div>
-                    
                   </div>
                 </div>
                 <div className="flex h-[80%] w-[30%] flex-col gap-2 rounded-lg border-2 border-black bg-white p-2">
@@ -146,20 +153,23 @@ function ExamReview() {
                 width={200}
                 className="h-[100px] w-[100px] scale-x-[-1]"
               />
+              {/* <Hourse3 /> */}
             </div>
           </div>
           <div className="flex w-full flex-col gap-6">
             {/* Text1 */}
-            <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start animate-fade-left">
+            <div className="flex animate-fade-left flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start">
               <p className="max-w-[400px] text-end text-sm sm:text-base">
-              Khu vực ôn thi hỗ trợ trò chuyện, giúp bạn trao đổi và tìm hiểu thông tin một cách dễ dàng và nhanh chóng.
+                Khu vực ôn thi hỗ trợ trò chuyện, giúp bạn trao đổi và tìm hiểu
+                thông tin một cách dễ dàng và nhanh chóng.
               </p>
               <Image src={HandPointer} alt="icon" width={24} height={24} />
             </div>
             {/* Text2 */}
-            <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start animate-fade-left">
+            <div className="flex animate-fade-left flex-row items-start justify-center gap-2 sm:gap-8 md:justify-start">
               <p className="max-w-[400px] text-end text-sm sm:text-base">
-              Tổ chức phòng ôn thi theo từng bộ môn và bộ đề được cung cấp sẵn, giúp bạn tập trung học tập và ôn luyện một cách hiệu quả.
+                Tổ chức phòng ôn thi theo từng bộ môn và bộ đề được cung cấp
+                sẵn, giúp bạn tập trung học tập và ôn luyện một cách hiệu quả.
               </p>
               <Image src={HandPointer} alt="icon" width={24} height={24} />
             </div>

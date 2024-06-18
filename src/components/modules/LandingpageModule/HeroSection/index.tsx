@@ -7,9 +7,14 @@ import { Button } from "@/components/ui/button";
 import ButtonArrow from "@public/svgr/ButtonArrow";
 import Scopy1 from "@public/svgr/Scopy1";
 import Scopy2 from "@public/svgr/Scopy2";
-import Arrow_subcribe from "@public/svgr/ArrowSubcribe";
+import ArrowSubcribe from "@public/svgr/ArrowSubcribe";
 import Mouse from "@public/svgr/Mouse";
 import Fly from "@public/svgr/Fly";
+import Cat1 from "./Cat1";
+import Cat2 from "./Cat2";
+import Hourse1 from "./Hourse1";
+import Hourse2 from "./Hourse2";
+import Image from "next/image";
 
 function HeroSection() {
   const ref = useRef(null);
@@ -63,50 +68,64 @@ function HeroSection() {
           <div className="">
             <motion.div
               initial={{
-                y: 200,
+                x: -200,
+                y: -100,
                 opacity: 0,
               }}
               animate={{
+                x: 0,
                 y: 0,
                 opacity: 1,
+                type: "spring",
                 transition: {
                   delay: 0,
-                  duration: 0.5,
+                  duration: 4,
+                  ease: "linear",
                 },
               }}
               style={{ translateY, opacity }}
-              className="md:left-5lg:bottom-16 absolute bottom-0 hidden transform transition-all duration-700 sm:-bottom-8 sm:-left-3 sm:block md:bottom-3 lg:left-16"
+              className="absolute bottom-0 hidden transform sm:-bottom-8 sm:-left-3 sm:block md:bottom-3 md:left-5 lg:bottom-16 lg:left-16"
             >
-              <Scopy1 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" />
+              {/* <Scopy1 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" /> */}
+              {/* <Cat1 /> */}
+              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md"></div>
+              <Hourse1 />
             </motion.div>
             <motion.div
               initial={{
-                y: 200,
+                x: 200,
+                y: -100,
                 opacity: 0,
               }}
               animate={{
+                x: 0,
                 y: 0,
                 opacity: 1,
-
+                type: "spring",
                 transition: {
                   delay: 0,
-                  duration: 0.5,
+                  duration: 4,
+                  ease: "linear",
                 },
               }}
               style={{ translateY, opacity }}
-              className="md:right-3lg:bottom-16 absolute bottom-0 hidden transition-all duration-700 sm:-bottom-8 sm:-right-6 sm:block md:bottom-3 lg:right-14"
+              className="absolute bottom-0 hidden sm:-bottom-8 sm:-right-6 sm:block md:bottom-3 md:right-3 lg:bottom-16 lg:right-14"
             >
-              <Scopy2 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" />
+              {/* <Scopy2 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" /> */}
+              {/* <Cat2 /> */}
+              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md"></div>
+              <Hourse2 />
             </motion.div>
-            <span className="absolute top-1/2 hidden scale-50 transition-all duration-700 md:right-36 md:block md:-translate-y-1/2 md:scale-75 lg:right-32 lg:-translate-y-[110%] lg:scale-100">
-              <Arrow_subcribe />
+            <span className="absolute top-1/2 hidden scale-50 transition-all duration-700 md:right-36 md:block md:-translate-y-1/2 md:scale-75 lg:right-28 lg:-translate-y-[200%] lg:scale-100">
+              <ArrowSubcribe />
+              {/* <Image alt="" src={"/arr.svg"} width={80} height={80} /> */}
             </span>
-            <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
+            {/* <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
               <Mouse />
             </span>
             <span className="absolute -top-16 left-20 scale-50 transition-all duration-700 sm:-top-12 sm:left-40 md:-top-6 md:left-52 md:scale-75 lg:left-52 lg:top-2 lg:scale-100 xl:left-80 xl:top-5">
               <Fly />
-            </span>
+            </span> */}
           </div>
         </motion.div>
       </div>
