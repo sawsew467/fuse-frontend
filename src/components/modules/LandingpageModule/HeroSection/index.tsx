@@ -28,10 +28,11 @@ function HeroSection() {
   const translateY = useTransform(scrollYProgress, [0, 0.75, 1], [0, 0, 200]);
 
   return (
-    <section className="w-full">
+    <section className="w-full" id="home">
       <div className="mx-auto max-w-[1400px] overflow-hidden">
         <motion.div
           ref={ref}
+          id="#"
           className="container relative flex flex-col items-center px-5 py-10 pt-16 sm:px-8 sm:pt-20 md:px-10 md:pb-28 md:pt-28 lg:px-[60px] lg:pb-32 lg:pt-36 xl:pb-36 xl:pt-48"
         >
           <motion.div className="flex flex-col items-center">

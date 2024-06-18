@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AppProgressBar } from "next-nprogress-bar";
 
 import { headerItems } from "@/data/headerItems";
 import { cn } from "@/lib/utils";
@@ -12,39 +11,39 @@ import { Button } from "@/components/ui/button";
 import ButtonArrow from "@public/svgr/ButtonArrow";
 import Logo from "@public/svgr/Logo";
 import ChevRight from "@public/svgr/ChevRight";
+import Nav from "@/components/modules/Header/Nav";
+import Image from "next/image";
+import Header from "@/components/modules/Header";
 
 function GuestHeader() {
-  const [headerClicked, setHeaderClicked] = useState("/");
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
+
+  const handleResize = useCallback(() => {
+    setIsHambugerClicked(false);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  const handleHiddenHeader = () => {
+    setIsHambugerClicked(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleHiddenHeader);
+    return () => {
+      window.removeEventListener("scroll", handleHiddenHeader);
+    };
+  }, [isHambugerClicked]);
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full bg-background py-4">
-        <AppProgressBar
-          height="4px"
-          color="#FF9966"
-          options={{ showSpinner: false }}
-          shallowRouting
-        />
-        <div className="container flex justify-between px-5 sm:px-8 md:px-10 lg:px-[60px]">
+      <Header isHambugerClicked={isHambugerClicked}>
+        <div className="container z-50 flex justify-between px-5 sm:px-8 md:px-10 lg:px-[60px]">
           <Logo />
-          <ul className="hidden gap-8 md:flex lg:gap-12">
-            {headerItems?.map((item, index) => (
-              <li
-                onClick={() => setHeaderClicked(item.href)}
-                key={index}
-                className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-1 text-xs md:text-sm lg:text-base"
-              >
-                <span>{item?.label}</span>
-                <div
-                  className={cn(
-                    "h-[2px] w-14 transition-all",
-                    item?.href === headerClicked && "bg-primary",
-                  )}
-                ></div>
-              </li>
-            ))}
-          </ul>
+          <Nav headerItems={headerItems} />
           <div className="gap:3 hidden md:flex lg:gap-6">
             <Link href="/sign-in">
               <Button variant="link">Đăng nhập</Button>
@@ -70,23 +69,35 @@ function GuestHeader() {
             </Button>
           </div>
         </div>
-      </header>
+      </Header>
       <div
         className={cn(
-          "fixed left-0 right-0 top-[72px] z-40 h-[calc(100vh-72px)] overflow-y-hidden bg-background transition-all",
+          "fixed left-0 right-0 top-0 z-40 block h-full overflow-y-hidden bg-background transition-all duration-500 lg:hidden",
           !isHambugerClicked ? "translate-y-[-100%]" : "translate-y-[0]",
         )}
       >
-        <ul className="container px-5 sm:px-8 md:px-10 lg:px-[60px]">
+        <span className="absolute -bottom-2 left-0 z-10 h-2 w-full">
+          <Image
+            src="/wave.svg"
+            alt=""
+            width={1440}
+            height={8}
+            className="h-full w-full object-cover"
+          />
+        </span>
+        <ul className="container px-5 pt-24 sm:px-8 md:px-10 lg:px-[60px]">
           {headerItems?.map((item) => (
-            <li
+            <Link
+              href={item.href}
               key={item?.label}
               className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 text-xs transition-all hover:bg-[#DCDAD3]"
-              onClick={() => setIsHambugerClicked(false)}
+              onClick={() => {
+                setIsHambugerClicked(false);
+              }}
             >
               <span>{item?.label}</span>
               <ChevRight />
-            </li>
+            </Link>
           ))}
           <div className="mt-4 space-y-4">
             <Button className="flex w-full gap-1" variant="outline" haveOverlay>
