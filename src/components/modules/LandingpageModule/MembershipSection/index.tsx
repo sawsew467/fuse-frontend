@@ -9,11 +9,12 @@ const data = [
     id: 1,
     title: "Miễn phí",
     description:
-      "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
+      "Hoàn hảo để dùng thử các tính năng cơ bản hoặc bắt đầu với học nhóm",
     price: 0,
     features: [
-      "Up to 50 active contacts per month",
-      "Up to 50 active contacts per month",
+      "50 trong mỗi nhóm học",
+      "Truy cập tài liệu cơ bản",
+      "Hỗ trợ email cơ bản",
     ],
     labelColor: "#fff7ad",
     animate: {
@@ -26,12 +27,13 @@ const data = [
     id: 2,
     title: "Nâng cao",
     description:
-      "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
+      "Phù hợp để mở rộng nhóm học và sử dụng các tính năng nâng cao",
     price: 100000,
     features: [
-      "Up to 50 active contacts per month",
-      "Up to 50 active contacts per month",
-      "Up to 50 active contacts per month",
+      "100 trong mỗi nhóm học",
+      "Truy cập tài liệu nâng cao",
+      "Hỗ trợ email và chat",
+      "Tạo bài kiểm tra trực tuyến",
     ],
     isBestSeller: true,
     labelColor: "#ceceff",
@@ -45,11 +47,12 @@ const data = [
     id: 3,
     title: "Chuyên nghiệp",
     description:
-      "Hoàn hảo để dùng thử Tương phản hoặc bắt đầu với hội thảo trên web",
+      "Dành cho những nhóm học chuyên sâu với các nhu cầu học tập cao hơn",
     price: 500000,
     features: [
-      "Up to 50 active contacts per month",
-      "Up to 50 active contacts per month",
+      "200 trong mỗi nhóm học",
+      "Hỗ trợ ưu tiên",
+      "Phân tích tiến độ học tập",
     ],
     labelColor: "#ffecee",
     animate: {

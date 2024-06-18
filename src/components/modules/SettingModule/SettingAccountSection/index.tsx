@@ -2,7 +2,7 @@ import InputLayout from '@/components/modules/SettingModule/inputLayout'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
-function SettingAcount() {
+function SettingAcountSection() {
   return (
     <>
       <h3 className='mb-3 text-left font-title text-xl font-bold sm:mb-4 sm:text-xl md:mb-5 md:text-2xl lg:mb-6 lg:text-3xl'>
@@ -31,4 +31,4 @@ function SettingAcount() {
   )
 }
 
-export default SettingAcount
+export default SettingAcountSection

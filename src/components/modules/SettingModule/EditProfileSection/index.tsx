@@ -3,10 +3,10 @@ import React from 'react'
 import InputLayout from '@/components/modules/SettingModule/inputLayout';
 import TextAreaLayout from "@/components/modules/SettingModule/textAreaLayout";
 import SelectLayout from '@/components/modules/SettingModule/selectLayout';
-import { CalendarForm } from '@/components/modules/SettingModule/EditProfile/calendar';
+import { CalendarForm } from '@/components/modules/SettingModule/EditProfileSection/calendar';
 import { Button } from '@/components/ui/button';
 
-// interface EditProfileProps {
+// interface EditProfileSectionProps {
 //     majors: {
 //         label: string,
 //         items: {
@@ -56,30 +56,30 @@ const semesters = [
     {
         label: "Năm Nhất",
         items: [
-            { value: "sm1", label: "Kỳ Chuyên Ngành 1" },
-            { value: "sm2", label: "Kỳ Chuyên Ngành 2" },
-            { value: "sm3", label: "Kỳ Chuyên Ngành 3" },
+            { value: "sm1", label: "Kỳ chuyên ngành 1" },
+            { value: "sm2", label: "Kỳ chuyên ngành 2" },
+            { value: "sm3", label: "Kỳ chuyên ngành 3" },
         ],
     },
     {
         label: "Năm Hai",
         items: [
-            { value: "sm4", label: "Kỳ Chuyên Ngành 4" },
-            { value: "sm5", label: "Kỳ Chuyên Ngành 5" },
-            { value: "sm6", label: "Kỳ Chuyên Ngành 6" },
+            { value: "sm4", label: "Kỳ chuyên ngành 4" },
+            { value: "sm5", label: "Kỳ chuyên ngành 5" },
+            { value: "sm6", label: "Kỳ chuyên ngành 6" },
         ],
     },
     {
         label: "Năm Ba",
         items: [
-            { value: "sm7", label: "Kỳ Chuyên Ngành 7" },
-            { value: "sm8", label: "Kỳ Chuyên Ngành 8" },
-            { value: "sm9", label: "Kỳ Chuyên Ngành 9" },
+            { value: "sm7", label: "Kỳ chuyên ngành 7" },
+            { value: "sm8", label: "Kỳ chuyên ngành 8" },
+            { value: "sm9", label: "Kỳ chuyên ngành 9" },
         ],
     },
 ];
 
-function EditProfile() {
+function EditProfileSection() {
     return (
         <div className=''>
             <h3 className='mb-3 text-left font-title text-xl font-bold sm:mb-4 sm:text-xl md:mb-5 md:text-2xl lg:mb-6 lg:text-3xl'>
@@ -112,4 +112,4 @@ function EditProfile() {
     )
 }
 
-export default EditProfile
+export default EditProfileSection

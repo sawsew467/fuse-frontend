@@ -1,4 +1,4 @@
-import SettingModule from "@/components/modules/SettingModule";
+import EditProfilePage from "@/components/modules/SettingModule/EditProfilePage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function EditPage() {
-  return <SettingModule></SettingModule>;
+  return <EditProfilePage></EditProfilePage>;
 }

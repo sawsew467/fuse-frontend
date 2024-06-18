@@ -15,21 +15,18 @@ function DashBoard() {
                     className='aspect-square object-cover rounded-full'
                 />
                 <div className='flex flex-col justify-center '>
-                    <h5 className=''>Trần Văn Bảo Thắng</h5>
+                    <h5 className='font-semibold'>Trần Văn Bảo Thắng</h5>
                     <span>@SawSew467</span>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
                 <Button className='' haveOverlay>
-                    <Link href="">
+                    <Link href="/settings/edit-profile">
                         <span>Hồ sơ</span>
                     </Link>
                 </Button>
-                {/* <Button className='w-full bg-secondary' haveOverlay>
-                    <span>Thông báo</span>
-                </Button> */}
                 <Button className='bg-secondary' haveOverlay>
-                    <Link href="">
+                    <Link href="/settings/setting-account">
                         <span>Cài đặt</span>
                     </Link>
                 </Button>

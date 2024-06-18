@@ -1,10 +1,9 @@
 'use client'
 
 import DashBoard from '@/components/modules/SettingModule/DashBoard';
-import EditProfile from '@/components/modules/SettingModule/EditProfile';
-import SettingAcount from '@/components/modules/SettingModule/SettingAcount';
+import SettingAcount from '@/components/modules/SettingModule/SettingAccountSection';
 
-function EditModule() {
+function SettingAccountPage() {
 
     return (
         <div className='container px-[60px] py-16'>
@@ -13,12 +12,11 @@ function EditModule() {
                     <DashBoard />
                 </div>
                 <div className='col-start-2 col-end-5 p-6 rounded-lg border-2 border-black bg-white shadow-3d transition-all '>
-                    <EditProfile />
-                    {/* <SettingAcount /> */}
+                    <SettingAcount />
                 </div>
             </div>
         </div>
     )
 }
 
-export default EditModule;
+export default SettingAccountPage;
