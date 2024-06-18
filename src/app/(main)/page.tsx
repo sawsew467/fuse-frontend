@@ -1,5 +1,4 @@
 import LandingpageModule from "@/components/modules/LandingpageModule";
-import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

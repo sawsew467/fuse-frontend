@@ -203,16 +203,18 @@ function BenefitSection() {
           ))}
         </ul>
       </div>
-      <Section
-        title="Và còn nhiều hơn thế nữa"
-        subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"
-      >
-        <div className="grid grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((item, index) => (
-            <Card key={index} data={item} ref={ref} />
-          ))}
-        </div>
-      </Section>
+      <div className="-mb-20">
+        <Section
+          title="Và còn nhiều hơn thế nữa"
+          subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"
+        >
+          <div className="grid grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            {data.map((item, index) => (
+              <Card key={index} data={item} ref={ref} />
+            ))}
+          </div>
+        </Section>
+      </div>
     </div>
   );
 }

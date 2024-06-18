@@ -37,8 +37,6 @@ function UserHeader() {
     window.location.reload();
   };
 
-  console.log(userInfo);
-
   return (
     <>
       <header className="fixed left-0 top-0 z-50 w-full bg-background py-4">
