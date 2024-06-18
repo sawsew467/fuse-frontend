@@ -42,6 +42,19 @@ function Card({ data, ref, hidden }: CardProps) {
     [1, 1, 0],
   );
 
+  const highlightFeature = (feature: string) => {
+    const [quantity, ...rest] = feature.split(" ");
+    return (
+      <div className="inline text-xs md:text-sm lg:text-base">
+        {quantity}{" "}
+        <span className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
+          thành viên
+        </span>{" "}
+        {rest.join(" ")}
+      </div>
+    );
+  };
+
   return (
     <motion.div
       style={{ translateY, opacity }}
@@ -64,9 +77,9 @@ function Card({ data, ref, hidden }: CardProps) {
           "relative min-h-32 flex-1 rounded-3xl border-2 border-black bg-white p-4 transition-all duration-500 sm:p-6 md:p-8 lg:p-10",
           data?.id === 2 && "lg:hover:-translate-y-3 lg:hover:scale-[1.025]",
           data?.id === 1 &&
-            "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+          "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           data?.id === 3 &&
-            "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+          "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           "shadow-3d hover:shadow-3d-hover",
         )}
       >
@@ -115,15 +128,9 @@ function Card({ data, ref, hidden }: CardProps) {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <div className="inline text-xs md:text-sm lg:text-base">
-              Up to 50{" "}
-              <p className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
-                active contacts
-              </p>{" "}
-              per month
-            </div>
+            {highlightFeature(data.features[0])}
           </li>
-          {data?.features.map((item) => (
+          {data?.features.slice(1).map((item) => (
             <li key={item} className="flex items-center gap-4">
               <svg
                 width="10"
