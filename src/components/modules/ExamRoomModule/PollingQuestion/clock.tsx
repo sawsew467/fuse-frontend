@@ -64,7 +64,7 @@ const Clock: React.FC<{ remainingTime: number }> = ({ remainingTime }) => {
           colorsTime={[10, 6, 3, 0]}
           strokeWidth={40}
           trailStrokeWidth={40}
-          size={150}
+          size={190}
           strokeLinecap="butt"
         >
           {renderTime}

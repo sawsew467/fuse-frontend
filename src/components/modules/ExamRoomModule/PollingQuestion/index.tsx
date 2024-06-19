@@ -4,6 +4,7 @@ import Chart from "@public/svgr/Chart";
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import Clock from "./clock";
+import ProcessStress from "../test";
 interface PollOption {
   id: number;
   text: string;
@@ -136,7 +137,7 @@ const QuestionPulling = (PollData: Poll) => {
             }
             alt={"background room"}
           />
-          <div className="w-1/6 content-center">Answered</div>
+         <ProcessStress/>
         </div>
         <div className="flex w-full flex-wrap justify-center gap-4 font-title">
           {poll?.options?.map((option) => (

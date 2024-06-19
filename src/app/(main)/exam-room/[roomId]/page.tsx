@@ -10,4 +10,4 @@ export const metadata: Metadata = {
 
 export default function ExamRoom() {
   return <ExamRoomModule/>;
-}
+}   
