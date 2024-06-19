@@ -7,7 +7,9 @@ function UserProfileModule() {
   return (
     <div className='container px-[60px] py-16'>
       <div className='flex flex-col gap-4'>
-        <PersonalInformation />
+        <div className="px-48 py-0">
+          <PersonalInformation />
+        </div>
         <Achievements />
       </div>
     </div>
