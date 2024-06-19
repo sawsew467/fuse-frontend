@@ -14,9 +14,12 @@ import ChevRight from "@public/svgr/ChevRight";
 import Nav from "@/components/modules/Header/Nav";
 import Image from "next/image";
 import Header from "@/components/modules/Header";
+import { useRouter } from "next-nprogress-bar";
 
 function GuestHeader() {
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
+
+  const router = useRouter();
 
   const handleResize = useCallback(() => {
     setIsHambugerClicked(false);
@@ -100,10 +103,23 @@ function GuestHeader() {
             </Link>
           ))}
           <div className="mt-4 space-y-4">
-            <Button className="flex w-full gap-1" variant="outline" haveOverlay>
+            <Button
+              onClick={() => {
+                router.push("/sign-in");
+              }}
+              className="flex w-full gap-1"
+              variant="outline"
+              haveOverlay
+            >
               Đăng nhập
             </Button>
-            <Button className="flex w-full gap-1" haveOverlay>
+            <Button
+              onClick={() => {
+                router.push("/sign-up");
+              }}
+              className="flex w-full gap-1"
+              haveOverlay
+            >
               <span>Đăng ký</span>
               <ButtonArrow />
             </Button>

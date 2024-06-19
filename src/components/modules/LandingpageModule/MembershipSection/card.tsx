@@ -33,14 +33,10 @@ function Card({ data, ref, hidden }: CardProps) {
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.6 : 0.04, 1],
+    [0, 0.005, 0.5],
     [0, 0, 2000],
   );
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, hidden ? 0.6 : 0.04, hidden ? 1 : 0.1],
-    [1, 1, 0],
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.005, 0.1], [1, 1, 0]);
 
   const highlightFeature = (feature: string) => {
     const [quantity, ...rest] = feature.split(" ");
@@ -57,7 +53,10 @@ function Card({ data, ref, hidden }: CardProps) {
 
   return (
     <motion.div
-      style={{ translateY, opacity }}
+      style={{
+        translateY: hidden ? 0 : translateY,
+        opacity: hidden ? 1 : opacity,
+      }}
       initial={data.animate}
       whileInView={{
         x: 0,
@@ -77,9 +76,9 @@ function Card({ data, ref, hidden }: CardProps) {
           "relative min-h-32 flex-1 rounded-3xl border-2 border-black bg-white p-4 transition-all duration-500 sm:p-6 md:p-8 lg:p-10",
           data?.id === 2 && "lg:hover:-translate-y-3 lg:hover:scale-[1.025]",
           data?.id === 1 &&
-          "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+            "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           data?.id === 3 &&
-          "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+            "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           "shadow-3d hover:shadow-3d-hover",
         )}
       >

@@ -7,15 +7,15 @@ import Section from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-import management from "@public/images/management.png";
-import security from "@public/images/security.png";
-import setting from "@public/images/setting.png";
-import support from "@public/images/support.png";
-import technology from "@public/images/technology.png";
-import touch_real_time from "@public/images/touch_real_time.png";
-import fast_easy from "@public/images/fast_easy.png";
-import effective from "@public/images/effective.png";
-import lovely from "@public/images/lovely.png";
+import managements from "@public/images/management.svg";
+import security from "@public/images/security.svg";
+import effective from "@public/images/effective.svg";
+import support from "@public/images/Support.svg";
+import fast_easy from "@public/images/fast_easy.svg";
+import infinity from "@public/images/infinity.svg";
+import lovely from "@public/images/lovely.svg";
+import setting from "@public/images/setting.svg";
+import touch_real_time from "@public/images/touch_real_time.svg";
 
 const data = [
   {
@@ -28,7 +28,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={management}
+        src={managements}
         alt="quản lí"
         width={100}
         height={100}
@@ -46,7 +46,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={technology}
+        src={infinity}
         alt="quản lí"
         width={100}
         height={100}
@@ -130,19 +130,22 @@ const data = [
 
 const benefits = [
   {
-    image: fast_easy,
+    image:
+    fast_easy,
     title: "Nhanh chóng và dễ dàng",
     description:
       "Nhanh chóng và dễ dàng để bạn có thể dành thời gian tạo nội dung tuyệt vời. Dễ dàng vì không ai thích sự khó khăn.",
   },
   {
-    image: effective,
+    image:
+    effective,
     title: "Hiệu quả và linh hoạt",
     description:
       "Hiệu quả và linh hoạt để đáp ứng mọi nhu cầu của bạn. Linh hoạt để bạn có thể làm việc theo cách của mình.",
   },
   {
-    image: lovely,
+    image:
+    lovely,
     title: "Được yêu thích và tin tưởng",
     description:
       "Được yêu thích và tin tưởng bởi hàng triệu người dùng trên toàn thế giới. Tin tưởng để bạn biết rằng dữ liệu của bạn an toàn.",
@@ -240,7 +243,7 @@ function BenefitSection() {
           ))}
         </ul>
       </div>
-      <div className="-mb-20">
+      <div className="mb-20">
         <Section
           title="Và còn nhiều hơn thế nữa"
           subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"

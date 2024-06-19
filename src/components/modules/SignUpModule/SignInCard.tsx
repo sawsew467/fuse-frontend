@@ -57,9 +57,6 @@ export function SignInCard({
         "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform backdrop-blur-sm transition-all duration-500",
         "z-10",
         mode === "SIGNIN" ? "z-50" : "z-40",
-        mode === "SIGNIN"
-          ? "opacity-100"
-          : "-translate-x-2/3 -translate-y-2/3 opacity-0",
       )}
     >
       <Logo />
