@@ -7,16 +7,16 @@ import Section from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-import management from "@public/images/management.png";
-import security from "@public/images/security.png";
-import setting from "@public/images/setting.png";
-import support from "@public/images/support.png";
-import technology from "@public/images/technology.png";
-import touch_real_time from "@public/images/touch_real_time.png";
+import management from "@public/images/managements.PNG";
+import security from "@public/images/securitys.PNG";
+import setting from "@public/images/settings.PNG";
+import support from "@public/images/support_1.PNG";
+import technology from "@public/images/tech.PNG";
+import touch_real_time from "@public/images/touch.PNG";
 
-import fast_easy from "@public/images/benefit1.png";
-import effective from "@public/images/benefit2.png";
-import lovely from "@public/images/benefit3.png";
+import fast_easy from "@public/images/benefit_1.PNG";
+import effective from "@public/images/benefit_2.PNG";
+import lovely from "@public/images/benefit_3.PNG";
 
 const data = [
   {
