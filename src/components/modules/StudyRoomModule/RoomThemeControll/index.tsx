@@ -41,10 +41,10 @@ function RoomThemeControll() {
       setCurrentTime(timeString);
     };
 
-    updateTime(); // Initial call to set the time immediately
-    const intervalId = setInterval(updateTime, 1000); // Update time every second
+    updateTime(); 
+    const intervalId = setInterval(updateTime, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId); 
   }, []);
 
   const handleScroll = () => {

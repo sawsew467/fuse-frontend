@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
 import { actionSetMute } from "@/store/slices/studyRoomController";
+import { useRouter } from "next-nprogress-bar";
 
 type TProps = {
 };
@@ -39,12 +40,13 @@ function ProfileMainBoard({}: TProps) {
       screenfull.toggle();
     }
   };
+  const router = useRouter();
   return (
     <div className="absolute right-4 top-4">
       <div className="flex flex-row gap-6">
         <div className=" border-2 border-black transition hover:shadow-3d-hover relative z-10 flex flex-row items-center rounded-lg backdrop-blur-sm bg-white/80 p-2">
           <div className="px-2">
-            <button className="flex flex-row-reverse items-center gap-2 rounded-md px-2 py-1 text-sm outline-none transition hover:bg-secondary">
+            <button className="flex flex-row-reverse items-center gap-2 rounded-md px-2 py-1 text-sm outline-none transition hover:bg-secondary" onClick={() => {router.push("/video-call/any")}}>
               <p>Video call</p>
               <Image
                 src={VideoCallIcon}
@@ -63,7 +65,7 @@ function ProfileMainBoard({}: TProps) {
                   Phòng của Vũ
                 </button>
               </DropdownMenu.Trigger>
-              <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200">
+              <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
                 <DropdownMenu.Label className="font-bold">
                   🐸 Người tham gia
                 </DropdownMenu.Label>
@@ -98,7 +100,7 @@ function ProfileMainBoard({}: TProps) {
                   Invite
                 </button>
               </DropdownMenu.Trigger>
-              <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200">
+              <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
                 <DropdownMenu.Label className="font-bold">
                   Mời bạn bè
                 </DropdownMenu.Label>
@@ -126,7 +128,7 @@ function ProfileMainBoard({}: TProps) {
           </div>
         </div>
 
-        <div className="relative z-10 flex flex-row items-center gap-4 rounded-lg backdrop-blur-sm bg-white/80 p-2">
+        <div className="relative z-10 flex flex-row items-center gap-4 rounded-lg backdrop-blur-sm bg-white/80 p-2 border-2 border-black hover:shadow-3d-hover">
           <div className="flex flex-row-reverse gap-2 border-r-2 px-2">
             <button
               className="flex h-[30px] w-[30px] items-center justify-center rounded-md outline-none transition hover:bg-secondary"
@@ -151,7 +153,7 @@ function ProfileMainBoard({}: TProps) {
                     className="h-[20px] w-[20px] cursor-pointer"
                   />
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content className="z-10 mr-4 mt-4 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200">
+                <DropdownMenu.Content className="z-10 mr-4 mt-4 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black  hover:shadow-3d-hover">
                   <DropdownMenu.Label className="text-start font-bold">
                     Thông báo
                   </DropdownMenu.Label>
@@ -199,7 +201,7 @@ function ProfileMainBoard({}: TProps) {
                   className="h-[30px] w-[30px] rounded-[50%]"
                 />
               </DropdownMenu.Trigger>
-              <DropdownMenu.Content className="z-10 mr-4 mt-3 flex w-fit animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200">
+              <DropdownMenu.Content className="z-10 mr-4 mt-3 flex w-fit animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
                 <DropdownMenu.Label className="font-bold">
                   Tài khoản
                 </DropdownMenu.Label>
