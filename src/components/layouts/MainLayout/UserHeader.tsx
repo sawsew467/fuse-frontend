@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { AppProgressBar } from "next-nprogress-bar";
 
 import { headerUser } from "@/data/headerItems";
 import { cn } from "@/lib/utils";
@@ -25,30 +24,42 @@ import { CustomInput } from "@/components/ui/customInput";
 import { LogOutIcon, Plus, Settings, User } from "lucide-react";
 import webStorageClient from "@/utils/webStorageClient";
 import { useAppSelector } from "@/hooks/redux-toolkit";
+import Nav from "@/components/modules/Header/Nav";
+import Header from "@/components/modules/Header";
 
 function UserHeader() {
-  const [headerClicked, setHeaderClicked] = useState("/");
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
 
   const { userInfo } = useAppSelector((state) => state.auth);
 
+  const handleResize = useCallback(() => {
+    setIsHambugerClicked(false);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
   const logout = () => {
     webStorageClient.removeAll();
     window.location.reload();
   };
 
-  console.log(userInfo);
+  const handleHiddenHeader = () => {
+    setIsHambugerClicked(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleHiddenHeader);
+    return () => {
+      window.removeEventListener("scroll", handleHiddenHeader);
+    };
+  }, [isHambugerClicked]);
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full bg-background py-4">
-        <AppProgressBar
-          height="4px"
-          color="#FF9966"
-          options={{ showSpinner: false }}
-          shallowRouting
-        />
-        <div className="container flex items-center justify-between gap-[52px] px-5 sm:px-8 md:px-10 lg:px-[60px]">
+      <Header isHambugerClicked={isHambugerClicked}>
+        <div className="container flex items-center justify-between gap-[50px] px-5 sm:px-8 md:px-10 lg:px-[60px]">
           <div className="flex lg:hidden">
             <Button
               variant={!isHambugerClicked ? "outline" : "default"}
@@ -63,23 +74,7 @@ function UserHeader() {
             </Button>
           </div>
           <Logo />
-          <ul className="hidden gap-8 lg:flex lg:gap-12">
-            {headerUser?.map((item, index) => (
-              <li
-                onClick={() => setHeaderClicked(item.href)}
-                key={index}
-                className="mt-2 flex cursor-pointer flex-col items-center justify-center gap-1 text-xs md:text-sm lg:text-base"
-              >
-                <span>{item?.label}</span>
-                <div
-                  className={cn(
-                    "h-[2px] w-14 transition-all",
-                    item?.href === headerClicked && "bg-primary",
-                  )}
-                ></div>
-              </li>
-            ))}
-          </ul>
+          <Nav headerItems={headerUser} />
           <div className="hidden flex-1 lg:block">
             <CustomInput
               className="w-full flex-1 rounded-full border-[#C1C1C1] bg-white"
@@ -123,7 +118,7 @@ function UserHeader() {
                   className="rounded-full border-2 border-black"
                 />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="-translate-x-5 lg:-translate-x-1/4">
+              <DropdownMenuContent className="-translate-x-5 shadow-3d lg:-translate-x-1/4">
                 <DropdownMenuLabel>
                   <div className="flex items-center gap-2">
                     <Image
@@ -167,23 +162,35 @@ function UserHeader() {
             </DropdownMenu>
           </div>
         </div>
-      </header>
+      </Header>
       <div
         className={cn(
-          "fixed left-0 right-0 top-[72px] z-40 block h-[calc(100vh-72px)] overflow-y-hidden bg-background transition-all lg:hidden",
+          "fixed left-0 right-0 top-0 z-40 block h-full overflow-y-hidden bg-background transition-all lg:hidden",
           !isHambugerClicked ? "translate-y-[-100%]" : "translate-y-[0]",
         )}
       >
-        <ul className="container px-5 sm:px-8 md:px-10 lg:px-[60px]">
+        <span className="absolute -bottom-2 left-0 z-10 h-2 w-full">
+          <Image
+            src="/wave.svg"
+            alt=""
+            width={1440}
+            height={8}
+            className="h-full w-full object-cover"
+          />
+        </span>
+        <ul className="container px-5 pt-24 sm:px-8 md:px-10 lg:px-[60px]">
           {headerUser?.map((item) => (
-            <li
+            <Link
+              href={item.href}
               key={item?.label}
               className="flex cursor-pointer items-center justify-between gap-4 rounded-md px-5 py-4 text-xs transition-all hover:bg-[#DCDAD3]"
-              onClick={() => setIsHambugerClicked(false)}
+              onClick={() => {
+                setIsHambugerClicked(false);
+              }}
             >
               <span>{item?.label}</span>
               <ChevRight />
-            </li>
+            </Link>
           ))}
         </ul>
         <div className="mt-2 flex-1 px-10">

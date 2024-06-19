@@ -42,8 +42,6 @@ export function SignUpCard({
   });
 
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
-    console.log(data);
-
     toast({
       title: "Đăng nhập thất bại",
       description: "Sai thông tin đăng nhập",
