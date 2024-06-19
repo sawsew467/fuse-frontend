@@ -137,4 +137,17 @@ html {
   }
 }
 
-/* *{border: 1px solid black;} */
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+ 
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
+}
+
