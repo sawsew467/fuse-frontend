@@ -13,9 +13,10 @@ import setting from "@public/images/setting.png";
 import support from "@public/images/support.png";
 import technology from "@public/images/technology.png";
 import touch_real_time from "@public/images/touch_real_time.png";
-import fast_easy from "@public/images/fast_easy.png";
-import effective from "@public/images/effective.png";
-import lovely from "@public/images/lovely.png";
+
+import fast_easy from "@public/images/benefit1.png";
+import effective from "@public/images/benefit2.png";
+import lovely from "@public/images/benefit3.png";
 
 const data = [
   {
