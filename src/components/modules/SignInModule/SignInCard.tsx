@@ -85,7 +85,8 @@ export function SignInCard({
         rotateY: mode === "SIGNIN" ? 0 : 180,
         translateZ: mode === "SIGNIN" ? 0 : -100,
         zIndex: mode === "SIGNIN" ? 50 : 40,
-        scale: mode === "SIGNIN" ?[0.75, 1] : [1, 0.75],
+        scale: mode === "SIGNIN" ? [0.75, 1] : [1, 0.75],
+        opacity: mode === "SIGNIN" ? 1 : 0,
 
         transition: {
           duration: 1,
@@ -96,11 +97,10 @@ export function SignInCard({
     >
       <div
         className={cn(
-          "h-full w-full flex-1 origin-center rounded-3xl border-2 border-black bg-white/70 px-4 py-8 shadow-3d transition-all duration-300 hover:shadow-3d-hover sm:px-6 sm:py-12 md:max-w-[500px] md:px-8 md:py-16 lg:px-10 lg:py-12",
+          "h-full w-full flex-1 origin-center rounded-3xl border-2 border-black bg-white/70 px-4 py-8 shadow-3d  hover:shadow-3d-hover sm:px-6 sm:py-12 md:max-w-[500px] md:px-8 md:py-16 lg:px-10 lg:py-12",
           "backdrop-blur-sm",
           "z-10",
           // mode === "SIGNIN" ? "z-50" : "z-40",
-          mode === "SIGNIN" ? "opacity-100" : "opacity-0 duration-200",
         )}
       >
         <Logo />
