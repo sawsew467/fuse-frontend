@@ -137,6 +137,20 @@ html {
   }
 }
 
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+ 
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
+}
+
 /* 
 process stress */
 
@@ -234,59 +248,3 @@ process stress */
 }
 
 /* streess process end */
-
-@keyframes progress-firework {
-  0% {
-    width: 50%;
-    height: 50%;
-    background: hsla(5, 100%, 50%, 1);
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    width: 150%;
-    height: 150%;
-    background: hsla(5, 100%, 70%, 1);
-    opacity: 0;
-  }
-}
-
-@keyframes progress-wave-animation {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.description {
-  display: flex;
-  max-width: 300px;
-  place-items: center;
-  justify-content: space-between;
-  margin-top: 45px;
-}
-
-.description input {
-  max-width: 30%;
-}
-
-.watermark {
-  margin-top: 2rem;
-  color: blue;
-  align-self: start;
-}
-
-
-html::-webkit-scrollbar {
-  width: 8px;
-}
- 
-html::-webkit-scrollbar-track {
-  background: #fff;
-}
- 
-html::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: #ccc;
-}
