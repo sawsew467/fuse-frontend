@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 
+import cancel from "@public/icons/cancle.png"
 
 
 const data = [
@@ -21,7 +22,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/management.png"}
+        src={cancel}
         alt="quản lí"
         width={100}
         height={100}
