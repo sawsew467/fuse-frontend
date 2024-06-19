@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import QuestionPulling, { Poll } from "../PollingQuestion";
-import PollMachine from "../Polling";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import QuestionPulling, { Poll } from "./PollingQuestion";
 
 const fakePoll: Poll = {
   question: "Quả trứng có trước hay còn bò có trước ?",
@@ -20,11 +18,11 @@ const fakePoll: Poll = {
       votes: [],
     },
     {
-        id: 4,
-        text: "D",
-        description: "Con bò ăn quả trứng rồi.",
-        votes: [],
-      },
+      id: 4,
+      text: "D",
+      description: "Con bò ăn quả trứng rồi.",
+      votes: [],
+    },
   ],
 };
 
@@ -32,15 +30,9 @@ interface QuizProps {
   userId: string | undefined;
 }
 
-interface StatisTicType {
-  statisticType: "option" | "chart";
-}
-
 const Quiz = ({ userId }: QuizProps) => {
   const [timeRemaining, setTimeRemaining] = useState(25);
   const [timerRunning, setTimerRunning] = useState(false);
-  const [typeStatistic, setTypeStatistic] =
-    useState<StatisTicType["statisticType"]>("option");
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -84,27 +76,12 @@ const Quiz = ({ userId }: QuizProps) => {
     startTimer();
   };
 
-  const handleStatisticChange = () => {
-    setTypeStatistic((prevType) =>
-      prevType === "option" ? "chart" : "option"
-    );
-  };
-
   return (
-    <div className="w-3/4 border-2 shadow-3d-dark border-black mx-auto">
-        <div>
-          {/* <Button className="mt-5" onClick={handleStatisticChange}>
-            ĐỔI LOẠI BIỂU ĐỒ
-          </Button> */}
-          {!typeStatistic === "option" ? (
-            <PollMachine />
-          ) : (
-            <QuestionPulling
-              question={fakePoll.question}
-              options={fakePoll.options}
-            />
-          )}
-        </div>
+    <div className="absolute left-1/2 top-24 w-3/4 -translate-x-1/2 transform border-2 border-black shadow-3d-dark">
+      <QuestionPulling
+        question={fakePoll.question}
+        options={fakePoll.options}
+      />
     </div>
   );
 };

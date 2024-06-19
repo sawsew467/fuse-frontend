@@ -1,5 +1,4 @@
 import ExamRoomModule from "@/components/modules/ExamRoomModule";
-import StudyAreaModule from "@/components/modules/StudyAreaModule";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function ExamRoom() {
-  return <ExamRoomModule/>;
-}   
+  return <ExamRoomModule />;
+}

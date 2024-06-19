@@ -1,6 +1,6 @@
-import { Chart, registerables } from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import React, { useEffect, useRef, useState } from 'react';
+import { Chart, registerables } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import React, { useEffect, useRef, useState } from "react";
 
 // Register the required components of Chart.js
 Chart.register(...registerables);
@@ -14,18 +14,18 @@ const PollMachine: React.FC = () => {
   const chartInstance = useRef<Chart | null>(null);
 
   useEffect(() => {
-    const ctx = chartRef.current?.getContext('2d');
+    const ctx = chartRef.current?.getContext("2d");
     if (ctx && !chartInstance.current) {
       chartInstance.current = new Chart(ctx, {
-        type: 'bar',
+        type: "bar",
         data: {
-          labels: ['A', 'B', 'C'],
+          labels: ["A", "B", "C", "D"],
           datasets: [
             {
               label: "",
-              data: [resultA, resultB, resultC],
-              backgroundColor: ['#56A3A6', '#DB504A', '#E3B505'],
-              borderColor: ['gray', 'gray', 'gray'],
+              data: [resultA, resultB, resultC, resultB],
+              backgroundColor: ["#56A3A6", "#DB504A", "#E3B505"],
+              borderColor: ["gray", "gray", "gray"],
               borderWidth: 1,
             },
           ],
@@ -34,17 +34,17 @@ const PollMachine: React.FC = () => {
           plugins: {
             legend: {
               display: true, // Display the legend
-              position: 'top', // Position the legend at the top
-              labels : {
-                boxWidth : 0
-              }
+              position: "top", // Position the legend at the top
+              labels: {
+                boxWidth: 0,
+              },
             },
             tooltip: { enabled: false },
             datalabels: {
               display: true,
-              color: 'black',
-              anchor: 'end',
-              align: 'end',
+              color: "black",
+              anchor: "end",
+              align: "end",
               formatter: (value) => value.toString(),
             },
           },
@@ -77,16 +77,22 @@ const PollMachine: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-fit">
-      <div className="mb-8">
+    <div className="flex h-fit flex-col items-center justify-center">
+      <div className="mt-10">
         <canvas ref={chartRef} id="r-chart"></canvas>
       </div>
-      <div className="grid justify-items-center items-center gap-4 grid-cols-1 grid-rows-4">
-        <h3 className="r-header text-lg mt-8">Results:</h3>
+      <div className="grid grid-cols-1 grid-rows-4 items-center justify-items-center gap-4">
+        <h3 className="r-header mt-8 text-lg">Results:</h3>
         <div className="flex space-x-4">
-          <p id="a-text" className="results text-xl">{resultA}</p>
-          <p id="b-text" className="results text-xl">{resultB}</p>
-          <p id="c-text" className="results text-xl">{resultC}</p>
+          <p id="a-text" className="results text-xl">
+            {resultA}
+          </p>
+          <p id="b-text" className="results text-xl">
+            {resultB}
+          </p>
+          <p id="c-text" className="results text-xl">
+            {resultC}
+          </p>
         </div>
       </div>
     </div>

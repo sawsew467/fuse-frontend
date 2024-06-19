@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Timeline from "./Timeline";
 import { Button } from "@/components/ui/button";
 import { fakeData } from "@/data/exam-room";
+import React, { useState } from "react";
+import Timeline from "./Timeline";
 
 type Question = {
   question: string;
@@ -26,20 +26,20 @@ type Data = {
 
 const SemesterLine: React.FC = () => {
   const [selectedSemester, setSelectedSemester] = useState<string>("Spring22");
-  const [data,setData] = useState<Data>(fakeData)
+  const [data, setData] = useState<Data>(fakeData);
   const handleSemesterClick = (semester: string) => {
     setSelectedSemester(semester);
   };
 
   return (
-    <div className="flex h-fit w-full gap-10 pt-0 px-8 py-2">
-      <div className="w-2/5 flex justify-end">
-        <div className="flex flex-col mt-4 gap-10">
+    <div className="flex h-fit w-full gap-10 px-8 py-2 pt-0">
+      <div className="flex w-2/6 justify-end">
+        <div className="mt-4 flex flex-col gap-10">
           {Object.keys(fakeData).map((semester) => (
             <Button
               key={semester}
               haveOverlay
-              variant={"outline"}
+              variant={selectedSemester == semester ? "outline" : "secondary"}
               onClick={() => handleSemesterClick(semester)}
             >
               {data[semester].title}

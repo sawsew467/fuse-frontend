@@ -5,8 +5,8 @@ type CustomCSSProperties = React.CSSProperties & {
   "--progress-value"?: number;
 };
 
-const ProcessStress = () => {   
-  const [progressValue, setProgressValue] = useState(10);
+const StressBar = () => {   
+  const [progressValue, setProgressValue] = useState(50);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.valueAsNumber;
@@ -49,4 +49,4 @@ const ProcessStress = () => {
   );
 };
 
-export default ProcessStress;
+export default StressBar;

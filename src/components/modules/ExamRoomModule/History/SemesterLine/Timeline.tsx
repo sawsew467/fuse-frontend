@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -6,12 +5,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import React from "react";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import OpenAllQuizz from "@public/svgr/OpenAllQuizz";
 import PinQuizz from "@public/svgr/PinQuizz";
 import PlayQuizz from "@public/svgr/PlayQuizz";
-import { cn } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { FlashcardArray } from "react-quizlet-flashcard";
 
@@ -126,7 +126,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                       <DialogTitle className="mb-2">{group.title}</DialogTitle>
                       <FlashcardArray
                         frontContentStyle={{
-                          backgroundColor: "lightgoldenrodyellow",
+                          backgroundColor: "primary",
                           textAlign: "center",
                           color: "black",
                           display: "flex",
@@ -145,14 +145,14 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                           id: index + 1, // Adjust id as needed
                           frontHTML: (
                             <div>
-                              <h2 className="timeline-heading mb-4 pb-2 border-white border-b-4 border-dashed">
+                              <h2 className="timeline-heading mb-4 border-b-4 border-dashed border-white pb-2">
                                 {question.question}
                               </h2>
                               {question.answers.map((answer, j) => (
-                          <p className="p-1" key={j}>
-                            {String.fromCharCode(97 + j)}. {answer}
-                          </p>
-                        ))}
+                                <p className="p-1" key={j}>
+                                  {String.fromCharCode(97 + j)}. {answer}
+                                </p>
+                              ))}
                             </div>
                           ),
                           backHTML: <p>{question.key}</p>,
@@ -169,10 +169,10 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
               <div className="mt-4">
                 <div
                   className={cn(
-                    "relative mb-20 min-h-[143px] rounded-lg border-2 border-black p-[46px]",
+                    "relative mb-20 min-h-[143px] w-[800px] rounded-lg border-2 border-black p-[46px]",
                     collapsed[index]
-                      ? "w-[500px] border-double shadow-3d transition duration-500 animate-accumulate"
-                      : "w-[800px] border-dashed transition duration-500 animate-add",
+                      ? "border-double shadow-3d transition duration-500 animate-accumulate"
+                      : "w-[850px] border-dashed transition duration-500 animate-add",
                   )}
                 >
                   <h2 className="absolute left-4 top-[-1rem] bg-[#F9F7EF] px-2 font-title text-lg">
