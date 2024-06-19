@@ -57,7 +57,7 @@ const Header = ({
         }}
         className={cn(
           "relative z-50 h-full w-full origin-top bg-background py-4",
-          isHambugerClicked ? "" : "shadow-2xl",
+          isHambugerClicked ? "" : "shadow-xl",
         )}
       >
         <span className="absolute -bottom-2 left-0 z-10 h-2 w-full">

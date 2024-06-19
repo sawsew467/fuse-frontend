@@ -18,7 +18,6 @@ function SignInModule({ pageMode }: { pageMode: "SIGNIN" | "SIGNUP" }) {
         style={{ perspective: 1000 }}
       >
         <SignInCard mode={mode} setMode={setMode} />
-        <div className=" z-[45] absolute inset-0backdrop-blur-sm"></div>
         <SignUpCard mode={mode} setMode={setMode} />
       </section>
       {/* <Ribbon mode={mode} /> */}
