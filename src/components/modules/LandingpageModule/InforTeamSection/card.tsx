@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Variants, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 interface CardProps {
   data: {
     avatar: string;
@@ -10,15 +11,32 @@ interface CardProps {
     facebookLink: string;
   };
   childAnimate?: Variants;
+  handleHover?: (item: string) => void;
+  hover?: string;
 }
 
-function Card({ data, childAnimate }: CardProps) {
+function Card({ data, childAnimate, handleHover, hover }: CardProps) {
   return (
-    <motion.div className="" variants={childAnimate} viewport={{ once: true }}>
-      <span className="group flex w-full h-full flex-col gap-6 rounded-lg border-2 border-black bg-white p-5 shadow-3d transition-all hover:shadow-3d-hover sm:flex-col sm:p-4 md:flex-col md:p-5 lg:flex-col lg:p-5">
-        <div className="flex-rown flex w-full justify-between items-center">
+    <motion.div
+      variants={childAnimate}
+      onMouseEnter={() => handleHover && handleHover(data.userName)}
+      onMouseLeave={() => handleHover && handleHover("")}
+    >
+      <span
+        className={cn(
+          "group flex h-full w-full flex-col gap-6 rounded-lg border-2 border-black bg-white p-5 shadow-3d transition-all duration-300 hover:shadow-3d-hover sm:flex-col sm:p-4 md:flex-col md:p-5 lg:flex-col lg:p-5",
+          hover === data.userName ? "scale-110" : hover && "opacity-60",
+        )}
+      >
+        <div className="flex-rown flex w-full items-center justify-between">
           <div className="flex flex-row items-center gap-2">
-            <Image src={data.avatar} alt="avatar" width={50} height={50} className='aspect-square object-cover rounded-full' />
+            <Image
+              src={data.avatar}
+              alt="avatar"
+              width={50}
+              height={50}
+              className="aspect-square rounded-full object-cover"
+            />
             <div className="flex flex-col overflow-hidden">
               <h5 className="truncate font-semibold leading-normal">
                 {data.fullName}

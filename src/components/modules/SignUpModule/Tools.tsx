@@ -399,4 +399,3 @@ export function Experience() {
   );
 }
 
-useGLTF.preload("/scene (7).glb");

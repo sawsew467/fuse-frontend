@@ -16,6 +16,9 @@ import Hourse1 from "./Hourse1";
 import Hourse2 from "./Hourse2";
 import Image from "next/image";
 
+import hero_1 from "@public/icons/hero1.svg";
+import hero_2 from "@public/icons/hero2.svg";
+
 function HeroSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -28,10 +31,11 @@ function HeroSection() {
   const translateY = useTransform(scrollYProgress, [0, 0.75, 1], [0, 0, 200]);
 
   return (
-    <section className="w-full">
+    <section className="w-full" id="home">
       <div className="mx-auto max-w-[1400px] overflow-hidden">
         <motion.div
           ref={ref}
+          id="#"
           className="container relative flex flex-col items-center px-5 py-10 pt-16 sm:px-8 sm:pt-20 md:px-10 md:pb-28 md:pt-28 lg:px-[60px] lg:pb-32 lg:pt-36 xl:pb-36 xl:pt-48"
         >
           <motion.div className="flex flex-col items-center">
@@ -87,8 +91,10 @@ function HeroSection() {
             >
               {/* <Scopy1 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" /> */}
               {/* <Cat1 /> */}
-              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md"></div>
-              <Hourse1 />
+              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md hidden lg:block"></div>
+              <div className="hidden lg:block">
+                <Hourse1 />
+              </div>
             </motion.div>
             <motion.div
               initial={{
@@ -112,18 +118,20 @@ function HeroSection() {
             >
               {/* <Scopy2 className="aspect-auto h-full w-full scale-50 md:scale-75 lg:scale-100" /> */}
               {/* <Cat2 /> */}
-              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md"></div>
-              <Hourse2 />
+              <div className="absolute bottom-2 left-1/2 -z-10 h-10 w-28 -translate-x-1/2 rounded-full bg-black/30 blur-md hidden lg:block"></div>
+              <div className="hidden lg:block">
+                <Hourse2 />
+              </div>
             </motion.div>
             <span className="absolute top-1/2 hidden scale-50 transition-all duration-700 md:right-36 md:block md:-translate-y-1/2 md:scale-75 lg:right-28 lg:-translate-y-[200%] lg:scale-100">
               <ArrowSubcribe />
               {/* <Image alt="" src={"/arr.svg"} width={80} height={80} /> */}
             </span>
-            {/* <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-24">
-              <Mouse />
+            {/* <span className="absolute right-20 top-0 scale-50 transition-all duration-700 sm:right-40 sm:top-6 md:right-52 md:top-8 md:scale-75 lg:right-40 lg:top-12 lg:scale-100 xl:right-80 xl:top-18">
+              <Image src={hero_1} alt="icon" width={150} height={150} />
             </span>
-            <span className="absolute -top-16 left-20 scale-50 transition-all duration-700 sm:-top-12 sm:left-40 md:-top-6 md:left-52 md:scale-75 lg:left-52 lg:top-2 lg:scale-100 xl:left-80 xl:top-5">
-              <Fly />
+            <span className="absolute -top-16 left-20 scale-50 transition-all duration-700 sm:-top-12 sm:left-40 md:-top-6 md:left-52 md:scale-75 lg:left-52 lg:top-2 lg:scale-100 xl:left-80 xl:top-18">
+              <Image src={hero_2} alt="icon" width={150} height={150} />
             </span> */}
           </div>
         </motion.div>

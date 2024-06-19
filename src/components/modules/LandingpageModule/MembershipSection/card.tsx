@@ -33,14 +33,23 @@ function Card({ data, ref, hidden }: CardProps) {
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.6 : 0.04, 1],
+    [0, 0.005, 0.5],
     [0, 0, 2000],
   );
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, hidden ? 0.6 : 0.04, hidden ? 1 : 0.1],
-    [1, 1, 0],
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.005, 0.1], [1, 1, 0]);
+
+  const highlightFeature = (feature: string) => {
+    const [quantity, ...rest] = feature.split(" ");
+    return (
+      <div className="inline text-xs md:text-sm lg:text-base">
+        {quantity}{" "}
+        <span className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
+          thành viên
+        </span>{" "}
+        {rest.join(" ")}
+      </div>
+    );
+  };
 
   const highlightFeature = (feature: string) => {
     const [quantity, ...rest] = feature.split(" ");
@@ -57,7 +66,10 @@ function Card({ data, ref, hidden }: CardProps) {
 
   return (
     <motion.div
-      style={{ translateY, opacity }}
+      style={{
+        translateY: hidden ? 0 : translateY,
+        opacity: hidden ? 1 : opacity,
+      }}
       initial={data.animate}
       whileInView={{
         x: 0,

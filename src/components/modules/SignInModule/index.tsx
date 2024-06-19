@@ -13,7 +13,10 @@ function SignInModule({ pageMode }: { pageMode: "SIGNIN" | "SIGNUP" }) {
   return (
     <>
       <Experience mode={mode} />
-      <section className="flex items-center justify-center">
+      <section
+        className="relative z-50 flex items-center justify-center w-[500px] h-[680px]"
+        style={{ perspective: 1000 }}
+      >
         <SignInCard mode={mode} setMode={setMode} />
         <SignUpCard mode={mode} setMode={setMode} />
       </section>

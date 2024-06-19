@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Dispatch, SetStateAction } from "react";
+import { motion } from "framer-motion";
 
 import { RegisterSchema } from "@/zod/schemas/RegisterSchema";
 import { cn } from "@/lib/utils";
@@ -50,112 +51,128 @@ export function SignUpCard({
   }
 
   return (
-    <div
-      className={cn(
-        "min-h-[400px] w-full max-w-[500px] flex-1 rounded-3xl border-2 border-black bg-white/70 px-4 py-8 shadow-3d transition-all duration-500 hover:shadow-3d-hover sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-10 lg:py-12",
-        "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform backdrop-blur-sm transition-all duration-500",
-        "z-10",
-        mode === "SIGNUP" ? "z-50" : "z-40",
-        mode === "SIGNUP"
-          ? "opacity-100"
-          : "-translate-x-2/3 -translate-y-2/3 opacity-0",
-      )}
+    <motion.div
+      initial={{
+        translateZ: -100,
+        scale: 0.75,
+        opacity: 0,
+      }}
+      animate={{
+        rotateY: mode === "SIGNUP" ? 0 : -180,
+        translateZ: mode === "SIGNUP" ? 0 : -100,
+        zIndex: mode === "SIGNUP" ? 50 : 40,
+        scale: mode === "SIGNUP" ? [0.75, 1] : [1, 0.75],
+        opacity: mode === "SIGNUP" ? 1 : 0,
+      }}
+      transition={{
+        type: "spring",
+        duration: 1,
+        bounce: 0.2,
+      }}
+      className="absolute h-full w-full max-w-[calc(100vw-40px)]"
     >
-      <Logo />
-      <p className="mb-9 mt-6 text-xl">
-        Đăng ký tài khoản mới hoàn toàn miễn phí!
-      </p>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="Nhập email của bạn" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Mật khẩu</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Nhập mật khẩu của bạn"
-                    type="password"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Xác nhận mật khẩu</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Nhập lại mật khẩu của bạn"
-                    type="password"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+      <div
+        className={cn(
+          "h-full w-full flex-1 rounded-3xl border-2 border-black bg-white/70 px-4 py-8 shadow-3d transition-all duration-300 hover:shadow-3d-hover sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-10 lg:py-12",
+          "backdrop-blur-sm",
+        )}
+      >
+        <Logo />
+        <p className="mb-9 mt-6 text-xl">
+          Đăng ký tài khoản mới hoàn toàn miễn phí!
+        </p>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Nhập email của bạn" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Mật khẩu</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Nhập mật khẩu của bạn"
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Xác nhận mật khẩu</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Nhập lại mật khẩu của bạn"
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <Button type="submit" haveOverlay className="w-full">
-            Đăng ký
-          </Button>
-          <p className="text-center text-xs">
-            Đã có tài khoản?
-            <span
-              className="ml-1 cursor-pointer text-primary hover:underline"
-              onClick={() => setMode("SIGNIN")}
-            >
-              Đăng nhập ngay!
-            </span>
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button
-              variant="outline"
-              haveOverlay
-              className="h-auto py-4"
-              type="button"
-            >
-              <Facebook />
+            <Button type="submit" haveOverlay className="w-full">
+              Đăng ký
             </Button>
-            <Button
-              variant="outline"
-              haveOverlay
-              className="h-auto py-4"
-              type="button"
-            >
-              <Google />
-            </Button>
-            <Button
-              variant="outline"
-              haveOverlay
-              className="h-auto py-4"
-              type="button"
-            >
-              <Apple />
-            </Button>
-          </div>
-        </form>
-      </Form>
-    </div>
+            <p className="text-center text-xs">
+              Đã có tài khoản?
+              <span
+                className="ml-1 cursor-pointer text-primary hover:underline"
+                onClick={() => setMode("SIGNIN")}
+              >
+                Đăng nhập ngay!
+              </span>
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button
+                variant="outline"
+                haveOverlay
+                className="h-auto py-4"
+                type="button"
+              >
+                <Facebook />
+              </Button>
+              <Button
+                variant="outline"
+                haveOverlay
+                className="h-auto py-4"
+                type="button"
+              >
+                <Google />
+              </Button>
+              <Button
+                variant="outline"
+                haveOverlay
+                className="h-auto py-4"
+                type="button"
+              >
+                <Apple />
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+    </motion.div>
   );
 }
 export default SignUpCard;

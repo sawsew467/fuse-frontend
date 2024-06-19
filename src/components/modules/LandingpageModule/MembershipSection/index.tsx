@@ -77,19 +77,22 @@ function MembershipSection() {
     setHidden(innerWidth < 1024);
   }, []);
   return (
-    <Section
-      title="Các gói tài khoản"
-      subTitle="Bắt đầu với việc học hoàn toàn miễn phí. <br/> Nâng cấp tài khoản để trải nghiệm nhiều tính năng tuyệt vời hơn!"
-    >
-      <div
-        ref={ref}
-        className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-center"
+    <>
+      <Section
+        title="Các gói tài khoản"
+        subTitle="Bắt đầu với việc học hoàn toàn miễn phí. <br/> Nâng cấp tài khoản để trải nghiệm nhiều tính năng tuyệt vời hơn!"
       >
-        {data.map((item, index) => (
-          <Card key={index} data={item} ref={ref} hidden={hidden} />
-        ))}
-      </div>
-    </Section>
+        <div
+          ref={ref}
+          className="flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-center"
+        >
+          {data.map((item, index) => (
+            <Card key={index} data={item} ref={ref} hidden={hidden} />
+          ))}
+        </div>
+        <div id="developers"></div>
+      </Section>
+    </>
   );
 }
 
