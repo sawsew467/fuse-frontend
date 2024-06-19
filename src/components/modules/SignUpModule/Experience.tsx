@@ -169,4 +169,3 @@ export function Experience({ mode = "SIGNIN" }: { mode: "SIGNIN" | "SIGNUP" }) {
   );
 }
 
-useGLTF.preload("/scene (7).glb");

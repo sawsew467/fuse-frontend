@@ -40,6 +40,7 @@ function ToolViewer({
         makeDefault
         enableZoom={false}
         enablePan={false}
+        enableRotate={false}
         autoRotateSpeed={0.6}
         target={new THREE.Vector3(0, 0, 0)}
         {...orbitControlsProps}
