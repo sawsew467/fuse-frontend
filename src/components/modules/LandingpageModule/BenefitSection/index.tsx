@@ -20,7 +20,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/management.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/management.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -38,7 +38,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/technology.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/technology.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -56,7 +56,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/touch_real_time.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/touch_real_time.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -74,7 +74,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/security.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/security.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -92,7 +92,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/support.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/support.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -110,7 +110,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={"/images/setting.PNG"}
+        src={"https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/setting.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -122,19 +122,19 @@ const data = [
 
 const benefits = [
   {
-    image: "/images/fast_easy.PNG",
+    image: "https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/fast_easy.png",
     title: "Nhanh chóng và dễ dàng",
     description:
       "Nhanh chóng và dễ dàng để bạn có thể dành thời gian tạo nội dung tuyệt vời. Dễ dàng vì không ai thích sự khó khăn.",
   },
   {
-    image: "/images/effective.PNG",
+    image: "https://res.cloudinary.com/dmeetnppd/image/upload/v1718769548/effective.png",
     title: "Hiệu quả và linh hoạt",
     description:
       "Hiệu quả và linh hoạt để đáp ứng mọi nhu cầu của bạn. Linh hoạt để bạn có thể làm việc theo cách của mình.",
   },
   {
-    image: "/images/lovely.PNG",
+    image: "https://res.cloudinary.com/dmeetnppd/image/upload/v1718769551/lovely.png",
     title: "Được yêu thích và tin tưởng",
     description:
       "Được yêu thích và tin tưởng bởi hàng triệu người dùng trên toàn thế giới. Tin tưởng để bạn biết rằng dữ liệu của bạn an toàn.",
