@@ -51,6 +51,8 @@ const logos = [
   },
 ];
 
+import fast_easy from "@public/images/fast_easy.png"
+
 function Logos() {
 
     return (
@@ -63,7 +65,7 @@ function Logos() {
                 {logos.concat(logos).map((item, index) => (
                     <button key={index} className="box flex-shrink-0 mx-4 inline duration-200 ">
                         <Image
-                            src={item.logo}
+                            src={fast_easy}
                             alt={`Logo ${index + 1}`}
                             width={64}
                             height={64}
