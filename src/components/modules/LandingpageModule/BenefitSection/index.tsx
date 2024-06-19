@@ -28,7 +28,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={management}
+        src={"/images/management.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -46,7 +46,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={technology}
+        src={"/images/technology.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -64,7 +64,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={touch_real_time}
+        src={"/images/touch_real_time.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -82,7 +82,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={security}
+        src={"/images/security.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -100,7 +100,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={support}
+        src={"/images/support.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -118,7 +118,7 @@ const data = [
     },
     icon: () => (
       <Image
-        src={setting}
+        src={"/images/setting.png"}
         alt="quản lí"
         width={100}
         height={100}
@@ -130,19 +130,19 @@ const data = [
 
 const benefits = [
   {
-    image: fast_easy,
+    image: "/images/fast_easy.png",
     title: "Nhanh chóng và dễ dàng",
     description:
       "Nhanh chóng và dễ dàng để bạn có thể dành thời gian tạo nội dung tuyệt vời. Dễ dàng vì không ai thích sự khó khăn.",
   },
   {
-    image: effective,
+    image: "/images/effective.png",
     title: "Hiệu quả và linh hoạt",
     description:
       "Hiệu quả và linh hoạt để đáp ứng mọi nhu cầu của bạn. Linh hoạt để bạn có thể làm việc theo cách của mình.",
   },
   {
-    image: lovely,
+    image: "/images/lovely.png",
     title: "Được yêu thích và tin tưởng",
     description:
       "Được yêu thích và tin tưởng bởi hàng triệu người dùng trên toàn thế giới. Tin tưởng để bạn biết rằng dữ liệu của bạn an toàn.",
