@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -69,9 +68,38 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  padding-inline: 4px;
+  background: rgba(0, 0, 0, 0);
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F5F3EA;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF9966;
+  border-radius: 100vw;
+  border: 3px solid #F5F3EA;
+}
+
+/* Handle on hover */
+
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   body {
@@ -82,25 +110,30 @@
     transform-style: preserve-3d;
     transition: transform 1s;
   }
+
   .paper:hover {
     transform: rotateY(180deg) translateX(100%);
     transform-style: preserve-3d;
     transition: transform 1s;
   }
+
   .box:hover {
     transform: scale(1.4) translateY(-15px);
   }
-  
+
   .box:has(+ .box:hover),
-  .box:hover + .box {
+  .box:hover+.box {
     transform: scale(1.1) translateY(-8px);
   }
 }
 
-
 @layer utilities {
   .animation-pause {
     animation-play-state: paused;
+  }
+  .tag {
+    @apply bg-[#65CCA0] px-1 rounded-md border-[1px]  border-black select-none w-fit ;
+    box-shadow: -2px 2px 0px 0px #000;
   }
 }
 
@@ -200,6 +233,8 @@ process stress */
   border-radius: 90px;
 }
 
+/* streess process end */
+
 @keyframes progress-firework {
   0% {
     width: 50%;
@@ -240,4 +275,18 @@ process stress */
   margin-top: 2rem;
   color: blue;
   align-self: start;
+}
+
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+ 
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
 }

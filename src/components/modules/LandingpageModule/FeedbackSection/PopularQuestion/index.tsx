@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/accordion";
 
 import scopyQuestion from "@public/scopyQuestion.svg";
+import Hourse5 from "../../HeroSection/Hourse5";
+import Hourse from "./Hourse";
 
 const faqData = [
   {
@@ -113,6 +115,7 @@ const PopularQuestion = () => {
           height={200}
           className="w-full"
         ></Image>
+        {/* <Hourse /> */}
       </motion.div>
     </motion.div>
   );

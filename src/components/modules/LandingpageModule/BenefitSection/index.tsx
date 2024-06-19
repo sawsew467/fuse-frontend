@@ -6,15 +6,16 @@ import Card from "./card";
 import Section from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import {
-  GlobeLock,
-  LaptopMinimal,
-  LaptopMinimalIcon,
-  Lightbulb,
-  MonitorSmartphone,
-  Users,
-  Wrench,
-} from "lucide-react";
+
+import management from "@public/images/management.png";
+import security from "@public/images/security.png";
+import setting from "@public/images/setting.png";
+import support from "@public/images/support.png";
+import technology from "@public/images/technology.png";
+import touch_real_time from "@public/images/touch_real_time.png";
+import fast_easy from "@public/images/fast_easy.png";
+import effective from "@public/images/effective.png";
+import lovely from "@public/images/lovely.png";
 
 const data = [
   {
@@ -26,7 +27,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <Users className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={management}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7 md:w-11 lg:w-11"
+      />
     ),
   },
   {
@@ -38,7 +45,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <LaptopMinimal className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={technology}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-9 md:w-12 lg:w-14"
+      />
     ),
   },
   {
@@ -50,7 +63,13 @@ const data = [
       translateY: [-200, 0, 0],
     },
     icon: () => (
-      <Lightbulb className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={touch_real_time}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-5 md:w-6 lg:w-7"
+      />
     ),
   },
   {
@@ -62,7 +81,13 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <GlobeLock className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={security}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7 md:w-11 lg:w-11"
+      />
     ),
   },
   {
@@ -74,7 +99,13 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <MonitorSmartphone className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={support}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7 md:w-11 lg:w-11"
+      />
     ),
   },
   {
@@ -86,26 +117,32 @@ const data = [
       translateY: [200, 0, 0],
     },
     icon: () => (
-      <Wrench className="group-hover:invert sm:h-7 sm:w-7 md:h-9 md:w-11 lg:h-9 lg:w-11" />
+      <Image
+        src={setting}
+        alt="quản lí"
+        width={100}
+        height={100}
+        className="w-7 md:w-11 lg:w-11"
+      />
     ),
   },
 ];
 
 const benefits = [
   {
-    image: "/lightning.svg",
+    image: fast_easy,
     title: "Nhanh chóng và dễ dàng",
     description:
       "Nhanh chóng và dễ dàng để bạn có thể dành thời gian tạo nội dung tuyệt vời. Dễ dàng vì không ai thích sự khó khăn.",
   },
   {
-    image: "/chain.svg",
+    image: effective,
     title: "Hiệu quả và linh hoạt",
     description:
       "Hiệu quả và linh hoạt để đáp ứng mọi nhu cầu của bạn. Linh hoạt để bạn có thể làm việc theo cách của mình.",
   },
   {
-    image: "/heart_hand.svg",
+    image: lovely,
     title: "Được yêu thích và tin tưởng",
     description:
       "Được yêu thích và tin tưởng bởi hàng triệu người dùng trên toàn thế giới. Tin tưởng để bạn biết rằng dữ liệu của bạn an toàn.",
@@ -124,7 +161,7 @@ function BenefitSection() {
           {benefits.map((benefit, index) => (
             <li
               key={index}
-              className="flex transform flex-row items-center justify-between gap-2 transition-transform duration-500 md:flex-col lg:flex-col"
+              className="flex transform flex-row items-center justify-end gap-2 transition-transform duration-500 md:flex-col lg:flex-col"
             >
               <motion.span
                 initial={{
@@ -203,16 +240,18 @@ function BenefitSection() {
           ))}
         </ul>
       </div>
-      <Section
-        title="Và còn nhiều hơn thế nữa"
-        subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"
-      >
-        <div className="grid grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((item, index) => (
-            <Card key={index} data={item} ref={ref} />
-          ))}
-        </div>
-      </Section>
+      <div className="-mb-20">
+        <Section
+          title="Và còn nhiều hơn thế nữa"
+          subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"
+        >
+          <div className="grid grid-rows-2 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            {data.map((item, index) => (
+              <Card key={index} data={item} ref={ref} />
+            ))}
+          </div>
+        </Section>
+      </div>
     </div>
   );
 }

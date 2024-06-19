@@ -1,15 +1,18 @@
 export const headerItems = [
   {
-    href: "/",
+    href: "/#home",
     label: "Sản phẩm",
+    id: "home",
   },
   {
-    href: "/membership",
+    href: "/#membership",
     label: "Gói tài khoản",
+    id: "membership",
   },
   {
-    href: "/developers",
+    href: "/#developers",
     label: "Đội ngũ phát triển",
+    id: "developers",
   },
 ];
 
@@ -17,14 +20,17 @@ export const headerUser = [
   {
     href: "/",
     label: "Trang chủ",
+    id: "home",
   },
   {
-    href: "/membership",
+    href: "/study-area",
     label: "Khu học tập",
+    id: "study-area",
   },
   {
-    href: "/developers",
+    href: "/exam-area",
     label: "Khu ôn thi",
+    id: "exam-area",
   },
 ];
 

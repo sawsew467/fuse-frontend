@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import MembershipSection from "./MembershipSection";
 import ProductSection from "./ProductSection";
 import FeedbackSection from "./FeedbackSection";
+import RoadScroller from "./RoadScroller";
 
 function LandingpageModule() {
   return (
@@ -12,9 +13,10 @@ function LandingpageModule() {
       <HeroSection />
       <ProductSection />
       <BenefitSection />
+      <RoadScroller />
       <MembershipSection />
-      <InforTeamSection/>
-      <FeedbackSection  />
+      <InforTeamSection />
+      <FeedbackSection />
       <CommunicationSection />
     </>
   );
