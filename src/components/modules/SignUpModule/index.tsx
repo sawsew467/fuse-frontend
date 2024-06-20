@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import SignUpCard from "./SignUpCard";
-import SignInCard from "./SignInCard";
 import { Experience } from "./Experience";
 import Ribbon from "./Ribbon";
+import SignInCard from "../SignInModule/SignInCard";
+import SignUpCard from "../SignInModule/SignUpCard";
 
 function SignUpModule() {
   const [mode, setMode] = useState<"SIGNIN" | "SIGNUP">("SIGNUP");

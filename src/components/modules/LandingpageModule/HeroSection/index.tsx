@@ -18,6 +18,7 @@ import Image from "next/image";
 
 import hero_1 from "@public/icons/hero1.svg";
 import hero_2 from "@public/icons/hero2.svg";
+import Link from "next/link";
 
 function HeroSection() {
   const ref = useRef(null);
@@ -57,14 +58,19 @@ function HeroSection() {
               </p>
             </motion.div>
             <div className="flex gap-2 md:gap-3 lg:gap-5">
-              <Button variant="outline" className="flex gap-1" haveOverlay>
-                <p className="text-xs md:text-base">Phòng học</p>
-                <ButtonArrow />
-              </Button>
-              <Button variant="outline" className="flex gap-1" haveOverlay>
-                <p className="text-xs md:text-base">Phòng ôn thi</p>
-                <ButtonArrow />
-              </Button>
+              <Link href={"/study-area"}>
+                <Button variant="outline" className="flex gap-1" haveOverlay >
+                  <p className="text-xs md:text-base">Phòng học</p>
+                  <ButtonArrow />
+                </Button>
+              </Link>
+              <Link href={"/exam-area"}>
+                <Button variant="outline" className="flex gap-1" haveOverlay>
+                  <p className="text-xs md:text-base">Phòng ôn thi</p>
+                  <ButtonArrow />
+                </Button>
+              </Link>
+              
             </div>
           </motion.div>
 

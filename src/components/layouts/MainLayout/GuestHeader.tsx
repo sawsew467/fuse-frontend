@@ -45,7 +45,7 @@ function GuestHeader() {
     <>
       <Header isHambugerClicked={isHambugerClicked}>
         <div className="container z-50 flex justify-between px-5 sm:px-8 md:px-10 lg:px-[60px]">
-          <Logo />
+          <Logo onClick={()=> router.push("/")}/>
           <Nav headerItems={headerItems} />
           <div className="gap:3 hidden md:flex lg:gap-6">
             <Link href="/sign-in">
