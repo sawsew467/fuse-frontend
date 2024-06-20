@@ -10,8 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import AvatarImage from "@public/images/avatartwo.jpg";
-
+import { TMessage, fakeDataBasicInfoInormation, fakeMessageData } from "@/data/stuty-room-themes";
 import {
   DrawingUtils,
   FilesetResolver,
@@ -20,7 +19,6 @@ import {
 } from "@mediapipe/tasks-vision";
 import RedHeartIcon from "@public/icons/studyroom/heart";
 import LikeIcon from "@public/icons/studyroom/like";
-import { TMessage, fakeDataBasicInfoInormation, fakeMessageData } from "@/data/stuty-room-themes";
 
 
 type GestureRecognizerType = GestureRecognizer | undefined;
