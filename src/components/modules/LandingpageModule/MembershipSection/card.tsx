@@ -76,9 +76,9 @@ function Card({ data, ref, hidden }: CardProps) {
           "relative min-h-32 flex-1 rounded-3xl border-2 border-black bg-white p-4 transition-all duration-500 sm:p-6 md:p-8 lg:p-10",
           data?.id === 2 && "lg:hover:-translate-y-3 lg:hover:scale-[1.025]",
           data?.id === 1 &&
-            "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+          "lg:-rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           data?.id === 3 &&
-            "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
+          "lg:rotate-3 lg:hover:rotate-0 lg:hover:scale-[1.05]",
           "shadow-3d hover:shadow-3d-hover",
         )}
       >
