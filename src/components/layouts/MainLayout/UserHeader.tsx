@@ -32,7 +32,7 @@ function UserHeader() {
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
 
   const { userInfo } = useAppSelector((state) => state.auth);
-  
+
   const router = useRouter();
 
   const handleResize = useCallback(() => {
@@ -76,7 +76,7 @@ function UserHeader() {
               </div>
             </Button>
           </div>
-          <Logo onClick={()=> router.push("/")}/>
+          <Logo onClick={() => router.push("/")} />
           <Nav headerItems={headerUser} />
           <div className="hidden flex-1 lg:block">
             <CustomInput
@@ -119,6 +119,7 @@ function UserHeader() {
                   width={48}
                   height={48}
                   className="rounded-full border-2 border-black"
+                  unoptimized
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="-translate-x-5 shadow-3d lg:-translate-x-1/4">
@@ -130,6 +131,7 @@ function UserHeader() {
                       width={54}
                       height={54}
                       className="rounded-full border-2 border-black"
+                      unoptimized
                     />
                     <div className="flex flex-col gap-1">
                       <h5 className="max-w-[200px] truncate text-xl font-medium">
@@ -140,14 +142,16 @@ function UserHeader() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={()=> router.push("/user-profile")}>
+                <DropdownMenuItem onClick={() => router.push("/user-profile")}>
                   <div className="flex w-[160px] items-center gap-4">
                     <User className="h-4 w-4" />
                     <span>Hồ sơ của bạn</span>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={()=> router.push("/settings/edit-profile")}>
+                <DropdownMenuItem
+                  onClick={() => router.push("/settings/edit-profile")}
+                >
                   <div className="flex w-[160px] items-center gap-4">
                     <Settings className="h-4 w-4" />
                     <span>Cài đặt</span>
