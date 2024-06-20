@@ -30,13 +30,19 @@ function StudyRoomMainLayout({ children }: { children: React.ReactNode }) {
     }
   }, [audio]);
 
-  useEffect(() => {
+  const getRandomTheme = () => {
+    const randomIndex = Math.floor(Math.random() * themes.length);
+    return themes[randomIndex];
+  };
+
+   useEffect(() => {
+    const randomTheme = getRandomTheme();
     dispatch(
       actionSetCurrentMedia({
-        id: themes[0]?.id,
-        name: themes[0]?.name,
-        video: themes[0]?.videoBackground,
-        audio: themes[0]?.audio,
+        id: randomTheme.id,
+        name: randomTheme.name,
+        video: randomTheme.videoBackground,
+        audio: randomTheme.audio,
       }),
     );
   }, [dispatch]);
@@ -109,6 +115,13 @@ function StudyRoomMainLayout({ children }: { children: React.ReactNode }) {
         <div className="absolute inset-0 z-[1] flex items-center justify-center bg-black/60">
           <div className="loader animate-pulse text-2xl font-bold text-white">
             Loading...
+          </div>
+        </div>
+      )}
+       {!audioPlayed && (
+        <div className="absolute inset-0 z-[1] flex items-center justify-center bg-black/60">
+          <div className="loader animate-pulse text-2xl font-bold text-white">
+            Click vào màn hình hoặc bấm phím bất kỳ để bật nhạc
           </div>
         </div>
       )}
