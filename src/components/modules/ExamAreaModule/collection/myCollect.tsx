@@ -11,7 +11,7 @@ function MyCollect() {
     <Section className="pt-1" title="Tất cả" icon={File}>
       <Search placeholder="Nhập mã môn" />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid p-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {examAreaData.map((card, index) => (
           <>{card.pinAt && <Card card={card} key={index} />}</>
         ))}

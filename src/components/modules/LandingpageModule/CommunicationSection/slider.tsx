@@ -4,7 +4,7 @@ import {
   CarouselDots,
   CarouselItem
 } from "@/components/ui/carousel";
-import { dataCommunity } from "@/data/Community";
+import { dataCommunity } from "@/data/communities";
 import Card from "./card";
 
 export function Slider() {
