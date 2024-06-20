@@ -25,6 +25,11 @@ import Logo from "@public/svgr/Logo";
 import Facebook from "@public/svgr/Facebook";
 import Google from "@public/svgr/Google";
 import Apple from "@public/svgr/Apple";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "@/services/firebase/config";
+import { useAppDispatch } from "@/hooks/redux-toolkit";
+import { actionLogin, actionSetIsAuth } from "@/store/slices/auth";
+import { useRouter } from "next-nprogress-bar";
 
 export function SignUpCard({
   mode,
@@ -33,6 +38,10 @@ export function SignUpCard({
   mode: string;
   setMode: Dispatch<SetStateAction<"SIGNIN" | "SIGNUP">>;
 }) {
+
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -49,6 +58,23 @@ export function SignUpCard({
       variant: "destructive",
     });
   }
+
+  const handleGoogleLogin = async () => {
+    try {
+      const resFirebase: any = await signInWithPopup(
+        auth,
+        provider.providerGoogle,
+      );
+      dispatch(actionLogin(resFirebase?.user));
+      dispatch(actionSetIsAuth(true));
+      setTimeout(() => {
+        router.push("/");
+        router.refresh();
+      }, 1000);
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
 
   return (
     <motion.div
@@ -157,6 +183,7 @@ export function SignUpCard({
                 haveOverlay
                 className="h-auto py-4"
                 type="button"
+                onClick={handleGoogleLogin}
               >
                 <Google />
               </Button>

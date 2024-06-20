@@ -1,9 +1,11 @@
+"use client"
 import React from "react";
 
 import Image from "next/image";
 import Lock from "@public/svgr/Lock";
 
 import Tag, { TagType } from "./tag";
+import { useRouter } from "next-nprogress-bar";
 
 export interface CardType {
   id: number;
@@ -24,10 +26,14 @@ const Card: React.FC<CardType> = ({
   isPrivate,
   tag,
 }) => {
+  const router = useRouter();
   return (
     <div
       key={id}
       className="flex flex-col rounded-[20px] border-2 border-black bg-white shadow-3d transition-all hover:shadow-3d-hover"
+      onClick={() => {
+        router.push('/study-room/any')
+      }}
     >
       <div className="h-52 w-full rounded-t-[20px]">
         <Image

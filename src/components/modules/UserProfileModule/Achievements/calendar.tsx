@@ -28,12 +28,40 @@ const Calendar: React.FC = () => {
           ))}
         </ul>
         <ul className="list-none text-center grid grid-cols-7 gap-4">
-          {daysOfMonth.map((day)=>(
+          {daysOfMonth.map((day) => (
             <li key={day} className=' z-[1] cursor-default select-none relative before:absolute before:left-[50%] before:top-[50%] before:w-10 before:h-10 rounded-none '>{day}</li>
           ))}
         </ul>
-      <FireAnimation/>
-      {/* <FireIcon/> */}
+        <div className='absolute bottom-[138px] left-[166px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[138px] left-[368px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[98px] left-[217px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[98px] left-[267px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[58px] left-[116px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[58px] left-[166px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[58px] left-[368px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[18px] left-[317px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[18px] left-[418px]'>
+          <FireAnimation />
+        </div>
+        <div className='absolute bottom-[-22px] left-[116px]'>
+          <FireAnimation />
+        </div>
       </div>
     </div>
   );

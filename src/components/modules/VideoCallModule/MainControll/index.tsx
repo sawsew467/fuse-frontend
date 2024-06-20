@@ -1,5 +1,7 @@
 "use client";
 
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
+import { actionSetIsOpenChat, actionSetIsOpenVideo } from "@/store/slices/studyRoomController";
 import MicIcon from "@public/icons/studyroom/mic";
 import PhoneIcon from "@public/icons/studyroom/phone";
 import {
@@ -22,11 +24,15 @@ function MainControll() {
       setCurrentTime(timeString);
     };
 
-    updateTime(); // Initial call to set the time immediately
-    const intervalId = setInterval(updateTime, 1000); // Update time every second
+    updateTime(); 
+    const intervalId = setInterval(updateTime, 1000); 
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId); 
   }, []);
+
+  const {videoCall} = useAppSelector((state) => state.studyRoomController)
+
+  const dispatch = useAppDispatch();
   return (
     <div className="flex w-full flex-row items-center justify-center">
       <div className="absolute left-4 hidden flex-row gap-2 md:flex">
@@ -46,7 +52,7 @@ function MainControll() {
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
           <MicIcon />
         </button>
-        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
+        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover" onClick={() => dispatch(actionSetIsOpenVideo(!videoCall.isOpenVideo))}>
           <LucideVideo />
         </button>
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
@@ -57,11 +63,11 @@ function MainControll() {
         </button>
       </div>
 
-      <div className="absolute right-4 flex flex-row-reverse gap-2">
+      <div className="absolute right-4 hidden md:flex flex-row-reverse gap-2">
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
           <ShieldAlert />
         </button>
-        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
+        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover" onClick={() => {dispatch(actionSetIsOpenChat(!videoCall.isOpenChat))}}>
           <MessageCircle />
         </button>
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">

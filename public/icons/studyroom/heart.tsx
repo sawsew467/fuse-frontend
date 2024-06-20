@@ -9,31 +9,36 @@ interface IconProps {
   className?: string;
 }
 
-const CaretUp: React.FC<IconProps> = ({
-  color = 'currentColor',
+const RedHeartIcon: React.FC<IconProps> = ({
+  color = '#ed1b24', // Default color as specified in the SVG
   size = '24', // Default size
   width = size,
   height = size,
-  className = 'w-6 h-6 text-gray-800 dark:text-white',
+  className = '',
 }) => (
   <svg
+    id="Layer_1"
+    data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
+    viewBox="0 0 122.88 107.39"
     fill={color}
     width={width}
     height={height}
     className={className}
     aria-hidden="true"
   >
+    <defs>
+      <style>{`.cls-1{fill:${color};fill-rule:evenodd;}`}</style>
+    </defs>
+    <title>red-heart</title>
     <path 
-      fillRule="evenodd" 
-      d="M5.575 13.729C4.501 15.033 5.43 17 7.12 17h9.762c1.69 0 2.618-1.967 1.544-3.271l-4.881-5.927a2 2 0 0 0-3.088 0l-4.88 5.927Z" 
-      clipRule="evenodd"
+      className="cls-1" 
+      d="M60.83,17.18c8-8.35,13.62-15.57,26-17C110-2.46,131.27,21.26,119.57,44.61c-3.33,6.65-10.11,14.56-17.61,22.32-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.55C29.16,76.89,1,55.92,0,29.94-.63,11.74,13.73.08,30.25.29c14.76.2,21,7.54,30.58,16.89Z"
     />
   </svg>
 );
 
-CaretUp.propTypes = {
+RedHeartIcon.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -41,4 +46,4 @@ CaretUp.propTypes = {
   className: PropTypes.string,
 };
 
-export default CaretUp;
+export default RedHeartIcon;

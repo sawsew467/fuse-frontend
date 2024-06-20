@@ -99,7 +99,11 @@ html {
 @layer base {
   * {
     @apply border-border;
-    cursor: none !important;
+
+    @media screen and (min-width : 1024px) {
+      cursor: none !important;
+
+    }
   }
 
   body {
@@ -131,6 +135,7 @@ html {
   .animation-pause {
     animation-play-state: paused;
   }
+
   .tag {
     @apply bg-[#65CCA0] px-1 rounded-md border-[1px]  border-black select-none ;
     box-shadow: -3px 3px 0px 0px #000;
@@ -147,17 +152,15 @@ html {
   }
 }
 
-
 html::-webkit-scrollbar {
   width: 8px;
 }
- 
+
 html::-webkit-scrollbar-track {
   background: #fff;
 }
- 
+
 html::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #ccc;
 }
-

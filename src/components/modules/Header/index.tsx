@@ -19,7 +19,7 @@ const Header = ({
     clearTimeout(time);
     time = setTimeout(() => {
       setHidden(false);
-    },500);
+    },400);
     setHidden(true);
   };
 
