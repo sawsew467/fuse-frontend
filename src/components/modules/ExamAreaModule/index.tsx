@@ -18,11 +18,11 @@ function CommunicationSection() {
         <Tabs defaultValue="discover" className="w-full pb-10">
           <TabsList>
             <TabsTrigger value="discover" className="flex gap-2">
-              <span>Khám phá</span>
+              <span className="sm:text-md md:text-xl lg:text-2xl">Khám phá</span>
               <Compass className="scale-125" />
             </TabsTrigger>
             <TabsTrigger value="gim" className="flex gap-2">
-              <span>Đã ghim</span>
+              <span className=" sm:text-md md:text-xl lg:text-2xl">Đã ghim</span>
               <PinColor className="scale-125" />
             </TabsTrigger>
           </TabsList>

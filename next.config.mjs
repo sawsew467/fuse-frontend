@@ -8,6 +8,7 @@ const nextConfig = {
         port: "",
       },
     ],
+    unoptimized: false
   },
 };
   
