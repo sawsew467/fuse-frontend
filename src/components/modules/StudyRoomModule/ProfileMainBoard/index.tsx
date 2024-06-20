@@ -194,11 +194,11 @@ function ProfileMainBoard({}: TProps) {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <Image
-                  src={AvatarImage}
+                  src={"https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg"}
                   alt="avatar"
                   height={200}
                   width={200}
-                  className="h-[30px] w-[30px] rounded-[50%]"
+                  className="h-[30px] w-[30px] rounded-[50%] object-cover"
                 />
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-4 mt-3 flex w-fit animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
