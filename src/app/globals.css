@@ -133,8 +133,18 @@ html {
   }
 
   .tag {
-    @apply w-fit select-none rounded-md border-[1px] border-black bg-[#65CCA0] px-1;
-    box-shadow: -2px 2px 0px 0px #000;
+    @apply select-none rounded-md border-[1px] border-black bg-[#65CCA0] px-1;
+    box-shadow: -3px 3px 0px 0px #000;
+  }
+
+  .animate-deylay-2 {
+    animation-delay: 0.5s;
+  }
+  .animate-deylay-3 {
+    animation-delay: 1.5s;
+  }
+  .animate-deylay-4 {
+    animation-delay: 2.5s;
   }
 }
 
