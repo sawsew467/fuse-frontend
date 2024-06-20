@@ -99,7 +99,7 @@ html {
 @layer base {
   * {
     @apply border-border;
-    /* cursor: none !important; */
+    cursor: none !important;
   }
 
   body {

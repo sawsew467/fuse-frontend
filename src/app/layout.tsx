@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={cn(inter.className)} suppressHydrationWarning={true}>
         <Providers>
           {children}
-          {/* <Cursor /> */}
+          <Cursor />
 
           <Toaster />
         </Providers>

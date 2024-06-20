@@ -51,19 +51,6 @@ function Card({ data, ref, hidden }: CardProps) {
     );
   };
 
-  const highlightFeature = (feature: string) => {
-    const [quantity, ...rest] = feature.split(" ");
-    return (
-      <div className="inline text-xs md:text-sm lg:text-base">
-        {quantity}{" "}
-        <span className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
-          thành viên
-        </span>{" "}
-        {rest.join(" ")}
-      </div>
-    );
-  };
-
   return (
     <motion.div
       style={{
