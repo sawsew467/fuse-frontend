@@ -44,6 +44,7 @@ function Cursor() {
           viewBox="0 0 56 56"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="-translate-x-4 -translate-y-4 scale-50"
         >
           <path
             fill="#444"

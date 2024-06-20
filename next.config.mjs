@@ -8,8 +8,8 @@ const nextConfig = {
         port: "",
       },
     ],
+    unoptimized: false,
   },
 };
-  
+
 export default nextConfig;
-  
