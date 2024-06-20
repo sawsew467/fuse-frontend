@@ -1,0 +1,38 @@
+.description {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 100px auto;
+  }
+  
+  .description * {
+    font-size: 26px;
+    line-height: 38px;
+  }
+  
+  .description p {
+    font-family: 'Caveat', cursive;
+  }
+  
+  .description p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  
+  .description ul {
+    list-style: bullet;
+    padding-left: 30px;
+  }
+  
+  .description li {
+    font-family: 'Caveat', cursive;
+  }
+  
+  .description:before {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgrey;
+  }
+  

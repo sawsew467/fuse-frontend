@@ -1,0 +1,116 @@
+
+.clock-main {
+	background-color: #f2f1ed;
+	color: #DCDAD3;
+	padding: 100px 50px;
+	font-size: clamp(2em,4.5vw,5em);
+	flex-direction: column;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-heading{
+	font-size: clamp(2rem,3.5vw,2.7rem);
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.flip-card {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	width: 80px;
+	border-radius: 0.1em;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.top,
+.bottom,
+.flip-card.flip::after,
+.flip-card.flip::before {
+	padding: 0.25em;
+	height: 0.75em;
+	line-height: 1;
+	overflow: hidden;
+}
+
+.top,
+.flip-card.flip::before {
+	background-color: #f7f7f7;
+	border-top-left-radius: 0.1em;
+	border-top-right-radius: 0.1em;
+	border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bottom,
+.flip-card.flip::after {
+	display: flex;
+	align-items: flex-end;
+	background-color: white;
+	border-bottom-left-radius: 0.1em;
+	border-bottom-right-radius: 0.1em;
+}
+
+.flip-card.flip::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	content: attr(data-current-number);
+	position: absolute;
+	transform-origin: bottom;
+	animation: flip-bottom 500ms ease;
+	backface-visibility: hidden;
+}
+
+@keyframes flip-bottom {
+	100% {
+		transform: rotateX(180deg);
+	}
+}
+
+.flip-card.flip::after {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	content: attr(data-next-number);
+	position: absolute;
+	transform-origin: top;
+	animation: flip-top 500ms ease;
+	transform: rotateX(180deg);
+	backface-visibility: hidden;
+}
+
+@keyframes flip-top {
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+.countdown-container {
+	display: flex;
+	gap: 0.5em;
+}
+
+.countdown-cards {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card-title {
+	font-size: clamp(.8rem,2vw,2rem);
+	letter-spacing: 1px;
+	margin-bottom: .5em;
+	font-weight: bold;
+	color: rgb(29, 27, 27);
+	text-transform: uppercase;
+}
+
+.card-container {
+	display: flex;
+	gap: 0.125em;
+}

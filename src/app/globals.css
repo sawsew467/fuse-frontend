@@ -154,3 +154,143 @@ html::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #ccc;
 }
+
+/* 
+process stress */
+
+
+.progress {
+  --progress-value: 50;
+  --progress-indicator-size: 350px;
+  --progress-size: 190px;
+  --progress-inner-size: calc(var(--progress-size) - 20px);
+  border: 5px solid hsla(5, 100%, 70%, 1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--progress-size);
+  height: var(--progress-size);
+  border-radius: 50%;
+  background: gray;
+}
+
+.progress::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  min-width: 8px;
+  min-height: 8px;
+  transform: translate(-50%, -50%);
+}
+
+.progress[data-value="100"] {
+  --color-progress: #557c55;
+  --color-progress-alpha: #a6cf98;
+}
+
+.progress[data-value="100"]::before {
+  animation: progress-firework 1.3s 0.1s ease infinite both;
+}
+
+.progress-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--progress-inner-size);
+  height: var(--progress-inner-size);
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;
+}
+
+.progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  color: black;
+  text-align: center;
+  overflow: hidden;
+}
+
+.progress-label strong {
+  font-size: 200%;
+}
+
+.progress-label span {
+  font-size: 120%;
+}
+
+.progress-indicator {
+  background: hsla(5, 100%, 50%, 1);
+  transform-origin: center center;
+  opacity: 0.6;
+  position: absolute;
+  top: calc(100% - var(--progress-value) * 1%);
+  left: -50%;
+  right: 50%;
+  width: var(--progress-indicator-size);
+  height: var(--progress-indicator-size);
+  border-radius: calc(var(--progress-indicator-size) / 2.5);
+  animation: progress-wave-animation 8s linear infinite both;
+}
+
+.progress-indicator:nth-child(2) {
+  background: hsla(5, 100%, 70%, 1);
+  transform: rotate(90deg);
+  border-radius: 90px;
+}
+
+@keyframes progress-firework {
+  0% {
+    width: 50%;
+    height: 50%;
+    background: hsla(5, 100%, 50%, 1);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    height: 150%;
+    background: hsla(5, 100%, 70%, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes progress-wave-animation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.description {
+  display: flex;
+  max-width: 300px;
+  place-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.description input {
+  max-width: 30%;
+}
+
+.watermark {
+  margin-top: 2rem;
+  color: blue;
+  align-self: start;
+}
+
+/* streess process end */
