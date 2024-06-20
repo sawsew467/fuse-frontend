@@ -243,7 +243,7 @@ function BenefitSection() {
           ))}
         </ul>
       </div>
-      <div className="mb-20">
+      <div className="lg:mb-20 mb-10">
         <Section
           title="Và còn nhiều hơn thế nữa"
           subTitle="Hãy sử dụng hiệu quả để tạo nên sự khác biệt"

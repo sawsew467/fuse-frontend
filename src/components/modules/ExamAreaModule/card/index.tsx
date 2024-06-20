@@ -15,6 +15,8 @@ import BlackUser from "@public/svgr/BlackUser";
 import JoinRoom from "@public/svgr/JoinRoom";
 import { MoreOptions } from "./moreOptions";
 
+import { useRouter } from "next-nprogress-bar";
+
 type CardType = {
   users: User[];
   pinAt?: Date | null;
@@ -43,10 +45,13 @@ const Card: React.FC<CardProps> = ({ card }) => {
   const handleClickNotificationBtn = (state: boolean) => {
     setIsNotification(!state);
   };
+
+  const router = useRouter();
+
   return (
     <div
       className={cn(
-        "flex w-fit min-w-full max-w-full flex-col gap-8 rounded-[20px] border-2 border-black p-5 shadow-3d hover:shadow-3d-hover",
+        "flex w-fit min-w-full max-w-full flex-col gap-2 rounded-[20px] border-2 border-black p-4 shadow-3d hover:shadow-3d-hover md:gap-4 lg:gap-8",
         isCurrentTimeWithinSlot(card.timeSlotStart, card.timeSlotEnd)
           ? "bg-gradient-to-b from-status-online to-white"
           : "bg-gradient-to-b from-status-offline to-white",
@@ -86,8 +91,13 @@ const Card: React.FC<CardProps> = ({ card }) => {
         <MoreOptions pinedState={card?.pinAt != null} />
       </div>
       <div>
-        <h1 className="text-2xl font-bold"> {card?.subject}</h1>
-        <p className="line-clamp-3 min-h-24 w-full text-2xl">{card?.title}</p>
+        <h1 className="text-xl font-bold sm:text-xl md:text-2xl">
+          {" "}
+          {card?.subject}
+        </h1>
+        <p className="min text-md line-clamp-3 min-h-16 w-full sm:text-lg md:min-h-20 md:text-xl lg:min-h-24">
+          {card?.title}
+        </p>
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
@@ -111,8 +121,17 @@ const Card: React.FC<CardProps> = ({ card }) => {
           </div>
         </div>
         <div className="flex w-full gap-3">
-          <Button className="flex w-full gap-1" haveOverlay>
-            <span>Tham gia phòng</span>
+          <Button
+            className="flex w-full gap-1"
+            haveOverlay
+            onClick={() => {
+              router.push(
+                `/exam-room/${card.roomId}
+                ${!isCurrentTimeWithinSlot(card.timeSlotStart, card.timeSlotEnd) ? "?offline" : ""}`,
+              );
+            }}
+          >
+            <span className="font-bold">Tham gia phòng</span>
             <JoinRoom />
           </Button>
           <Button

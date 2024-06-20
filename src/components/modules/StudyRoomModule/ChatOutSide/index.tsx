@@ -15,76 +15,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import AvatarImage from "@public/images/avatartwo.jpg";
+import { TMessage, fakeMessageData } from "@/data/stuty-room-themes";
 
-type TMessage = {
-  message: string;
-  from: string;
-  role: string;
-  time: string;
-};
-
-const fakeMessageData: TMessage[] = [
-  {
-    from: "Tran Van Bao Thang",
-    message: "Hello world",
-    role: "Joinner",
-    time: "08:20:00",
-  },
-  {
-    from: "Nguyen Thi Mai",
-    message: "Good morning everyone!",
-    role: "Member",
-    time: "08:25:00",
-  },
-  {
-    from: "Le Van Duc",
-    message: "Did you finish the project?",
-    role: "Member",
-    time: "08:30:00",
-  },
-  {
-    from: "Hoang Minh Anh",
-    message: "Yes, I sent it to the client.",
-    role: "Manager",
-    time: "08:35:00",
-  },
-  {
-    from: "Tran Van Bao Thang",
-    message: "Great job, Minh Anh!",
-    role: "Joinner",
-    time: "08:40:00",
-  },
-  {
-    from: "Nguyen Thi Mai",
-    message: "Let's discuss the new task in the meeting.",
-    role: "Member",
-    time: "08:45:00",
-  },
-  {
-    from: "Le Van Duc",
-    message: "Sure, I will prepare the slides.",
-    role: "Member",
-    time: "08:50:00",
-  },
-  {
-    from: "Hoang Minh Anh",
-    message: "Please make sure to include the latest updates.",
-    role: "Manager",
-    time: "08:55:00",
-  },
-  {
-    from: "Tran Van Bao Thang",
-    message: "When is the meeting?",
-    role: "Joinner",
-    time: "09:00:00",
-  },
-  {
-    from: "Nguyen Thi Mai",
-    message: "It's at 10 AM in the main conference room.",
-    role: "Member",
-    time: "09:05:00",
-  },
-];
 
 const FormSchema = z.object({
   message: z
@@ -116,6 +48,7 @@ function ChatOutSide() {
 
   const handleSendMessage = () => {
     const dataSend: TMessage = {
+      avatar: "https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg",
       from: "Vu Vu",
       message: messageInput!,
       role: "host",
@@ -164,11 +97,11 @@ function ChatOutSide() {
               <div key={index} className="flex flex-row items-center gap-2">
                 <div>
                   <Image
-                    src={AvatarImage}
+                    src={_.avatar}
                     alt="image"
                     height={200}
                     width={200}
-                    className="h-40px] w-[40px] rounded-full"
+                    className="h-[42px] w-[42px] rounded-full object-cover border-2 border-primary"
                   />
                 </div>
                 <div className="flex w-full flex-col items-center">

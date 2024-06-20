@@ -35,7 +35,7 @@ function Cursor() {
   return (
     <>
       <div
-        className="fixed left-40 top-40 z-[999]"
+        className="fixed left-40 top-40 z-[999] lg:block hidden"
         style={{ left: `${position.x + 4}px`, top: `${position.y + 4}px` }}
       >
         <svg

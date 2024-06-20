@@ -25,7 +25,7 @@ function Card({ data, childAnimate, handleHover, hover }: CardProps) {
       <span
         className={cn(
           "group flex h-full w-full flex-col gap-6 rounded-lg border-2 border-black bg-white p-5 shadow-3d transition-all duration-300 hover:shadow-3d-hover sm:flex-col sm:p-4 md:flex-col md:p-5 lg:flex-col lg:p-5",
-          hover === data.userName ? "scale-110" : hover && "opacity-60",
+          hover === data.userName ? "scale-110 " : hover && "opacity-60 delay-200",
         )}
       >
         <div className="flex-rown flex w-full items-center justify-between">
