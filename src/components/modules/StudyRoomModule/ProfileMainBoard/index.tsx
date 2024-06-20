@@ -54,6 +54,7 @@ function ProfileMainBoard({}: TProps) {
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px]"
+                unoptimized
               />
             </button>
           </div>
@@ -80,6 +81,7 @@ function ProfileMainBoard({}: TProps) {
                           height={40}
                           width={40}
                           className="rounded-full"
+                          unoptimized
                         />
                         <div>
                           <p className="font-bold">Trần Văn Bảo Thắng</p>
@@ -140,6 +142,7 @@ function ProfileMainBoard({}: TProps) {
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px] cursor-pointer"
+                unoptimized
               />
             </button>
             <button className="flex h-[30px] w-[30px] items-center justify-center rounded-md outline-none transition hover:bg-secondary">
@@ -151,6 +154,7 @@ function ProfileMainBoard({}: TProps) {
                     height={200}
                     width={200}
                     className="h-[20px] w-[20px] cursor-pointer"
+                    unoptimized
                   />
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content className="z-10 mr-4 mt-4 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black  hover:shadow-3d-hover">
@@ -187,6 +191,7 @@ function ProfileMainBoard({}: TProps) {
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px] cursor-pointer"
+                unoptimized
               />
             </button>
           </div>
@@ -199,6 +204,7 @@ function ProfileMainBoard({}: TProps) {
                   height={200}
                   width={200}
                   className="h-[30px] w-[30px] rounded-[50%] object-cover"
+                  unoptimized
                 />
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-4 mt-3 flex w-fit animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">

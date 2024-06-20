@@ -23,13 +23,13 @@ function TopHeadControll() {
           className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover"
           onClick={() => router.push("/study-room/any")}
         >
-          <Image src={Undo} alt="icon" />
+          <Image src={Undo} alt="icon" unoptimized/>
         </button>
       </div>
 
       <div className="flex flex-row gap-2">
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
-          <Image src={MusicIconSvg} alt="icon" width={24} height={24} />
+          <Image src={MusicIconSvg} alt="icon" width={24} height={24} unoptimized/>
         </button>
         <button
           className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover"

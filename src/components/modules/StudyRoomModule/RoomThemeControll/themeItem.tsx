@@ -39,6 +39,7 @@ function ThemeItem({imageSrc, themeName, dataSource}:TProps) {
         height={100}
         width={100}
         className="h-[60px] w-[60px] rounded-lg object-cover"
+        unoptimized
       />
       {isHovered && (
         <div className="animate-fade animate-duration-500 border-space absolute left-[-5px] top-[-5px] flex h-[70px] w-[70px] items-center justify-center rounded-xl border-4 border-dashed border-black">

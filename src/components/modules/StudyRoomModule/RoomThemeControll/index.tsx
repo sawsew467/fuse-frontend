@@ -184,6 +184,7 @@ function RoomThemeControll() {
                     alt="icon"
                     height={30}
                     width={30}
+                    unoptimized
                   />
                 </div>
                 <div className="flex w-full flex-row items-center gap-2">
@@ -250,6 +251,7 @@ function RoomThemeControll() {
             height={40}
             width={40}
             className="h-[35px] w-[35px]"
+            unoptimized
           />
         </div>
       </div>
