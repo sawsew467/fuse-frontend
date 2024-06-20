@@ -26,11 +26,14 @@ import webStorageClient from "@/utils/webStorageClient";
 import { useAppSelector } from "@/hooks/redux-toolkit";
 import Nav from "@/components/modules/Header/Nav";
 import Header from "@/components/modules/Header";
+import { useRouter } from "next-nprogress-bar";
 
 function UserHeader() {
   const [isHambugerClicked, setIsHambugerClicked] = useState(false);
 
   const { userInfo } = useAppSelector((state) => state.auth);
+  
+  const router = useRouter();
 
   const handleResize = useCallback(() => {
     setIsHambugerClicked(false);
@@ -73,7 +76,7 @@ function UserHeader() {
               </div>
             </Button>
           </div>
-          <Logo />
+          <Logo onClick={()=> router.push("/")}/>
           <Nav headerItems={headerUser} />
           <div className="hidden flex-1 lg:block">
             <CustomInput
@@ -111,7 +114,7 @@ function UserHeader() {
             <DropdownMenu>
               <DropdownMenuTrigger className="outline-none">
                 <Image
-                  src={"/images/avatar.webp"}
+                  src={userInfo?.photoURL || "/images/avatar.webp"}
                   alt=""
                   width={48}
                   height={48}
@@ -122,7 +125,7 @@ function UserHeader() {
                 <DropdownMenuLabel>
                   <div className="flex items-center gap-2">
                     <Image
-                      src={"/images/avatar.webp"}
+                      src={userInfo?.photoURL || "/images/avatar.webp"}
                       alt=""
                       width={54}
                       height={54}
@@ -137,21 +140,20 @@ function UserHeader() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> router.push("/user-profile")}>
                   <div className="flex w-[160px] items-center gap-4">
                     <User className="h-4 w-4" />
                     <span>Hồ sơ của bạn</span>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> router.push("/settings/edit-profile")}>
                   <div className="flex w-[160px] items-center gap-4">
                     <Settings className="h-4 w-4" />
                     <span>Cài đặt</span>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-
                 <DropdownMenuItem onClick={logout}>
                   <div className="flex w-[160px] items-center gap-4">
                     <LogOutIcon className="h-4 w-4" />
