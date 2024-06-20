@@ -8,9 +8,37 @@ import React, { useEffect, useState } from 'react';
 const Calendar: React.FC = () => {
   const daysOfWeek = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
   const daysOfMonth = [
-    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-    "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-    "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"
+    { day: "1", isLearn: false },
+    { day: "2", isLearn: true },
+    { day: "3", isLearn: false },
+    { day: "4", isLearn: false },
+    { day: "5", isLearn: true },
+    { day: "6", isLearn: false },
+    { day: "7", isLearn: false },
+    { day: "8", isLearn: false },
+    { day: "9", isLearn: false },
+    { day: "10", isLearn: true },
+    { day: "11", isLearn: true },
+    { day: "12", isLearn: false },
+    { day: "13", isLearn: false },
+    { day: "14", isLearn: false },
+    { day: "15", isLearn: true },
+    { day: "16", isLearn: true },
+    { day: "17", isLearn: false },
+    { day: "18", isLearn: false },
+    { day: "19", isLearn: false },
+    { day: "20", isLearn: true },
+    { day: "21", isLearn: false },
+    { day: "22", isLearn: false },
+    { day: "23", isLearn: false },
+    { day: "24", isLearn: false },
+    { day: "25", isLearn: false },
+    { day: "26", isLearn: true },
+    { day: "27", isLearn: false },
+    { day: "28", isLearn: true },
+    { day: "29", isLearn: true },
+    { day: "30", isLearn: false },
+    { day: "31", isLearn: false }
   ];
   return (
     <div className="w-96 p-6 ">
@@ -28,40 +56,17 @@ const Calendar: React.FC = () => {
           ))}
         </ul>
         <ul className="list-none text-center grid grid-cols-7 gap-4">
-          {daysOfMonth.map((day) => (
-            <li key={day} className=' z-[1] cursor-default select-none relative before:absolute before:left-[50%] before:top-[50%] before:w-10 before:h-10 rounded-none '>{day}</li>
+          {daysOfMonth.map((dayObj) => (
+            <li key={dayObj.day} className='z-[1] cursor-default select-none relative before:absolute before:left-[50%] before:top-[50%] before:w-10 before:h-10 rounded-none '>
+              {dayObj.day}
+              {dayObj.isLearn && (
+                <div className="absolute z-[-1] bottom-[-80px] left-1/2 transform -translate-x-1/2">
+                  <FireAnimation />
+                </div>
+              )}
+            </li>
           ))}
         </ul>
-        <div className='absolute bottom-[138px] left-[166px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[138px] left-[368px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[98px] left-[217px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[98px] left-[267px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[58px] left-[116px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[58px] left-[166px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[58px] left-[368px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[18px] left-[317px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[18px] left-[418px]'>
-          <FireAnimation />
-        </div>
-        <div className='absolute bottom-[-22px] left-[116px]'>
-          <FireAnimation />
-        </div>
       </div>
     </div>
   );
