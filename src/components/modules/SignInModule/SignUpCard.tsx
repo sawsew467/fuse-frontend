@@ -68,7 +68,7 @@ export function SignUpCard({
       dispatch(actionLogin(resFirebase?.user));
       dispatch(actionSetIsAuth(true));
       setTimeout(() => {
-        router.push("/");
+        router.push("/home");
         router.refresh();
       }, 1000);
     } catch (error: any) {
