@@ -16,8 +16,6 @@ import Hourse1 from "./Hourse1";
 import Hourse2 from "./Hourse2";
 import Image from "next/image";
 
-import hero_1 from "@public/icons/hero1.svg";
-import hero_2 from "@public/icons/hero2.svg";
 import Link from "next/link";
 
 function HeroSection() {
