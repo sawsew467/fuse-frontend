@@ -19,7 +19,7 @@ const Nav = ({ headerItems }: { headerItems: Array<HeaderType> }) => {
 
   const handleHover = (id: string) => {
     setTimeout(() => {
-      const e = document.querySelector<HTMLElement>("#header-" + id);
+      const e = document?.querySelector<HTMLElement>("#header-" + id);
       if (e) {
         const translate = e.offsetWidth / 2 + e.offsetLeft;
         if (isNumber(translate)) {
