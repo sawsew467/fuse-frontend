@@ -12,11 +12,11 @@ function SignUpModule() {
 
   return (
     <>
-      <Experience mode={mode} />
       <section className="flex items-center justify-center">
         <SignInCard mode={mode} setMode={setMode} />
         <SignUpCard mode={mode} setMode={setMode} />
       </section>
+      <Experience mode={mode} />
       {/* <Ribbon mode={mode} /> */}
     </>
   );

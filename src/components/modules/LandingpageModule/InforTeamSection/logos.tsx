@@ -51,6 +51,7 @@ const logos = [
   },
 ];
 
+
 function Logos() {
 
     return (

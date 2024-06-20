@@ -2,9 +2,8 @@
 
 import { OrbitControls, OrbitControlsProps } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { LegacyRef, Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import * as THREE from "three";
-import Floor from "./Floor";
 import { animateWithGsapTimeline } from "@/utils/animateGSAP";
 
 interface ToolViewerProps {
@@ -41,6 +40,7 @@ function ToolViewer({
         makeDefault
         enableZoom={false}
         enablePan={false}
+        enableRotate={false}
         autoRotateSpeed={0.6}
         target={new THREE.Vector3(0, 0, 0)}
         {...orbitControlsProps}

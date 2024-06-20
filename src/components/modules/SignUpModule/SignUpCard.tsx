@@ -42,8 +42,6 @@ export function SignUpCard({
   });
 
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
-    console.log(data);
-
     toast({
       title: "Đăng nhập thất bại",
       description: "Sai thông tin đăng nhập",
@@ -58,9 +56,6 @@ export function SignUpCard({
         "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform backdrop-blur-sm transition-all duration-500",
         "z-10",
         mode === "SIGNUP" ? "z-50" : "z-40",
-        mode === "SIGNUP"
-          ? "opacity-100"
-          : "-translate-x-2/3 -translate-y-2/3 opacity-0",
       )}
     >
       <Logo />

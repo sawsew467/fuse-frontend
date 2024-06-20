@@ -28,23 +28,35 @@ interface CardProps {
 function Card({ data, ref, hidden }: CardProps) {
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["center center", "end end"],
   });
 
   const translateY = useTransform(
     scrollYProgress,
-    [0, hidden ? 0.6 : 0.44, 1],
+    [0, 0.005, 0.5],
     [0, 0, 2000],
   );
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, hidden ? 0.6 : 0.44, hidden ? 1 : 0.5],
-    [1, 1, 0],
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.005, 0.1], [1, 1, 0]);
+
+  const highlightFeature = (feature: string) => {
+    const [quantity, ...rest] = feature.split(" ");
+    return (
+      <div className="inline text-xs md:text-sm lg:text-base">
+        {quantity}{" "}
+        <span className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
+          thành viên
+        </span>{" "}
+        {rest.join(" ")}
+      </div>
+    );
+  };
 
   return (
     <motion.div
-      style={{ translateY, opacity }}
+      style={{
+        translateY: hidden ? 0 : translateY,
+        opacity: hidden ? 1 : opacity,
+      }}
       initial={data.animate}
       whileInView={{
         x: 0,
@@ -115,15 +127,9 @@ function Card({ data, ref, hidden }: CardProps) {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <div className="inline text-xs md:text-sm lg:text-base">
-              Up to 50{" "}
-              <p className="inline text-xs underline decoration-dotted underline-offset-4 opacity-50 md:text-sm lg:text-base">
-                active contacts
-              </p>{" "}
-              per month
-            </div>
+            {highlightFeature(data.features[0])}
           </li>
-          {data?.features.map((item) => (
+          {data?.features.slice(1).map((item) => (
             <li key={item} className="flex items-center gap-4">
               <svg
                 width="10"
