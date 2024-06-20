@@ -81,7 +81,7 @@ export type TMessage = {
       time: "08:40:00",
     },
     {
-      avatar: "https://i.ibb.co/RgHWmXb/MG-5515-op2-1.png",
+      avatar: "/avatar_image/Khang_avatar.svg",
       from: "Nguyễn Văn Duy Khang",
       message: "Let's discuss the new task in the meeting.",
       role: "Member",
@@ -134,7 +134,7 @@ export type TMessage = {
       name: "Lê Đức Anh Phương",
     },
     {
-      avatar: "https://i.ibb.co/RgHWmXb/MG-5515-op2-1.png",
+      avatar: "/avatar_image/Khang_avatar.svg",
       name: "Nguyễn Văn Duy Khang",
     }
   ];

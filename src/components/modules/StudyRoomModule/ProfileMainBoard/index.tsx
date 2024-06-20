@@ -47,7 +47,7 @@ function ProfileMainBoard({}: TProps) {
         <div className=" border-2 border-black transition hover:shadow-3d-hover relative z-10 flex flex-row items-center rounded-lg backdrop-blur-sm bg-white/80 p-2">
           <div className="px-2">
             <button className="flex flex-row-reverse items-center gap-2 rounded-md px-2 py-1 text-sm outline-none transition hover:bg-secondary" onClick={() => {router.push("/video-call/any")}}>
-              <p>Video call</p>
+              <p>Gọi video</p>
               <Image
                 src={VideoCallIcon}
                 alt="icons"
@@ -99,7 +99,7 @@ function ProfileMainBoard({}: TProps) {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <button className="rounded-md px-4 py-1 text-sm outline-none transition hover:bg-secondary">
-                  Invite
+                  Mời bạn bè
                 </button>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
