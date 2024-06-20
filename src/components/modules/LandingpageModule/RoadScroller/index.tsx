@@ -21,10 +21,14 @@ function RoadScroller() {
     target: ref,
     offset: ["start center", "start start"],
   });
-  const translateX = useTransform(scrollYProgress, [0, 1], [hidden ? -100 : -200, hidden ? 900 :1300]);
+  const translateX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [hidden ? -100 : -200, hidden ? 900 : 1300],
+  );
 
   return (
-    <div className="w-full overflow-hidden py-10" ref={ref}>
+    <div className="w-full overflow-hidden lg:py-10 py-5" ref={ref}>
       <div className="relative mt-20 h-[200px] w-[120vw] -translate-x-2 rotate-2 border-2 bg-primary">
         <motion.div style={{ translateX }}>
           <div className="relative w-fit">
@@ -33,6 +37,7 @@ function RoadScroller() {
           </div>
         </motion.div>
       </div>
+      <div id="membership"></div>
     </div>
   );
 }
