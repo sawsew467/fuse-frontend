@@ -495,6 +495,7 @@ function VideoCallSection() {
                     width={120}
                     height={120}
                     className="rounded-full object-cover  h-[120px] w-[120px]"
+                    unoptimized
                   />
                 </div>
                 <h4 className="text-xl font-bold">Vũ Vũ</h4>
@@ -516,6 +517,7 @@ function VideoCallSection() {
                       width={80}
                       height={80}
                       className="rounded-full h-[80px] w-[80px] object-cover"
+                      unoptimized
                     />
                   </div>
                   <h4>{_.name}</h4>
@@ -548,6 +550,7 @@ function VideoCallSection() {
                       height={200}
                       width={200}
                       className="h-[40px] object-cover w-[40px] rounded-full"
+                      unoptimized
                     />
                   </div>
                   <div className="flex w-full flex-col items-center">

@@ -42,6 +42,7 @@ const Card: React.FC<CardType> = ({
           height={200}
           src={imgSrc}
           alt={"background room"}
+          unoptimized
         />
       </div>
 
