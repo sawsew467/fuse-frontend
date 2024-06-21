@@ -47,13 +47,14 @@ function ProfileMainBoard({}: TProps) {
         <div className=" border-2 border-black transition hover:shadow-3d-hover relative z-10 flex flex-row items-center rounded-lg backdrop-blur-sm bg-white/80 p-2">
           <div className="px-2">
             <button className="flex flex-row-reverse items-center gap-2 rounded-md px-2 py-1 text-sm outline-none transition hover:bg-secondary" onClick={() => {router.push("/video-call/any")}}>
-              <p>Video call</p>
+              <p>Gọi video</p>
               <Image
                 src={VideoCallIcon}
                 alt="icons"
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px]"
+                unoptimized
               />
             </button>
           </div>
@@ -80,6 +81,7 @@ function ProfileMainBoard({}: TProps) {
                           height={40}
                           width={40}
                           className="rounded-full"
+                          unoptimized
                         />
                         <div>
                           <p className="font-bold">Trần Văn Bảo Thắng</p>
@@ -97,7 +99,7 @@ function ProfileMainBoard({}: TProps) {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <button className="rounded-md px-4 py-1 text-sm outline-none transition hover:bg-secondary">
-                  Invite
+                  Mời bạn bè
                 </button>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
@@ -140,6 +142,7 @@ function ProfileMainBoard({}: TProps) {
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px] cursor-pointer"
+                unoptimized
               />
             </button>
             <button className="flex h-[30px] w-[30px] items-center justify-center rounded-md outline-none transition hover:bg-secondary">
@@ -151,6 +154,7 @@ function ProfileMainBoard({}: TProps) {
                     height={200}
                     width={200}
                     className="h-[20px] w-[20px] cursor-pointer"
+                    unoptimized
                   />
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content className="z-10 mr-4 mt-4 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black  hover:shadow-3d-hover">
@@ -187,6 +191,7 @@ function ProfileMainBoard({}: TProps) {
                 height={200}
                 width={200}
                 className="h-[20px] w-[20px] cursor-pointer"
+                unoptimized
               />
             </button>
           </div>
@@ -194,11 +199,12 @@ function ProfileMainBoard({}: TProps) {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <Image
-                  src={AvatarImage}
+                  src={"https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg"}
                   alt="avatar"
                   height={200}
                   width={200}
-                  className="h-[30px] w-[30px] rounded-[50%]"
+                  className="h-[30px] w-[30px] rounded-[50%] object-cover"
+                  unoptimized
                 />
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-4 mt-3 flex w-fit animate-fade-down flex-col gap-2 rounded-lg bg-white p-4 shadow-md animate-duration-200 border-2 border-black hover:shadow-3d-hover">
