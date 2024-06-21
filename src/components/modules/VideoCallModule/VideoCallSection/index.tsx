@@ -509,7 +509,7 @@ function VideoCallSection() {
                     alt="Avatar"
                     width={120}
                     height={120}
-                    className="h-[120px] w-[120px] rounded-full object-cover"
+                    className="rounded-full object-cover  h-[120px] w-[120px]"
                     unoptimized
                   />
                 </div>
