@@ -2,25 +2,25 @@ import { useEffect, useState } from "react";
 import QuestionPulling, { Poll } from "./PollingQuestion";
 
 const fakePoll: Poll = {
-  question: "Quả trứng có trước hay còn bò có trước ?",
+  question: "What is the primary function of the CPU (Central Processing Unit) in a computer?",
   options: [
-    { id: 1, text: "A", description: "Trứng", votes: [] },
+    { id: 1, text: "A", description: "To store data and programs temporarily", votes: [] },
     {
       id: 2,
       text: "B",
-      description: "Bò.",
+      description: "To manage and coordinate all computer components.",
       votes: [],
     },
     {
       id: 3,
       text: "C",
-      description: "Con gà có trước.",
+      description: "To execute instructions and process data.",
       votes: [],
     },
     {
       id: 4,
       text: "D",
-      description: "Con bò ăn quả trứng rồi.",
+      description: "To provide long-term data storage.",
       votes: [],
     },
   ],

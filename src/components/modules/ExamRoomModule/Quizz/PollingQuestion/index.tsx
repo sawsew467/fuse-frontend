@@ -112,7 +112,7 @@ const QuestionPulling = (PollData: Poll) => {
       <div className="text-md border-b-2 border-status-offline bg-[#FFF380] px-4 py-8 text-center drop-shadow-xl">
         {typeStatistic != "clock" && (
           <span className="font-title text-xl font-semibold">
-            Con bò có trước hay quả trứng gà có trước ???
+            {poll?.question}
           </span>
         )}
       </div>
@@ -124,11 +124,12 @@ const QuestionPulling = (PollData: Poll) => {
                 <Clock remainingTime={20} />
               </div>
               <Image
-                className="max-w-2/3 object-fit max-h-70 min-h-[200px] w-auto"
+                className="max-w-2/3 object-fit max-h-[222px] min-h-[200px] w-auto"
                 width={200}
                 height={100}
+                unoptimized
                 src={
-                  "https://cdn.pixabay.com/photo/2023/10/10/12/36/lofi-8306352_960_720.jpg"
+                  "https://miro.medium.com/v2/resize:fit:1400/0*_G1LMTJu2SKIFrmw.gif"
                 }
                 alt={"background room"}
               />
@@ -159,19 +160,11 @@ const QuestionPulling = (PollData: Poll) => {
           <>
             <div className="flex gap-4">
               <Button
-                className="p-1"
+                className="p-1 "
+                disabled={!voted}
                 haveOverlay
                 variant={"outline"}
-                onClick={() => {
-                  handleStatisticChange();
-                }}
-              >
-                <Chart className="h-8 w-8" />
-              </Button>
-              <Button
-                className="p-1"
-                haveOverlay
-                variant={"outline"}
+                
                 onClick={() => {
                   handleStatisticChange();
                 }}
