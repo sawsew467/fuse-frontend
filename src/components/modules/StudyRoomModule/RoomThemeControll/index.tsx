@@ -41,10 +41,10 @@ function RoomThemeControll() {
       setCurrentTime(timeString);
     };
 
-    updateTime(); 
+    updateTime();
     const intervalId = setInterval(updateTime, 1000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleScroll = () => {
@@ -114,18 +114,18 @@ function RoomThemeControll() {
           `${isOpenMusicTheme ? "translate-x-0" : "translate-x-[-394px]"}`,
         )}
       >
-        <div className="border-2 border-black hover:shadow-3d-dark transition h-full w-full overflow-auto rounded-lg bg-white/80 p-4 backdrop-blur-sm scrollbar-hide">
+        <div className="h-full w-full overflow-auto rounded-lg border-2 border-black bg-white/80 p-4 backdrop-blur-sm transition scrollbar-hide hover:shadow-3d-dark">
           <div className="flex flex-col gap-4">
             <div className="flex flex-row items-center justify-between">
               <h3 className="text-start font-title text-2xl font-bold">
-                Fuse Room
+                Phòng học Fuse
               </h3>
               <p className="text-start text-xl font-bold">{currentTime}</p>
             </div>
 
             <div className="flex flex-col gap-2">
               <div>
-                <h3 className="font-medium">Music themes</h3>
+                <h3 className="font-medium">Chủ đề nhạc</h3>
               </div>
               <div className="flex flex-col gap-2">
                 <p className="font-base text-[12px]">
@@ -151,11 +151,6 @@ function RoomThemeControll() {
                         />
                       </div>
                     ))}
-                    {Array.from({ length: 10 }).map((item, index: number) => (
-                      <div key={index}>
-                        <ThemeItem />
-                      </div>
-                    ))}
                   </div>
                   {/* Scroll to bottom x step */}
                   <button
@@ -171,7 +166,7 @@ function RoomThemeControll() {
 
             <div className="flex flex-col gap-2">
               <div>
-                <h3>Media controll</h3>
+                <h3>Thay đổi media</h3>
               </div>
 
               <div className="flex flex-row items-center gap-4 rounded-lg bg-white/50 p-2">
@@ -202,7 +197,7 @@ function RoomThemeControll() {
 
               <div className="flex flex-col items-start gap-2 rounded-lg bg-white/50 p-2">
                 <div>
-                  <p className="text-[12px]">Audio Output</p>
+                  <p className="text-[12px]">Đầu ra âm thanh</p>
                 </div>
                 <div className="flex w-full flex-row items-center gap-2">
                   <select
@@ -210,7 +205,7 @@ function RoomThemeControll() {
                     onChange={handleAudioOutputChange}
                     className="w-full appearance-none rounded-lg p-2 outline-none"
                   >
-                    <option value="default">Default</option>
+                    <option value="default">Mặc định</option>
                     {audioDevices.map((device) => (
                       <option key={device.deviceId} value={device.deviceId}>
                         {device.label}
@@ -221,7 +216,7 @@ function RoomThemeControll() {
               </div>
               <div className="flex flex-col items-start gap-2 rounded-lg bg-white/50 p-2">
                 <div>
-                  <p className="text-[12px]">Video Input</p>
+                  <p className="text-[12px]">Đầu vào Video</p>
                 </div>
                 <div className="flex w-full flex-row items-center gap-2">
                   <select
@@ -229,7 +224,7 @@ function RoomThemeControll() {
                     onChange={handleAudioOutputChange}
                     className="w-full appearance-none rounded-lg p-2 outline-none"
                   >
-                    <option value="default">Default</option>
+                    <option value="default">Mặc định</option>
                     {audioDevices.map((device) => (
                       <option key={device.deviceId} value={device.deviceId}>
                         {device.label}
@@ -242,7 +237,7 @@ function RoomThemeControll() {
           </div>
         </div>
         <div
-          className="border-2 border-black hover:shadow-3d-hover transition h-fit w-fit cursor-pointer rounded-lg bg-white/80 p-2 backdrop-blur-sm"
+          className="h-fit w-fit cursor-pointer rounded-lg border-2 border-black bg-white/80 p-2 backdrop-blur-sm transition hover:shadow-3d-hover"
           onClick={() => setIsOpenMusicTheme(!isOpenMusicTheme)}
         >
           <Image

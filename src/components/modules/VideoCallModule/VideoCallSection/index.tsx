@@ -10,7 +10,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { TMessage, fakeDataBasicInfoInormation, fakeMessageData } from "@/data/stuty-room-themes";
+import {
+  TMessage,
+  fakeDataBasicInfoInormation,
+  fakeMessageData,
+} from "@/data/stuty-room-themes";
 import {
   DrawingUtils,
   FilesetResolver,
@@ -19,7 +23,7 @@ import {
 } from "@mediapipe/tasks-vision";
 import RedHeartIcon from "@public/icons/studyroom/heart";
 import LikeIcon from "@public/icons/studyroom/like";
-
+import { usePathname } from "next/navigation";
 
 type GestureRecognizerType = GestureRecognizer | undefined;
 
@@ -59,7 +63,8 @@ function VideoCallSection() {
 
   const handleSendMessage = () => {
     const dataSend: TMessage = {
-      avatar: "https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg",
+      avatar:
+        "https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg",
       from: "Vu Vu",
       message: messageInput!,
       role: "host",
@@ -91,6 +96,21 @@ function VideoCallSection() {
   const [userAction, setUserAction] = useState<string>("");
   const [showLove, setShowLove] = useState(false);
   const [showLike, setShowLike] = useState(false);
+
+  const currentRoute = usePathname();
+
+  const disableCam = () => {
+    if (webcamRunning && mediaStream) {
+      mediaStream.getTracks().forEach((track) => track.stop());
+      setWebcamRunning(false);
+      setMediaStream(null);
+    }
+  };
+  useEffect(() => {
+    if (!currentRoute.includes("/study-room/") || !currentRoute.includes("/video-call/")) {
+      disableCam();
+    }
+  }, [currentRoute]);
 
   const createGestureRecognizer = async () => {
     try {
@@ -135,9 +155,9 @@ function VideoCallSection() {
     if (!gestureRecognizer) {
       return;
     }
-
+  
     if (webcamRunning) {
-      // Stop the webcam
+      // Stop the previous media stream
       if (mediaStream) {
         mediaStream.getTracks().forEach((track) => track.stop());
       }
@@ -145,24 +165,28 @@ function VideoCallSection() {
       if (videoRef.current) {
         videoRef.current.srcObject = null;
       }
-      return; // Exit the function after stopping the webcam
+      return;
     } else {
       setWebcamRunning(true);
     }
-    const constraints = {
-      video: true,
-    };
-
-    navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+  
+    try {
+      const constraints = {
+        video: true,
+      };
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      setMediaStream(stream);
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        videoRef.current?.addEventListener("loadeddata", predictWebcam);
-        console.log(videoRef.current);
       }
-    });
+    } catch (error) {
+      console.error("Error accessing webcam:", error);
+    }
   };
+  
 
   const predictWebcam = async () => {
+    
     if (!videoRef.current) return;
     if (!gestureRecognizer) return;
     if (!canvasElementRef.current) return;
@@ -325,14 +349,6 @@ function VideoCallSection() {
         ) {
           setUserAction("love");
         }
-
-        if (
-          Math.abs(x0_4 - x1_8) < 0.03 &&
-          Math.abs(x1_4 - x0_8) < 0.03 &&
-          Math.abs(y0_4 - y1_8) < 0.03 &&
-          Math.abs(y1_4 - y0_8) < 0.03
-        ) {
-        }
       }
     }
 
@@ -348,9 +364,6 @@ function VideoCallSection() {
     }
   }, [videoCall.isOpenVideo]);
 
-  console.log("ACTION", userAction);
-  console.log("LIKE", showLike);
-  console.log("LOVE", showLove);
   useEffect(() => {
     if (userAction === "love") {
       setShowLove(true);
@@ -488,9 +501,11 @@ function VideoCallSection() {
               </div>
             ) : (
               <div className="flex h-full w-full flex-col items-center justify-center gap-2">
-                <div className="rounded-full  border-2 border-primary">
+                <div className="rounded-full border-2 border-primary">
                   <Image
-                    src={"https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg"}
+                    src={
+                      "https://i.ibb.co/qBNhB8Q/z4906224013507-d649511249cf5ef7e835baf8a498b877.jpg"
+                    }
                     alt="Avatar"
                     width={120}
                     height={120}
@@ -510,13 +525,13 @@ function VideoCallSection() {
                   key={index}
                   className="flex h-[40%] w-full flex-col items-center justify-center rounded-lg bg-white/60"
                 >
-                  <div className="border-2 border-primary rounded-full">
+                  <div className="rounded-full border-2 border-primary">
                     <Image
                       src={_.avatar}
                       alt="Avatar"
                       width={80}
                       height={80}
-                      className="rounded-full h-[80px] w-[80px] object-cover"
+                      className="h-[80px] w-[80px] rounded-full object-cover"
                       unoptimized
                     />
                   </div>
@@ -549,7 +564,7 @@ function VideoCallSection() {
                       alt="image"
                       height={200}
                       width={200}
-                      className="h-[40px] object-cover w-[40px] rounded-full"
+                      className="h-[40px] w-[40px] rounded-full object-cover"
                       unoptimized
                     />
                   </div>

@@ -69,7 +69,7 @@ function ChatOutSide() {
       <div
         className={cn(
           "absolute bottom-0 right-[0px] flex h-full w-full flex-row items-end gap-4 transition duration-500",
-          `${isOpenChat ? "translate-x-0" : "translate-x-[425px]"}`,
+          `${isOpenChat ? "translate-x-0" : "translate-x-[430px]"}`,
         )}
       >
         <div
@@ -81,7 +81,7 @@ function ChatOutSide() {
             alt="icons"
             height={40}
             width={40}
-            className="h-[40px] w-[40px]"
+            className="h-[35px] w-[35px]"
             unoptimized
           />
         </div>
