@@ -12,7 +12,8 @@ interface CurrentMedia {
 
 interface VideoCallState {
   isOpenChat: boolean;
-  isOpenVideo:boolean;
+  isOpenVideo: boolean;
+  isOpenMic: boolean;
 }
 
 interface AudioState {
@@ -42,7 +43,8 @@ const initialState: StudyRoomControllerState = {
   videoCall: {
     isOpenChat: true,
     isOpenVideo: false,
-  }
+    isOpenMic: false,
+  },
 };
 
 export const studyRoomControllerSlice = createSlice({
@@ -66,11 +68,21 @@ export const studyRoomControllerSlice = createSlice({
     },
     actionSetIsOpenVideo: (state, action: PayloadAction<boolean>) => {
       state.videoCall.isOpenVideo = action.payload;
-    },  
+    },
+    actionSetIsOpenMic: (state, action: PayloadAction<boolean>) => {
+      state.videoCall.isOpenMic = action.payload;
+    },
   },
 });
 
-export const { actionSetCurrentMedia, actionSetAudio, actionSetVolume, actionSetMute, actionSetIsOpenChat, actionSetIsOpenVideo} =
-  studyRoomControllerSlice.actions;
+export const {
+  actionSetCurrentMedia,
+  actionSetAudio,
+  actionSetVolume,
+  actionSetMute,
+  actionSetIsOpenChat,
+  actionSetIsOpenVideo,
+  actionSetIsOpenMic,
+} = studyRoomControllerSlice.actions;
 
 export default studyRoomControllerSlice.reducer;

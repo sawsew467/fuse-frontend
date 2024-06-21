@@ -1,12 +1,16 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-toolkit";
-import { actionSetIsOpenChat, actionSetIsOpenVideo } from "@/store/slices/studyRoomController";
+import { cn } from "@/lib/utils";
+import { actionSetIsOpenChat, actionSetIsOpenMic, actionSetIsOpenVideo } from "@/store/slices/studyRoomController";
 import MicIcon from "@public/icons/studyroom/mic";
 import PhoneIcon from "@public/icons/studyroom/phone";
 import {
     HandIcon,
+    LucideMic,
+    LucideMicOff,
     LucideVideo,
+    LucideVideoOff,
     MessageCircle,
     Settings,
     ShieldAlert,
@@ -49,11 +53,25 @@ function MainControll() {
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
           <Smile />
         </button>
-        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
-          <MicIcon />
+        <button className={
+          cn("rounded-full border-2 border-black p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover",
+            !videoCall.isOpenMic ? "bg-red-300/80" : "bg-white/80"
+          )
+        }
+          onClick={() => dispatch(actionSetIsOpenMic(!videoCall.isOpenMic))}
+        >
+          {
+            videoCall.isOpenMic ? <LucideMic /> : <LucideMicOff />
+          }
         </button>
-        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover" onClick={() => dispatch(actionSetIsOpenVideo(!videoCall.isOpenVideo))}>
-          <LucideVideo />
+        <button className={
+          cn("rounded-full border-2 border-black p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover",
+            !videoCall.isOpenVideo ? "bg-red-300/80" : "bg-white/80"
+          )
+        } onClick={() => dispatch(actionSetIsOpenVideo(!videoCall.isOpenVideo))}>
+            {
+              videoCall.isOpenVideo ? <LucideVideo /> : <LucideVideoOff />
+            }
         </button>
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
           <HandIcon />
@@ -67,7 +85,11 @@ function MainControll() {
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">
           <ShieldAlert />
         </button>
-        <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover" onClick={() => {dispatch(actionSetIsOpenChat(!videoCall.isOpenChat))}}>
+        <button className={
+          cn("rounded-full border-2 border-black  p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover",
+            videoCall.isOpenChat ? "bg-primary/80" : "bg-white/80"
+          )
+        } onClick={() => {dispatch(actionSetIsOpenChat(!videoCall.isOpenChat))}}>
           <MessageCircle />
         </button>
         <button className="rounded-full border-2 border-black bg-white/80 p-[10px] backdrop-blur-sm transition hover:shadow-3d-hover">

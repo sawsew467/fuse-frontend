@@ -141,77 +141,78 @@ export const fakeMessageData: TMessage[] = [
   {
     avatar: "https://i.ibb.co/qNspdpx/Club-leader-photo.webp",
     from: "Trần Văn Bảo Thắng",
-    message: "Hello world",
-    role: "Joinner",
+    message: "Xin chào các bạn",
+    role: "Tham gia",
     time: "08:20:00",
   },
   {
     avatar: "https://i.ibb.co/RgHWmXb/MG-5515-op2-1.png",
     from: "Nguyễn Văn Duy Khang",
-    message: "Good morning everyone!",
-    role: "Member",
+    message: "Chào buổi sáng mọi người!",
+    role: "Thành viên",
     time: "08:25:00",
   },
   {
     avatar:
       "https://i.ibb.co/TgXZgwv/445356269-973328174802658-3860307921523704298-n.jpg",
     from: "Lê Đức Anh Phương",
-    message: "Did you finish the project?",
-    role: "Member",
+    message: "Bạn đã hoàn thành bài tập chưa?",
+    role: "Thành viên",
     time: "08:30:00",
   },
   {
     avatar:
       "https://i.ibb.co/TgXZgwv/445356269-973328174802658-3860307921523704298-n.jpg",
     from: "Nguyễn Văn Duy Khang",
-    message: "Yes, I sent it to the client.",
-    role: "Manager",
+    message: "Vâng, tôi đã làm xong rồi.",
+    role: "Quản lý",
     time: "08:35:00",
   },
   {
     avatar: "https://i.ibb.co/qNspdpx/Club-leader-photo.webp",
     from: "Trần Văn Bảo Thắng",
-    message: "Great job!",
-    role: "Joinner",
+    message: "Làm việc tuyệt vời!",
+    role: "Tham gia",
     time: "08:40:00",
   },
   {
     avatar: "/avatar_image/Khang_avatar.svg",
     from: "Nguyễn Văn Duy Khang",
-    message: "Let's discuss the new task in the meeting.",
-    role: "Member",
+    message: "Hãy thảo luận về bài mới nào",
+    role: "Thành viên",
     time: "08:45:00",
   },
   {
     avatar:
       "https://i.ibb.co/TgXZgwv/445356269-973328174802658-3860307921523704298-n.jpg",
     from: "Lê Đức Anh Phương",
-    message: "Sure, I will prepare the slides.",
-    role: "Member",
+    message: "Dạ, tôi sẽ chuẩn bị slide.",
+    role: "Thành viên",
     time: "08:50:00",
   },
   {
     avatar: "https://i.ibb.co/qNspdpx/Club-leader-photo.webp",
     from: "Trần Văn Bảo Thắng",
-    message: "Please make sure to include the latest updates.",
-    role: "Manager",
+    message: "Đảm bảo bao gồm những cập nhật mới nhất.",
+    role: "Quản lý",
     time: "08:55:00",
   },
   {
     avatar: "https://i.ibb.co/qNspdpx/Club-leader-photo.webp",
     from: "Trần Văn Bảo Thắng",
-    message: "When is the meeting?",
-    role: "Joinner",
+    message: "Bắt đầu chưa nhỉ ?",
+    role: "Tham gia",
     time: "09:00:00",
   },
   {
     avatar: "https://i.ibb.co/RgHWmXb/MG-5515-op2-1.png",
     from: "Nguyễn Văn Duy Khang",
-    message: "It's at 10 AM in the main conference room.",
-    role: "Member",
+    message: "Bắt đầu nào mọi người!",
+    role: "Thành viên",
     time: "09:05:00",
   },
 ];
+
 
 export type TBasicInfoInRoom = {
   avatar: string;
