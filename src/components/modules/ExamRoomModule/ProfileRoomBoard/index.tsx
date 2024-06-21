@@ -43,8 +43,6 @@ function ProfileRoomBoard({}: TProps) {
     <div className="absolute right-4 top-4">
       <div className="flex flex-row gap-6">
         <div className="relative z-10 flex flex-row items-center rounded-lg border-2 border-black bg-white/80 p-2 backdrop-blur-sm transition hover:shadow-3d-hover">
-          <div className="px-2"></div>
-          <div className="h-full border-l-2"></div>
           <div className="px-2">
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
@@ -84,7 +82,7 @@ function ProfileRoomBoard({}: TProps) {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <button className="rounded-md px-4 py-1 text-sm outline-none transition hover:bg-secondary">
-                  Invite
+                  Mời
                 </button>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="z-10 mr-6 mt-3 flex max-h-[300px] w-fit max-w-[400px] animate-fade-down flex-col gap-2 rounded-lg border-2 border-black bg-white p-4 shadow-md animate-duration-200 hover:shadow-3d-hover">

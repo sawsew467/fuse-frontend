@@ -72,24 +72,21 @@
   width: 15px;
   padding-inline: 4px;
   background: rgba(0, 0, 0, 0);
-
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #F5F3EA;
+  background: #f5f3ea;
 }
-
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #FF9966;
+  background: #ff9966;
   border-radius: 100vw;
-  border: 3px solid #F5F3EA;
+  border: 3px solid #f5f3ea;
 }
 
 /* Handle on hover */
-
 
 body,
 html {
@@ -126,7 +123,7 @@ html {
   }
 
   .box:has(+ .box:hover),
-  .box:hover+.box {
+  .box:hover + .box {
     transform: scale(1.1) translateY(-8px);
   }
 }
@@ -137,12 +134,12 @@ html {
   }
 
   .tag {
-    @apply bg-[#65CCA0] px-1 rounded-md border-[1px]  border-black select-none ;
+    @apply select-none rounded-md border-[1px] border-black bg-[#65CCA0] px-1;
     box-shadow: -3px 3px 0px 0px #000;
   }
 
   .animate-deylay-2 {
-    animation-delay: .5s;
+    animation-delay: 0.5s;
   }
   .animate-deylay-3 {
     animation-delay: 1.5s;
@@ -167,7 +164,6 @@ html::-webkit-scrollbar-thumb {
 
 /* 
 process stress */
-
 
 .progress {
   --progress-value: 50;

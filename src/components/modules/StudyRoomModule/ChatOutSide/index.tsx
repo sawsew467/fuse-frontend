@@ -69,7 +69,7 @@ function ChatOutSide() {
       <div
         className={cn(
           "absolute bottom-0 right-[0px] flex h-full w-full flex-row items-end gap-4 transition duration-500",
-          `${isOpenChat ? "translate-x-0" : "translate-x-[425px]"}`,
+          `${isOpenChat ? "translate-x-0" : "translate-x-[430px]"}`,
         )}
       >
         <div
@@ -81,7 +81,8 @@ function ChatOutSide() {
             alt="icons"
             height={40}
             width={40}
-            className="h-[40px] w-[40px]"
+            className="h-[35px] w-[35px]"
+            unoptimized
           />
         </div>
         <div className="flex h-full w-full flex-col gap-2 rounded-lg border-2 border-black bg-white/80 p-3 backdrop-blur-sm transition hover:shadow-3d-hover">
@@ -102,6 +103,7 @@ function ChatOutSide() {
                     height={200}
                     width={200}
                     className="h-[42px] w-[42px] rounded-full object-cover border-2 border-primary"
+                    unoptimized
                   />
                 </div>
                 <div className="flex w-full flex-col items-center">

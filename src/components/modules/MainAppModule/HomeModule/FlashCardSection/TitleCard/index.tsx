@@ -30,7 +30,7 @@ function TitleCard({flashCardData}: TProps) {
         </div>
         <div className="flex flex-row gap-5 items-center">
             <div className="border-2 border-black w-fit  rounded-[50%] overflow-hidden shadow-3d-light">
-                <Image src={"https://res.cloudinary.com/dy1uuo6ql/image/upload/v1713897426/nk4zyhnkf8yghycffnqs.jpg"} alt="Image" width={200} height={200} className="w-[50px] h-[50px] object-cover"/>
+                <Image src={"https://res.cloudinary.com/dy1uuo6ql/image/upload/v1713897426/nk4zyhnkf8yghycffnqs.jpg"} alt="Image" width={200} height={200} className="w-[50px] h-[50px] object-cover" unoptimized/>
             </div>
             <div>
                 <p className="font-bold">{flashCardData.author.name}</p>

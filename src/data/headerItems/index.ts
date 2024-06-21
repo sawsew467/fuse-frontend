@@ -18,7 +18,7 @@ export const headerItems = [
 
 export const headerUser = [
   {
-    href: "/",
+    href: "/home",
     label: "Trang chủ",
     id: "home",
   },
