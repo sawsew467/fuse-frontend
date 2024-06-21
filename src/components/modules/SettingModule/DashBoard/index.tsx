@@ -20,16 +20,16 @@ function DashBoard() {
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <Button className='' haveOverlay>
-                    <Link href="/settings/edit-profile">
+                <Link href="/settings/edit-profile">
+                    <Button className='w-full' haveOverlay>
                         <span>Hồ sơ</span>
-                    </Link>
-                </Button>
-                <Button className='bg-secondary' haveOverlay>
-                    <Link href="/settings/setting-account">
+                    </Button>
+                </Link>
+                <Link href="/settings/setting-account">
+                    <Button className='w-full bg-secondary' haveOverlay>
                         <span>Cài đặt</span>
-                    </Link>
-                </Button>
+                    </Button>
+                </Link>
             </div>
         </div>
     )
